@@ -7,6 +7,7 @@ src/projects.py (portfolio content in both languages).
 """
 import html
 import json
+import urllib.parse
 import os
 import re
 import shutil
@@ -15,6 +16,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 from i18n import translate  # noqa: E402
+from newsections import ANALYTICS_OFF, ANALYTICS_ON, GITHUB, LINKEDIN, PRIVACY, T  # noqa: E402
 from projects import BY_SLUG, CATEGORIES, CATEGORY_ORDER, HOME_HIGHLIGHTS, P  # noqa: E402
 
 EN = json.load(open(os.path.join(ROOT, "src", "en.json"), encoding="utf-8"))
@@ -27,9 +29,9 @@ UI = {
         lang="pt-BR", prefix="", other="en", other_label="EN", other_title="Read in English",
         title="ChordIQ — Physics AI para engenharia industrial",
         desc="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.",
-        nav=[("servicos", "Serviços"), ("portfolio", "Portfólio"), ("casos", "Casos reais"), ("capacidades", "Capacidades"),
-             ("principio", "Princípio"), ("metodo", "Como trabalhamos"), ("parceria", "Parceria"), ("contato", "Contato")],
-        cta="Falar com a gente", menu="Menu",
+        nav=[("servicos", "Serviços"), ("portfolio", "Portfólio"), ("casos", "Validações"), ("capacidades", "Capacidades"),
+             ("metodo", "Como trabalhamos"), ("sobre", "Sobre"), ("contato", "Contato")],
+        cta="Falar com a gente", menu="Menu", hero_media_label="Ver o projeto Aircraft Design Optimizer", hero_media_cap="Aircraft Design Optimizer · CFD 3D (OpenFOAM) · pressão na pele", demo_btn="Pedir acesso à demo", demo_subject="Acesso à demo: ", demo_body="Olá! Gostaria de testar o ", demo_note="Os apps de demonstração têm acesso restrito.",
         show_eyebrow="Veja funcionando", show_h2="Um avião comercial projetado por IA e física, em 96 segundos.",
         show_p="O Aircraft Design Optimizer voa 1.920 projetos de avião de corredor único, descarta os que não seriam certificáveis e confere os escolhidos em CFD 3D. Calibrado primeiro no A320, depois otimizado: até −13% de CO₂ por passageiro-km, dentro do portão de 36 m do aeroporto.",
         show_btn="Ver o projeto completo", show_cap="Demonstração em vídeo do Aircraft Design Optimizer.",
@@ -50,9 +52,9 @@ UI = {
         lang="en", prefix="/en", other="pt", other_label="PT", other_title="Ler em português",
         title="ChordIQ — Physics AI for industrial engineering",
         desc="We turn industrial simulations and processes into fast, physical and verifiable AI models. CFD, digital twins, surrogate models and verification, with real cases and measured numbers.",
-        nav=[("servicos", "Services"), ("portfolio", "Portfolio"), ("casos", "Real cases"), ("capacidades", "Capabilities"),
-             ("principio", "Principle"), ("metodo", "How we work"), ("parceria", "Partnership"), ("contato", "Contact")],
-        cta="Talk to us", menu="Menu",
+        nav=[("servicos", "Services"), ("portfolio", "Portfolio"), ("casos", "Validations"), ("capacidades", "Capabilities"),
+             ("metodo", "How we work"), ("sobre", "About"), ("contato", "Contact")],
+        cta="Talk to us", menu="Menu", hero_media_label="See the Aircraft Design Optimizer project", hero_media_cap="Aircraft Design Optimizer · 3D CFD (OpenFOAM) · skin pressure", demo_btn="Request demo access", demo_subject="Demo access: ", demo_body="Hello! I would like to try ", demo_note="The demo apps have restricted access.",
         show_eyebrow="See it working", show_h2="An airliner designed by AI and physics, in 96 seconds.",
         show_p="The Aircraft Design Optimizer flies 1,920 single-aisle airliner designs, discards the ones that would not be certifiable and checks the picks in 3D CFD. Calibrated on the A320 first, then optimized: up to −13% CO₂ per passenger-km, inside the 36 m airport gate.",
         show_btn="See the full project", show_cap="Video demonstration of the Aircraft Design Optimizer.",
@@ -71,8 +73,8 @@ UI = {
     ),
 }
 
-HOME_ORDER = ["hero", "SHOWCASE", "proof", "problema", "HIGHLIGHTS", "servicos", "casos", "capacidades", "exemplos", "setores",
-              "principio", "validacao", "metodo", "proposito", "position", "parceria", "contato"]
+HOME_ORDER = ["hero", "SHOWCASE", "proof", "problema", "ENTRIES", "HIGHLIGHTS", "servicos", "casos",
+              "principio", "validacao", "metodo", "PILOT", "ABOUT", "contato"]
 
 
 def read(name):
@@ -85,13 +87,31 @@ def absolutize(s):
     return s
 
 
+PAGE_SLUGS = {"about": {"pt": "sobre", "en": "about"}, "capabilities": {"pt": "capacidades", "en": "capabilities"},
+              "privacy": {"pt": "privacidade", "en": "privacy"}}
+
+
 def path_for(lang, kind, slug=None):
     pre = UI[lang]["prefix"]
     if kind == "home":
         return pre + "/"
     if kind == "portfolio":
         return pre + "/portfolio/"
+    if kind in PAGE_SLUGS:
+        return f"{pre}/{PAGE_SLUGS[kind][lang]}/"
     return f"{pre}/portfolio/{slug}.html"
+
+
+def jsonld(kind):
+    if kind != "home":
+        return ""
+    data = {"@context": "https://schema.org", "@type": "Organization", "name": "ChordIQ", "url": SITE + "/",
+            "logo": SITE + "/apple-touch-icon.png", "email": "yan@pinneapple.org",
+            "address": {"@type": "PostalAddress", "addressLocality": "Natal", "addressRegion": "RN", "addressCountry": "BR"},
+            "sameAs": [LINKEDIN, GITHUB]}
+    if CFG.get("legal_name"):
+        data["legalName"] = CFG["legal_name"]
+    return '\n  <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
 
 
 def head(lang, title, desc, kind, slug=None):
@@ -129,10 +149,9 @@ def head(lang, title, desc, kind, slug=None):
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="preload" href="/fonts/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxKsv4Rn.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">{jsonld(kind)}
 </head>
 <body>
 '''
@@ -144,7 +163,14 @@ def header(lang, kind, slug=None):
     base = "" if kind == "home" else home
     nav = []
     for anchor, label in u["nav"]:
-        href = f"{home}portfolio/" if (anchor == "portfolio" and kind != "home") else f"{base}#{anchor}"
+        if anchor == "portfolio" and kind != "home":
+            href = path_for(lang, "portfolio")
+        elif anchor == "capacidades":
+            href = path_for(lang, "capabilities")
+        elif anchor == "sobre":
+            href = path_for(lang, "about")
+        else:
+            href = f"{base}#{anchor}"
         nav.append(f'      <a href="{href}">{label}</a>')
     sw = path_for(u["other"], kind, slug)
     return f'''<header>
@@ -168,11 +194,16 @@ def header(lang, kind, slug=None):
 '''
 
 
+def analytics_tag():
+    code = CFG.get("analytics_goatcounter", "").strip()
+    return f'\n<script data-goatcounter="https://{code}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' if code else ""
+
+
 def tail(lang="pt", kind="home"):
     u = UI[lang]
     base = "" if kind == "home" else u["prefix"] + "/"
     return f'''
-<a class="mobile-cta" href="{base}#contato">{u["cta"]}</a>
+<a class="mobile-cta" href="{base}#contato">{u["cta"]}</a>{analytics_tag()}
 <script src="/script.js"></script>
 </body>
 </html>
@@ -181,7 +212,10 @@ def tail(lang="pt", kind="home"):
 
 def footer(lang):
     s = read("footer")
-    return translate(s, EN) if lang == "en" else s
+    s = translate(s, EN) if lang == "en" else s
+    t = T[lang]
+    links = " &middot; ".join(f'<a href="{path_for(lang, k)}">{lbl}</a>' for k, lbl in zip(("privacy", "about", "capabilities"), t["legal"]))
+    return s.replace("</footer>", f'  <div class="wrap legal-links">{links}</div>\n</footer>')
 
 
 def card(lang, p):
@@ -259,11 +293,19 @@ def home(lang):
             out.append(showcase(lang))
         elif name == "HIGHLIGHTS":
             out.append(highlights(lang))
+        elif name == "ENTRIES":
+            out.append(entries(lang))
+        elif name == "PILOT":
+            out.append(pilot(lang))
+        elif name == "ABOUT":
+            out.append(about_teaser(lang))
         else:
             s = read(name)
             if name == "exemplos":
                 s = s.replace('<div class="wrap">', f'<div class="wrap">\n    <details class="more"><summary>{u["ex_summary"]}</summary>', 1)
                 s = s.replace("  </div>\n</section>", "    </details>\n  </div>\n</section>")
+            if name == "hero":
+                s = s.replace("<!--HEROMEDIA-->", hero_media(lang))
             if name == "contato":
                 bk = CFG.get("booking_url", "").strip()
                 btn = f'<p><a class="btn btn-ghost" href="{E(bk)}" target="_blank" rel="noopener">{"Agendar uma conversa" if lang == "pt" else "Book a call"} &rarr;</a></p>' if bk else ""
@@ -314,6 +356,11 @@ def contact_cta(lang):
 '''
 
 
+def demo_href(lang, p):
+    u = UI[lang]
+    return "mailto:yan@pinneapple.org?subject=" + urllib.parse.quote(u["demo_subject"] + p["name"]) + "&body=" + urllib.parse.quote(u["demo_body"] + p["name"] + ".")
+
+
 def project(lang, p):
     u = UI[lang]
     d = p[lang]
@@ -354,6 +401,7 @@ def project(lang, p):
         </ul>{limit}
         <p class="side-k">{u["tags"]}</p>
         <div class="tag-row">{tags}</div>
+        <p class="demo-ask"><a class="btn btn-primary" href="{demo_href(lang, p)}">{u["demo_btn"]} &rarr;</a><span>{u["demo_note"]}</span></p>
       </aside>
     </div>
     <h2 class="gal-h">{u["gallery"]}</h2>
@@ -369,6 +417,192 @@ def project(lang, p):
     return absolutize(head(lang, title + u["proj_suffix"], d["tagline"], "project", p["slug"]) + header(lang, "project", p["slug"]) + body + contact_cta(lang) + footer(lang) + tail(lang, "project"))
 
 
+def hero_media(lang):
+    u = UI[lang]
+    p = BY_SLUG["aircraft-design-optimizer"]
+    return f'''<a class="hero-media" href="{path_for(lang, "project", p["slug"])}" aria-label="{E(u["hero_media_label"])}">
+      <video autoplay muted loop playsinline preload="auto" poster="/videos/hero-aero.jpg" aria-hidden="true">
+        <source src="/videos/hero-aero.mp4" type="video/mp4">
+      </video>
+      <span class="hero-media-cap">{E(u["hero_media_cap"])}</span>
+    </a>'''
+
+
+def entries(lang):
+    t = T[lang]
+    cards = []
+    for q, slug, hint in t["entries"]:
+        cards.append(f'''      <a class="entry" href="{path_for(lang, "project", slug)}">
+        <span class="entry-q">{E(q)}</span>
+        <span class="entry-a">{E(hint)}</span>
+        <span class="entry-go">{t["entry_open"]} &rarr;</span>
+      </a>''')
+    return f'''<section id="entradas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{t["entry_eyebrow"]}</p>
+      <h2>{t["entry_h2"]}</h2>
+      <p>{t["entry_p"]}</p>
+    </div>
+    <div class="entry-grid">
+{chr(10).join(cards)}
+    </div>
+  </div>
+</section>
+
+'''
+
+
+def pilot(lang):
+    t = T[lang]
+    cols = []
+    for h, items in t["pilot_cols"]:
+        li = "\n".join(f"          <li>{E(i)}</li>" for i in items)
+        cols.append(f'''      <div class="pilot-col">
+        <h3>{E(h)}</h3>
+        <ul>
+{li}
+        </ul>
+      </div>''')
+    return f'''<section id="piloto">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{t["pilot_eyebrow"]}</p>
+      <h2>{t["pilot_h2"]}</h2>
+      <p>{t["pilot_p"]}</p>
+    </div>
+    <div class="pilot-grid">
+{chr(10).join(cols)}
+    </div>
+    <p class="show-cta"><a class="btn btn-primary" href="#contato">{t["pilot_btn"]} &rarr;</a></p>
+  </div>
+</section>
+
+'''
+
+
+def about_teaser(lang):
+    t = T[lang]
+    return f'''<section id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{t["about_eyebrow"]}</p>
+      <h2>{t["about_h2"]}</h2>
+      <p>{t["about_p"]}</p>
+    </div>
+    <div class="person">
+      <div class="person-mark" aria-hidden="true">YB</div>
+      <div><strong>{t["about_person"]}</strong><span>{t["about_role"]}</span></div>
+      <a class="ext" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+    </div>
+    <p class="show-cta"><a class="btn btn-primary" href="{path_for(lang, "about")}">{t["about_btn"]} &rarr;</a>
+      <a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a></p>
+  </div>
+</section>
+
+'''
+
+
+def simple_page(lang, kind, title, desc, body):
+    return absolutize(head(lang, title, desc, kind) + header(lang, kind) + body + contact_cta(lang) + footer(lang) + tail(lang, kind))
+
+
+def tr(lang, name):
+    s = read(name)
+    return translate(s, EN) if lang == "en" else s
+
+
+def about_page(lang):
+    t = T[lang]
+    u = UI[lang]
+    lines = "".join(f'<div class="who-row"><span class="who-k">{E(k)}</span><p>{E(v)}</p></div>' for k, v in t["who_lines"])
+    body = f'''<main class="page">
+  <div class="wrap">
+    <p class="crumbs"><a href="{u["prefix"]}/">{u["crumb_home"]}</a> / {t["about_eyebrow"]}</p>
+    <div class="section-head">
+      <p class="eyebrow">{t["about_eyebrow"]}</p>
+      <h1>{t["ab_h1"]}</h1>
+      <p class="lead">{t["ab_lead"]}</p>
+    </div>
+    <h2 class="gal-h">{t["who_h2"]}</h2>
+    <div class="who">{lines}</div>
+    <p class="show-cta"><a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a>
+      <a class="btn btn-ghost" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn &rarr;</a></p>
+  </div>
+</main>
+{tr(lang, "proposito")}
+{tr(lang, "position")}
+{tr(lang, "setores")}
+{tr(lang, "parceria")}
+'''
+    return simple_page(lang, "about", t["ab_title"], t["ab_desc"], body)
+
+
+def capabilities_page(lang):
+    t = T[lang]
+    u = UI[lang]
+    figs = "\n".join(f'      <figure><img loading="lazy" decoding="async" src="/img/portfolio/{f}" alt="{E(c)}"><figcaption>{E(c)}</figcaption></figure>' for f, c in t["studio"])
+    ex = tr(lang, "exemplos")
+    body = f'''<main class="page">
+  <div class="wrap">
+    <p class="crumbs"><a href="{u["prefix"]}/">{u["crumb_home"]}</a> / {t["cap_h1"]}</p>
+    <div class="section-head">
+      <h1>{t["cap_h1"]}</h1>
+      <p class="lead">{t["cap_lead"]}</p>
+    </div>
+  </div>
+</main>
+{tr(lang, "capacidades")}
+{ex}
+<section id="studio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{t["studio_h2"]}</h2>
+      <p>{t["studio_p"]}</p>
+    </div>
+    <div class="gallery">
+{figs}
+    </div>
+  </div>
+</section>
+'''
+    return simple_page(lang, "capabilities", t["cap_title"], t["cap_desc"], body)
+
+
+def privacy_page(lang):
+    t = T[lang]
+    u = UI[lang]
+    legal = ""
+    if CFG.get("legal_name"):
+        legal = f" ({E(CFG['legal_name'])}" + (f", CNPJ {E(CFG['cnpj'])}" if CFG.get("cnpj") else "") + ")"
+    analytics = (ANALYTICS_ON if CFG.get("analytics_goatcounter", "").strip() else ANALYTICS_OFF)[lang]
+    secs = "\n".join(f"    <h2>{E(h)}</h2>\n    <p>{b.format(legal=legal, analytics=analytics)}</p>" for h, b in PRIVACY[lang])
+    body = f'''<main class="page legal">
+  <div class="wrap">
+    <p class="crumbs"><a href="{u["prefix"]}/">{u["crumb_home"]}</a> / {t["pv_h1"]}</p>
+    <h1>{t["pv_h1"]}</h1>
+{secs}
+  </div>
+</main>
+'''
+    return absolutize(head(lang, t["pv_title"], t["pv_desc"], "privacy") + header(lang, "privacy") + body + footer(lang) + tail(lang, "privacy"))
+
+
+def not_found():
+    body = '''<main class="page"><div class="wrap">
+  <p class="eyebrow">404</p>
+  <h1>Página não encontrada · Page not found</h1>
+  <p class="lead"><a href="/">Voltar ao início</a> · <a href="/en/">Back to the home page</a></p>
+</div></main>
+'''
+    return absolutize(head("pt", "404 — ChordIQ", "Página não encontrada.", "home").replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n  <link rel="canonical"') + header("pt", "home") + body + footer("pt") + tail("pt", "home"))
+
+
+def sitemap(urls):
+    rows = "\n".join(f"  <url><loc>{SITE}{u}</loc></url>" for u in urls)
+    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{rows}\n</urlset>\n'
+
+
 def write(path, content):
     full = os.path.join(ROOT, path.lstrip("/"))
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -377,12 +611,12 @@ def write(path, content):
 
 def main():
     # clean generated output
-    for d in ("portfolio", "en"):
+    for d in ("portfolio", "en", "sobre", "capacidades", "privacidade"):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     missing = set()
     # dry run for missing translations (home sections)
     for name in HOME_ORDER:
-        if name in ("SHOWCASE", "HIGHLIGHTS"):
+        if name in ("SHOWCASE", "HIGHLIGHTS", "ENTRIES", "PILOT", "ABOUT"):
             continue
         translate(read(name), EN, missing)
     translate(read("footer"), EN, missing)
@@ -396,7 +630,17 @@ def main():
         write(path_for(lang, "portfolio") + "index.html", portfolio(lang))
         for p in P:
             write(path_for(lang, "project", p["slug"]), project(lang, p))
-    print("built", 2 * (2 + len(P)), "pages")
+        write(path_for(lang, "about") + "index.html", about_page(lang))
+        write(path_for(lang, "capabilities") + "index.html", capabilities_page(lang))
+        write(path_for(lang, "privacy") + "index.html", privacy_page(lang))
+    write("/404.html", not_found())
+    urls = []
+    for lang in ("pt", "en"):
+        urls += [path_for(lang, k) for k in ("home", "portfolio", "about", "capabilities", "privacy")]
+        urls += [path_for(lang, "project", p["slug"]) for p in P]
+    write("/sitemap.xml", sitemap(urls))
+    write("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    print("built", len(urls) + 1, "pages")
 
 
 if __name__ == "__main__":

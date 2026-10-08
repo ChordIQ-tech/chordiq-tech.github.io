@@ -26,10 +26,10 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="preload" href="/fonts/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxKsv4Rn.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChordIQ", "url": "https://chordiq-tech.github.io/", "logo": "https://chordiq-tech.github.io/apple-touch-icon.png", "email": "yan@pinneapple.org", "address": {"@type": "PostalAddress", "addressLocality": "Natal", "addressRegion": "RN", "addressCountry": "BR"}, "sameAs": ["https://www.linkedin.com/in/yan-barros-yan", "https://github.com/PINNeAPPle-Labs/PINNeAPPle"]}</script>
 </head>
 <body>
 <header>
@@ -46,11 +46,10 @@
     <nav id="site-nav">
       <a href="#servicos">Services</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#casos">Real cases</a>
-      <a href="#capacidades">Capabilities</a>
-      <a href="#principio">Principle</a>
+      <a href="#casos">Validations</a>
+      <a href="/en/capabilities/">Capabilities</a>
       <a href="#metodo">How we work</a>
-      <a href="#parceria">Partnership</a>
+      <a href="/en/about/">About</a>
       <a href="#contato">Contact</a>
     </nav>
     <a class="lang-switch" href="/" hreflang="pt" lang="pt" title="Ler em português">PT</a>
@@ -59,14 +58,15 @@
 </header>
 <div class="hero" id="top">
   <canvas id="field" aria-hidden="true"></canvas>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
     <p class="eyebrow">Physics AI for industrial engineering</p>
     <h1>Simulate. Predict. Optimize. Without losing the physics.</h1>
     <p class="lead">We turn industrial simulations and processes into AI models that are
       <b>fast, physical and verifiable</b>: the physics of your process inside the model, with the gain always tied to the measured result.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contato">Discuss a pilot →</a>
-      <a class="btn btn-ghost" href="#casos">See real cases, with numbers and images →</a>
+      <a class="btn btn-ghost" href="#casos">See validations, with numbers and images →</a>
     </div>
     <div class="tag-row">
       <span class="tag">CFD + AI</span>
@@ -76,6 +76,13 @@
       <span class="tag">Physical verification</span>
       <span class="tag">Optimization</span>
     </div>
+    </div>
+    <a class="hero-media" href="/en/portfolio/aircraft-design-optimizer.html" aria-label="See the Aircraft Design Optimizer project">
+      <video autoplay muted loop playsinline preload="auto" poster="/videos/hero-aero.jpg" aria-hidden="true">
+        <source src="/videos/hero-aero.mp4" type="video/mp4">
+      </video>
+      <span class="hero-media-cap">Aircraft Design Optimizer · 3D CFD (OpenFOAM) · skin pressure</span>
+    </a>
   </div>
 </div>
 
@@ -146,6 +153,48 @@
       <span class="node">Validation</span>
       <span class="arrow">&rarr;</span>
       <span class="node">Production</span>
+    </div>
+  </div>
+</section>
+
+<section id="entradas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where to start</p>
+      <h2>What is your problem?</h2>
+      <p>Pick the one that looks most like your situation. Each shortcut leads to one of our projects, with video, measured numbers and limits.</p>
+    </div>
+    <div class="entry-grid">
+      <a class="entry" href="/en/portfolio/heatsink-sizer.html">
+        <span class="entry-q">My simulation takes too long to decide</span>
+        <span class="entry-a">Surrogates that answer in milliseconds, checked against the real simulation.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
+      <a class="entry" href="/en/portfolio/aircraft-design-optimizer.html">
+        <span class="entry-q">I have to choose among many possible designs</span>
+        <span class="entry-a">Optimization with real trade-offs, and the reason each design was rejected.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
+      <a class="entry" href="/en/portfolio/simulation-comparator.html">
+        <span class="entry-q">I don&#x27;t know if I can trust the result</span>
+        <span class="entry-a">Comparison, mesh and verification before a decision.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
+      <a class="entry" href="/en/portfolio/engineering-data-health.html">
+        <span class="entry-q">My plant data is a mess</span>
+        <span class="entry-a">A quality diagnosis with the evidence for each finding.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
+      <a class="entry" href="/en/portfolio/inverse-heat-lab.html">
+        <span class="entry-q">I have few measurements and need to estimate the rest</span>
+        <span class="entry-a">From a handful of sensors to the whole field, with the parameter nobody measured.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
+      <a class="entry" href="/en/portfolio/form-compiler.html">
+        <span class="entry-q">I spend hours copying data from datasheets</span>
+        <span class="entry-a">Filled forms, with the source of every value.</span>
+        <span class="entry-go">See the project &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -222,8 +271,8 @@
     <div class="section-head">
       <p class="eyebrow">What we do</p>
       <h2>Six ways to put physics and data to work in your operation.</h2>
-      <p>Each service below has already been applied to a real case; see the numbers in
-        <a href="#casos">Real cases</a>.</p>
+      <p>Each service below has already been validated against a real reference; see the numbers in
+        <a href="#casos">Technical validations</a>.</p>
     </div>
     <div class="svc-grid">
       <article class="svc">
@@ -287,9 +336,9 @@
 <section id="casos">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Real cases · technical articles</p>
+      <p class="eyebrow">Technical validations · articles</p>
       <h2>What the methods deliver, with numbers and images.</h2>
-      <p>Each case below was run end to end and compared against a real reference: a published experiment, a numerical solver or an industry baseline. Click to open the details.</p>
+      <p>Each validation below was run end to end and compared against a real reference: a published experiment, a numerical solver or an industry baseline. Click to open the details.</p>
     </div>
     <div class="case-list">
 
@@ -417,7 +466,7 @@
       </details>
 
       <details class="mais-casos">
-        <summary>See 7 more technical cases</summary>
+        <summary>See 7 more technical validations</summary>
         <div class="case-list">
 
           <details class="case">
@@ -570,172 +619,6 @@
   </div>
 </section>
 
-<section id="capacidades">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Capabilities</p>
-      <h2>Seven application formats we already know how to build.</h2>
-      <p>The images below illustrate the type of deliverable; they are not all a published case with a verified number. For that, see <a href="#casos">Real cases</a> just above. This is so you can quickly recognize whether your problem fits one of these formats.</p>
-    </div>
-    <div class="cap-grid">
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_estrutural.jpg" alt="On the left, a mechanical part coloured by structural stress; on the right, streamlines coloured by speed in a pipe elbow">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Structural simulation and CFD</span>
-          <h3>Stress (left) and flow (right), with a number behind the colour</h3>
-          <p>Finite elements for structure and finite volumes for fluid and heat transfer. In real work, each colour on the map corresponds to a value you can check against the physics, not just a pretty illustration.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_surrogate.jpg" alt="Render of a heat sink coloured by temperature">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Surrogate models from physics</span>
-          <h3>From heavy simulation to a model that answers in microseconds</h3>
-          <p>We train a surrogate on the real physics of your process and check it against the original simulation at every delivery, never against itself.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_twin.jpg" alt="Render of a wind turbine with a live reading panel overlaid">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Digital twins</span>
-          <h3>The asset in 3D, with the live reading beside it</h3>
-          <p>Physical model + real equipment data in one place: what is not measured directly is estimated, with the origin of every number always visible.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_automacao.jpg" alt="Render of an industrial vessel with connected piping and sensors">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Process automation and optimization</span>
-          <h3>From sensor to operating point, with an agent in the middle</h3>
-          <p>Plant readings, a physical model and an agent that suggests (or adjusts) the setpoint, always within the safety limits your team defines.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_design.jpg" alt="Parametric sweep of airfoils coloured by performance">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Design experimentation</span>
-          <h3>Dozens of geometry variants, a single sweep</h3>
-          <p>Surrogate-guided optimization over the design space, with each final variant re-checked against the physical model before it becomes a recommendation.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_parametros.jpg" alt="Convergence chart of a hidden physical parameter recovered from sensors">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Parameter discovery from data</span>
-          <h3>The property nobody measured, estimated from what already exists</h3>
-          <p>Bayesian inversion (Ensemble Kalman) or SINDy to recover physical parameters and even governing equations from sensor readings that are already installed.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="/img/cap_benchmark.jpg" alt="Radar chart comparing physical AI model architectures">
-          <span class="pill-cap">Capability</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Model architecture benchmark</span>
-          <h3>Which network solves your problem best, not the paper's</h3>
-          <p>An honest comparison between architectures (PINN, FNO, physical Transformer, MLP) on the same data and training budget, including when our choice does not win.</p>
-        </div>
-      </article>
-    </div>
-    <p class="cap-note">The seven images above were produced for this site to illustrate the capability; none replaces a validated case. Where a verified numerical result already exists for the same kind of application, it is in the section <a href="#casos">Real cases</a>.</p>
-  </div>
-</section>
-
-<section id="exemplos">
-  <div class="wrap">
-    <details class="more"><summary>See the real call behind four of our deliverables</summary>
-    <div class="section-head">
-      <p class="eyebrow">In practice</p>
-      <h2>The real call behind 4 of our deliverables.</h2>
-      <p>A service without auditable code is a promise, not a deliverable. This is not illustrative pseudocode: these are real signatures from our own libraries and endpoints.</p>
-    </div>
-    <div class="example-grid">
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Digital twin · surrogate model</span>
-        <pre class="code"><span class="cm"># trains the surrogate and checks it against a real 3D simulation</span>
-surrogate, _ = engine.train_surrogate()
-resultado = engine.run_sweep(surrogate)
-<span class="cm"># result: temperature error vs. FEA, per design</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt="Agreement chart between the trained surrogate and the real 3D simulation"></div>
-        <div class="body2"><p>Real output: 4.46% mean temperature error against a 3D finite-element simulation, 227,000× faster.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verification · physics before the decision</span>
-        <pre class="code"><span class="cm"># checks physical consistency and convergence, not just whether it "solved"</span>
-from pinneapple_analysis.verification import physics_confidence_score as pcs
-
-confianca = pcs.compute_physics_confidence(
-    guardrail_report=guardrail_report,
-    convergence_result=convergence_result,
-)</pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="/img/verificacao.jpg" alt="Physical verification report with a confidence score"></div>
-        <div class="body2"><p>Real output: a score from 0 to 1 per check, never an average that hides a check that did not run.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Flow measurement · software PIV</span>
-        <pre class="code"><span class="cm"># same algorithm as the /v1/analyze_sequence endpoint, called directly</span>
-from pinneapple_perception.video_piv import piv_velocity_field
-
-campo = piv_velocity_field(
-    frame_a, frame_b, window_size=32, search_margin=12, dt=1.0,
-)
-<span class="cm"># campo["u"], campo["v"]: velocity per interrogation window</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="/img/flowtrace_vortex.jpg" alt="Velocity field recovered by PIV compared with the true field"></div>
-        <div class="body2"><p>Real output: 81 velocity vectors recovered, 3.94% mean error against the exact field.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperability · mesh conversion and repair</span>
-        <pre class="code"><span class="cm"># real production endpoint, a real multipart upload</span>
-curl -X POST https://api.../v1/convert \
-  -F "file=@malha_legada.stl" \
-  -F "output=stl" -F "repair=true"
-<span class="cm"># response: mesh with no duplicates, no degenerate faces, normals ok</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="/img/meshbridge_repair.jpg" alt="Mesh with defects before and after the automatic repair"></div>
-        <div class="body2"><p>Real output: 25 of 25 defective faces removed, normals 100% consistent after the repair.</p></div>
-      </article>
-    </div>
-    </details>
-  </div>
-</section>
-
-<section id="setores">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Where we work</p>
-      <h2>Environments where science and operational data decide the outcome.</h2>
-      <p>We work where the cost of a modelling error is high, from electric arc furnaces to pneumatic conveying pipes. Our technology is horizontal; our experience is applied where simulation, data and engineering decisions carry a high cost, not a promise of equal depth across seven different industries.</p>
-    </div>
-    <div class="sector-row">
-      <span class="sector-tag">Steelmaking</span>
-      <span class="sector-tag">Mining</span>
-      <span class="sector-tag">Oil &amp; gas</span>
-      <span class="sector-tag">Offshore energy</span>
-      <span class="sector-tag">Aerospace</span>
-      <span class="sector-tag">Robotics and off-road machines</span>
-      <span class="sector-tag">Critical industrial processes</span>
-    </div>
-  </div>
-</section>
-
 <section id="principio">
   <div class="wrap">
     <div class="section-head">
@@ -744,10 +627,10 @@ curl -X POST https://api.../v1/convert \
       <p>It is not enough for the model to work. It has to be verifiable: error against experiment, error against a solver, comparison against the industry baseline, Monte Carlo, uncertainty, convergence. When AI is not the best answer, we say so.</p>
     </div>
     <div class="principle-quote">
-      <span class="card-k">Real case · rover mobility</span>
+      <span class="card-k">Validation · rover mobility</span>
       <h3>Sometimes the answer is not to use AI.</h3>
       <p>In one of our rover mobility cases, the cost analysis showed that, for that specific problem, <span class="bold-line">a well-implemented classical numerical method was faster and more accurate than the neural network itself</span>. We recommended the classical method to the client, not the flashier path.</p>
-      <p>Our goal is to solve the engineering problem, not to sell AI. <a href="#casos">See the full case →</a></p>
+      <p>Our goal is to solve the engineering problem, not to sell AI. <a href="#casos">See the full validation →</a></p>
     </div>
   </div>
 </section>
@@ -788,102 +671,57 @@ curl -X POST https://api.../v1/convert \
   </div>
 </section>
 
-<section class="band" id="proposito">
-  <div class="wrap">
-    <p class="eyebrow">Why we exist</p>
-    <div class="manifesto">
-      <div class="row">
-        <div class="k">Purpose</div>
-        <div class="v">To join engineering and AI to optimize industrial processes from data and science, turning <b>physical knowledge into decisions</b> that are faster, safer and more profitable.</div>
-      </div>
-      <div class="row">
-        <div class="k">How</div>
-        <div class="v">We start from the equations that already govern your process and use machine learning only where theory alone does not close the gap: an unknown parameter, a real geometry, a regime outside the catalog. <b>Every delivery shows the error measured against the reference</b>, never a promise without a number.</div>
-      </div>
-      <div class="row">
-        <div class="k">Vision</div>
-        <div class="v">To be the <b>reference in Physics AI</b>, the company people remember when industry needs to join simulation, data and AI with scientific rigour.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="position">
-  <div class="wrap">
-    <p class="eyebrow">Positioning</p>
-    <p>
-      <span class="neg">We are not a generic AI consultancy or a software house.</span><br>
-      <span class="pos">We are applied engineering with scientific AI,</span>
-      <span class="neg">built to measure for each client's process.</span>
-    </p>
-    <div class="rain-grid">
-      <div class="rain-card">
-        <span class="card-k">Sunny day, stable market</span>
-        <h3>Impossible to overtake</h3>
-        <p>On a dry track with uniform grip, it is practically impossible to overtake a pack of 20 Formula 1 cars. Tech giants dominate the same way: consolidated scale, capital and infrastructure make direct competition nearly unviable for a small company.</p>
-      </div>
-      <div class="rain-card">
-        <span class="card-k">Rainy day, disrupted market</span>
-        <h3>The game changes completely</h3>
-        <p>All it takes is rain for the concept to change: unpredictable grip and strategy matter more than raw power, and overtaking becomes frequent. In technological disruption, an agile pair like ChordIQ and Domus is more efficient and has less to lose, thanks to the agility of the three-phase model.</p>
-      </div>
-    </div>
-    <p class="rain-note">We don't compete head-on with the giants on a sunny day.
-      <span class="pos">We were designed to win when it rains.</span></p>
-  </div>
-</section>
-
-<section id="parceria">
+<section id="piloto">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">ChordIQ + Domus</p>
-      <h2>ChordIQ is Physics AI. In partnership, we add agents and a different commercial model.</h2>
-      <p>ChordIQ brings the physics of the process: simulation, surrogate models and verification grounded in the real physics of your process. <b>In partnership with Domus</b>, when the problem calls for it, we add a layer of agents that execute and a commercial model that only grows when your business grows, not when a licence is sold.</p>
+      <p class="eyebrow">The pilot</p>
+      <h2>What happens when you decide to test.</h2>
+      <p>Every project starts with a closed-scope pilot. No surprises: you know what you bring, what you get and under what conditions.</p>
     </div>
-    <div class="diff-grid">
-      <div class="diff-col">
-        <span class="card-k">Pure science · ChordIQ</span>
-        <h3>Physics AI</h3>
+    <div class="pilot-grid">
+      <div class="pilot-col">
+        <h3>What you bring</h3>
         <ul>
-          <li>Models anchored in physical laws and well-established statistical principles, not just in data correlation.</li>
-          <li>Narrows the space of answers that are plausible but physically invalid.</li>
-          <li>A basis for robust modelling in commodity markets and industrial processes.</li>
+          <li>The problem and the success metric, on one page.</li>
+          <li>A sample of data, geometry or documents (it can be anonymized).</li>
+          <li>Someone from your technical team to validate the result.</li>
         </ul>
       </div>
-      <div class="plus">+</div>
-      <div class="diff-col">
-        <span class="card-k">Cutting-edge AI · Domus</span>
-        <h3>Agentic &amp; Regenerative</h3>
+      <div class="pilot-col">
+        <h3>What we deliver</h3>
         <ul>
-          <li>Agents that plan, execute and correct themselves in real operational cycles.</li>
-          <li>Regenerative architectures: the system feeds back and improves with its own use.</li>
-          <li>Direct action on business processes, not just report generation.</li>
+          <li>A closed scope in writing, before the first line of code.</li>
+          <li>A working tool or model on your case.</li>
+          <li>The result compared with your current method, with the gain measured, the limits and the uncertainty.</li>
+        </ul>
+      </div>
+      <div class="pilot-col">
+        <h3>Conditions</h3>
+        <ul>
+          <li>An NDA before any data.</li>
+          <li>Initial diagnosis at no cost; timeline and price set in the closed scope.</li>
+          <li>In validation you pay only the open cost, with no margin; in production, remuneration follows the gain.</li>
         </ul>
       </div>
     </div>
-    <p class="equation">Physics constrains. <b>Data calibrates.</b> Validation decides.</p>
+    <p class="show-cta"><a class="btn btn-primary" href="#contato">Discuss a pilot &rarr;</a></p>
+  </div>
+</section>
 
-    <p style="color:var(--on-surface-dim);margin-top:2.6rem;max-width:58ch">Domus is not an assembly line selling a licence or access. We come in under NDA, validate the opportunity at minimum cost and only grow financially when the growth of your business is real and proven, in three phases of decreasing risk.</p>
-    <div class="phase-grid">
-      <div class="phase">
-        <span class="step-n">Phase 01</span>
-        <span class="tagline">Technical diagnosis · NDA, no cost</span>
-        <h3>Diagnosis under confidentiality</h3>
-        <p>We enter your business under a confidentiality agreement to identify, precisely, the growth opportunity through technology. Without a clear potential gain, the project does not move forward, and both sides save time.</p>
-      </div>
-      <div class="phase">
-        <span class="step-n">Phase 02</span>
-        <span class="tagline">MVP / POC · cost pass-through</span>
-        <h3>Validation in a controlled environment</h3>
-        <p>We validate the concept and the gain-based pricing model in a restricted environment with adequate security. You pay only the open cost, with no margin built in.</p>
-      </div>
-      <div class="phase">
-        <span class="step-n">Phase 03</span>
-        <span class="tagline">Complete solution · symbiotic gain</span>
-        <h3>Production, with remuneration tied to the result</h3>
-        <p>We deliver the solution with the functionality and security needed to operate in production. You pay for the gain generated: we grow exactly as your business grows.</p>
-      </div>
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who we are</p>
+      <h2>Applied engineering, with open-source code you can audit.</h2>
+      <p>Every project on this site is built on PINNeAPPle, an open-source Physics AI library (Apache 2.0 licence), published on PyPI, with a public repository, a changelog and tests.</p>
     </div>
+    <div class="person">
+      <div class="person-mark" aria-hidden="true">YB</div>
+      <div><strong>Yan Barros</strong><span>author and maintainer of PINNeAPPle · Natal, Brazil</span></div>
+      <a class="ext" href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+    </div>
+    <p class="show-cta"><a class="btn btn-primary" href="/en/about/">Meet the team and the partnership &rarr;</a>
+      <a class="btn btn-ghost" href="https://github.com/PINNeAPPle-Labs/PINNeAPPle" target="_blank" rel="noopener">See the code on GitHub &rarr;</a></p>
   </div>
 </section>
 
@@ -950,6 +788,7 @@ curl -X POST https://api.../v1/convert \
       <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
     <span>Natal, Brazil</span>
   </div>
+  <div class="wrap legal-links"><a href="/en/privacy/">Privacy</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/capabilities/">Capabilities</a></div>
 </footer>
 
 <a class="mobile-cta" href="#contato">Talk to us</a>

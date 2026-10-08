@@ -71,6 +71,11 @@
     }
   }
 
+  // respect reduced motion: no autoplaying hero video
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+  }
+
   // mobile menu
   var menuBtn = document.querySelector('.menu-btn');
   var siteNav = document.getElementById('site-nav');

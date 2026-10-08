@@ -356,5 +356,16 @@
  "a5acaa": "# checks physical consistency and convergence, not just whether it \"solved\"",
  "607cae": "“Discuss a pilot” opens a WhatsApp conversation with your message already written; “Send by e-mail” opens your e-mail app. Nothing is sent without you confirming on your side.",
  "8d783e": "Send by e-mail",
- "e0c7ab": "Book a call"
+ "e0c7ab": "Book a call",
+ "5459ad": "See validations, with numbers and images →",
+ "e4e8b5": "Each service below has already been validated against a real reference; see the numbers in",
+ "f186c3": "Technical validations",
+ "a8185d": "Technical validations · articles",
+ "3b66ce": "Each validation below was run end to end and compared against a real reference: a published experiment, a numerical solver or an industry baseline. Click to open the details.",
+ "67ac9e": "See 7 more technical validations",
+ "0e452f": "Validation · rover mobility",
+ "f6f071": "See the full validation →",
+ "b7e9e7": "The images below illustrate the type of deliverable; they are not all a published case with a verified number. For that, see the",
+ "1aaec4": ". This is so you can quickly recognize whether your problem fits one of these formats.",
+ "0822d9": "The seven images above were produced for this site to illustrate the capability; none replaces a validated case. Where a verified numerical result already exists for the same kind of application, it is in the"
 }
