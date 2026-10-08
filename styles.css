@@ -503,4 +503,8 @@ footer .legal-entity { width: 100%; font-size: 0.7rem; opacity: .85; }
 .people { display: grid; gap: 1rem; margin-bottom: 1.6rem; }
 .person-photo { width: 3.4rem; height: 3.4rem; border-radius: 50%; object-fit: cover; }
 .person-bio { margin: 0.4rem 0 0; font-size: 0.88rem; color: var(--on-surface-dim); max-width: 52ch; }
-.person > div { flex: 1; min-width: 12rem; }
+.person > div:not(.person-mark) { flex: 1; min-width: 12rem; }
+.person > .person-mark, .person > .person-photo { flex: none; }
+.person-mark { width: 3.4rem; height: 3.4rem; }
+.person { max-width: 44rem; align-items: flex-start; }
+.person .ext { align-self: center; }

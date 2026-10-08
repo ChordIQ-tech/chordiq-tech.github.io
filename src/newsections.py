@@ -43,7 +43,7 @@ T = {
         ab_title="Sobre a ChordIQ — equipe, propósito e parceria", ab_desc="Quem está por trás da ChordIQ: o PINNeAPPle, uma biblioteca de Physics AI de código aberto, o propósito, o posicionamento e a parceria com a Domus.",
         ab_h1="Sobre a ChordIQ", ab_lead="Engenharia aplicada com IA científica, construída sobre uma biblioteca aberta que qualquer pessoa pode auditar.",
         who_h2="Quem está por trás", who_lines=[
-            ("Equipe", "Yan Barros, autor e mantenedor do PINNeAPPle, em Natal/RN. A ChordIQ trabalha em parceria com a Domus quando o problema pede agentes e um modelo comercial atrelado ao resultado."),
+            ("Equipe", "Yan Barros, fundador, e Tiago Seixas Bittencourt, parceiro no projeto. A ChordIQ trabalha em parceria com a Domus quando o problema pede agentes e um modelo comercial atrelado ao resultado."),
             ("Código aberto", "O PINNeAPPle é uma biblioteca de Physics AI (redes informadas pela física, operadores neurais, solvers e pipelines reprodutíveis) sob licença Apache 2.0, publicada no PyPI, com repositório público, changelog e testes. Cada projeto do portfólio roda sobre ela."),
         ],
         # capabilities page
@@ -97,7 +97,7 @@ T = {
         ab_title="About ChordIQ — team, purpose and partnership", ab_desc="Who is behind ChordIQ: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",
         ab_h1="About ChordIQ", ab_lead="Applied engineering with scientific AI, built on an open library that anyone can audit.",
         who_h2="Who is behind it", who_lines=[
-            ("Team", "Yan Barros, author and maintainer of PINNeAPPle, based in Natal, Brazil. ChordIQ works in partnership with Domus when the problem calls for agents and a commercial model tied to the result."),
+            ("Team", "Yan Barros, founder, and Tiago Seixas Bittencourt, project partner. ChordIQ works in partnership with Domus when the problem calls for agents and a commercial model tied to the result."),
             ("Open source", "PINNeAPPle is a Physics AI library (physics-informed networks, neural operators, solvers and reproducible pipelines) under the Apache 2.0 licence, published on PyPI, with a public repository, a changelog and tests. Every project in the portfolio runs on it."),
         ],
         cap_title="Capabilities — ChordIQ", cap_desc="The application formats ChordIQ already knows how to build, the real calls behind the deliverables and 3D visualization of results.",

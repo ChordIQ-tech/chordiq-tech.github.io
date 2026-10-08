@@ -8,12 +8,21 @@
  "team": [
   {
    "name": "Yan Barros",
-   "role_pt": "autor e mantenedor do PINNeAPPle · Natal/RN",
-   "role_en": "author and maintainer of PINNeAPPle · Natal, Brazil",
+   "role_pt": "fundador da ChordIQ · criador do PINNeAPPle",
+   "role_en": "founder of ChordIQ · creator of PINNeAPPle",
+   "bio_pt": "Físico de formação, une física, IA e engenharia para levar modelos científicos a aplicações reais. Criou o PINNeAPPle e fundou a ChordIQ para aplicar IA a problemas reais de engenharia e da indústria no Brasil. Tem experiência em clima, agronegócio e astrofísica solar.",
+   "bio_en": "A physicist by training, he combines physics, AI and engineering to take scientific models into real applications. He created PINNeAPPle and founded ChordIQ to apply AI to real engineering and industrial problems in Brazil. His background includes climate, agribusiness and solar astrophysics.",
+   "photo": "yan-barros.jpg",
+   "linkedin": "https://www.linkedin.com/in/yan-barros-yan"
+  },
+  {
+   "name": "Tiago Seixas Bittencourt",
+   "role_pt": "parceiro no projeto ChordIQ",
+   "role_en": "ChordIQ project partner",
    "bio_pt": "",
    "bio_en": "",
    "photo": "",
-   "linkedin": "https://www.linkedin.com/in/yan-barros-yan"
+   "linkedin": "https://www.linkedin.com/in/tiago-seixas-bittencourt/"
   }
  ]
 }
