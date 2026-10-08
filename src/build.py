@@ -215,7 +215,7 @@ def footer(lang):
     s = translate(s, EN) if lang == "en" else s
     t = T[lang]
     links = " &middot; ".join(f'<a href="{path_for(lang, k)}">{lbl}</a>' for k, lbl in zip(("privacy", "about", "capabilities"), t["legal"]))
-    ent = (f'ChordIQ &middot; {E(CFG["legal_name"])} &middot; CNPJ {CFG["cnpj"]} &middot; Natal/RN' if CFG.get("legal_name") else "")
+    ent = (f'ChordIQ &middot; {E(CFG["legal_name"])} &middot; CNPJ {CFG["cnpj"]}' if CFG.get("legal_name") else "")
     if CFG.get("partner_legal_name"):
         ent += f' &nbsp;|&nbsp; Domus &middot; {E(CFG["partner_legal_name"])} &middot; CNPJ {CFG["partner_cnpj"]} &middot; Volta Redonda/RJ'
     ent_html = f'<div class="wrap legal-entity">{ent}</div>\n  ' if ent else ""

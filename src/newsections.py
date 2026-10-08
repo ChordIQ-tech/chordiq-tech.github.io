@@ -43,7 +43,6 @@ T = {
         ab_title="Sobre a ChordIQ — equipe, propósito e parceria", ab_desc="Quem está por trás da ChordIQ: o PINNeAPPle, uma biblioteca de Physics AI de código aberto, o propósito, o posicionamento e a parceria com a Domus.",
         ab_h1="Sobre a ChordIQ", ab_lead="Engenharia aplicada com IA científica, construída sobre uma biblioteca aberta que qualquer pessoa pode auditar.",
         who_h2="Quem está por trás", who_lines=[
-            ("Equipe", "Yan Barros, fundador, e Tiago Seixas Bittencourt, parceiro no projeto. A ChordIQ trabalha em parceria com a Domus quando o problema pede agentes e um modelo comercial atrelado ao resultado."),
             ("Código aberto", "O PINNeAPPle é uma biblioteca de Physics AI (redes informadas pela física, operadores neurais, solvers e pipelines reprodutíveis) sob licença Apache 2.0, publicada no PyPI, com repositório público, changelog e testes. Cada projeto do portfólio roda sobre ela."),
         ],
         # capabilities page
@@ -97,7 +96,6 @@ T = {
         ab_title="About ChordIQ — team, purpose and partnership", ab_desc="Who is behind ChordIQ: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",
         ab_h1="About ChordIQ", ab_lead="Applied engineering with scientific AI, built on an open library that anyone can audit.",
         who_h2="Who is behind it", who_lines=[
-            ("Team", "Yan Barros, founder, and Tiago Seixas Bittencourt, project partner. ChordIQ works in partnership with Domus when the problem calls for agents and a commercial model tied to the result."),
             ("Open source", "PINNeAPPle is a Physics AI library (physics-informed networks, neural operators, solvers and reproducible pipelines) under the Apache 2.0 licence, published on PyPI, with a public repository, a changelog and tests. Every project in the portfolio runs on it."),
         ],
         cap_title="Capabilities — ChordIQ", cap_desc="The application formats ChordIQ already knows how to build, the real calls behind the deliverables and 3D visualization of results.",
@@ -117,7 +115,7 @@ T = {
 
 PRIVACY = {
     "pt": [
-        ("Quem somos", "Este site é da ChordIQ, de Natal/RN, Brasil{legal}. Para qualquer pedido sobre dados pessoais, escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
+        ("Quem somos", "Este site é da ChordIQ{legal}. Para qualquer pedido sobre dados pessoais, escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
         ("O que o site coleta", "O site é estático e não define cookies. O formulário de contato não envia nada para um servidor nosso: ele monta a mensagem no seu navegador e abre o seu WhatsApp ou o seu aplicativo de e-mail, e só vai adiante se você confirmar o envio. Os dados que você escrever (nome, e-mail, empresa e descrição do problema) só chegam até nós por esse canal, e só se você enviar."),
         ("Para que usamos", "Os dados que você nos envia servem apenas para responder ao seu contato e para preparar uma proposta ou um escopo, se houver interesse. Não vendemos nem compartilhamos esses dados."),
         ("Estatísticas de acesso", "{analytics}"),
@@ -125,7 +123,7 @@ PRIVACY = {
         ("Seus direitos", "Pela LGPD, você pode pedir acesso, correção ou exclusão dos dados que nos enviou, e a revogação de qualquer consentimento. Escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
     ],
     "en": [
-        ("Who we are", "This site belongs to ChordIQ, based in Natal, Brazil{legal}. For any request about personal data, write to <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
+        ("Who we are", "This site belongs to ChordIQ{legal}. For any request about personal data, write to <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
         ("What the site collects", "The site is static and sets no cookies. The contact form does not send anything to a server of ours: it builds the message in your browser and opens your WhatsApp or e-mail app, and it only goes further if you confirm the sending. The data you write (name, e-mail, company and a description of the problem) reaches us only through that channel, and only if you send it."),
         ("What we use it for", "The data you send us is used only to answer your contact and to prepare a proposal or a scope, if there is interest. We do not sell or share it."),
         ("Visit statistics", "{analytics}"),
