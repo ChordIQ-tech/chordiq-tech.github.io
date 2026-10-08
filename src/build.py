@@ -27,7 +27,7 @@ SITE = "https://chordiq-tech.github.io"
 UI = {
     "pt": dict(
         lang="pt-BR", prefix="", other="en", other_label="EN", other_title="Read in English",
-        title="ChordIQ — Physics AI para engenharia industrial",
+        title="ChordIQ + Domus — Physics AI para engenharia industrial",
         desc="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.",
         nav=[("servicos", "Serviços"), ("portfolio", "Portfólio"), ("casos", "Validações"), ("capacidades", "Capacidades"),
              ("metodo", "Como trabalhamos"), ("sobre", "Sobre"), ("contato", "Contato")],
@@ -45,12 +45,12 @@ UI = {
         cta_h="Quer algo assim para a sua operação?", cta_p="Conte o problema. A gente volta com um escopo fechado e uma métrica de sucesso, sem compromisso.", cta_b="Discutir um piloto",
         ex_summary="Ver a chamada real por trás de quatro das nossas entregas",
         video_label="Demonstração em vídeo: ",
-        pf_title="Portfólio — ChordIQ", pf_desc="Projetos de engenharia com física e IA: térmica, dados industriais, simulação e malha, rastreabilidade e aeroespacial.",
-        proj_suffix=" — ChordIQ",
+        pf_title="Portfólio — ChordIQ + Domus", pf_desc="Projetos de engenharia com física e IA: térmica, dados industriais, simulação e malha, rastreabilidade e aeroespacial.",
+        proj_suffix=" — ChordIQ + Domus",
     ),
     "en": dict(
         lang="en", prefix="/en", other="pt", other_label="PT", other_title="Ler em português",
-        title="ChordIQ — Physics AI for industrial engineering",
+        title="ChordIQ + Domus — Physics AI for industrial engineering",
         desc="We turn industrial simulations and processes into fast, physical and verifiable AI models. CFD, digital twins, surrogate models and verification, with real cases and measured numbers.",
         nav=[("servicos", "Services"), ("portfolio", "Portfolio"), ("casos", "Validations"), ("capacidades", "Capabilities"),
              ("metodo", "How we work"), ("sobre", "About"), ("contato", "Contact")],
@@ -68,8 +68,8 @@ UI = {
         cta_h="Want something like this for your operation?", cta_p="Tell us the problem. We come back with a closed scope and a success metric, no commitment.", cta_b="Discuss a pilot",
         ex_summary="See the real call behind four of our deliverables",
         video_label="Video demonstration: ",
-        pf_title="Portfolio — ChordIQ", pf_desc="Engineering projects with physics and AI: thermal, industrial data, simulation and mesh, traceability and aerospace.",
-        proj_suffix=" — ChordIQ",
+        pf_title="Portfolio — ChordIQ + Domus", pf_desc="Engineering projects with physics and AI: thermal, industrial data, simulation and mesh, traceability and aerospace.",
+        proj_suffix=" — ChordIQ + Domus",
     ),
 }
 
@@ -105,7 +105,7 @@ def path_for(lang, kind, slug=None):
 def jsonld(kind):
     if kind != "home":
         return ""
-    data = {"@context": "https://schema.org", "@type": "Organization", "name": "ChordIQ", "url": SITE + "/",
+    data = {"@context": "https://schema.org", "@type": "Organization", "name": "ChordIQ + Domus", "url": SITE + "/",
             "logo": SITE + "/apple-touch-icon.png", "email": "yan@pinneapple.org",
             "sameAs": [LINKEDIN, GITHUB]}
     if CFG.get("legal_name"):
@@ -138,7 +138,7 @@ def head(lang, title, desc, kind, slug=None):
   <meta property="og:image" content="{SITE}/img/og-{lang}.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="ChordIQ">
+  <meta property="og:site_name" content="ChordIQ + Domus">
   <meta property="og:locale" content="{"pt_BR" if lang == "pt" else "en_US"}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{E(title)}">
@@ -214,9 +214,9 @@ def footer(lang):
     s = translate(s, EN) if lang == "en" else s
     t = T[lang]
     links = " &middot; ".join(f'<a href="{path_for(lang, k)}">{lbl}</a>' for k, lbl in zip(("privacy", "about", "capabilities"), t["legal"]))
-    ent = (f'ChordIQ &middot; {E(CFG["legal_name"])} &middot; CNPJ {CFG["cnpj"]}' if CFG.get("legal_name") else "")
+    ent = (f'ChordIQ: {E(CFG["legal_name"])} &middot; CNPJ {CFG["cnpj"]}' if CFG.get("legal_name") else "")
     if CFG.get("partner_legal_name"):
-        ent += f' &nbsp;|&nbsp; Domus &middot; {E(CFG["partner_legal_name"])} &middot; CNPJ {CFG["partner_cnpj"]} &middot; Volta Redonda/RJ'
+        ent += f' &nbsp;|&nbsp; Domus: {E(CFG["partner_legal_name"])} &middot; CNPJ {CFG["partner_cnpj"]} &middot; Volta Redonda/RJ'
     ent_html = f'<div class="wrap legal-entity">{ent}</div>\n  ' if ent else ""
     return s.replace("</footer>", f'  {ent_html}<div class="wrap legal-links">{links}</div>\n</footer>')
 
@@ -599,7 +599,7 @@ def privacy_page(lang):
     u = UI[lang]
     legal = ""
     if CFG.get("legal_name"):
-        legal = f" ({E(CFG['legal_name'])}" + (f", CNPJ {E(CFG['cnpj'])}" if CFG.get("cnpj") else "") + ")"
+        legal = f" (ChordIQ: {E(CFG['legal_name'])}, CNPJ {E(CFG['cnpj'])}" + (f"; Domus: {E(CFG['partner_legal_name'])}, CNPJ {E(CFG['partner_cnpj'])}" if CFG.get("partner_legal_name") else "") + ")"
     analytics = (ANALYTICS_ON if CFG.get("analytics_goatcounter", "").strip() else ANALYTICS_OFF)[lang]
     secs = "\n".join(f"    <h2>{E(h)}</h2>\n    <p>{b.format(legal=legal, analytics=analytics)}</p>" for h, b in PRIVACY[lang])
     body = f'''<main class="page legal">
@@ -620,7 +620,7 @@ def not_found():
   <p class="lead"><a href="/">Voltar ao início</a> · <a href="/en/">Back to the home page</a></p>
 </div></main>
 '''
-    return absolutize(head("pt", "404 — ChordIQ", "Página não encontrada.", "home").replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n  <link rel="canonical"') + header("pt", "home") + body + footer("pt") + tail("pt", "home"))
+    return absolutize(head("pt", "404 — ChordIQ + Domus", "Página não encontrada.", "home").replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n  <link rel="canonical"') + header("pt", "home") + body + footer("pt") + tail("pt", "home"))
 
 
 def sitemap(urls):

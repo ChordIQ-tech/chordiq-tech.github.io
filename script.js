@@ -112,7 +112,7 @@
     var email = (document.getElementById('f-email').value || '').trim();
     var empresa = (document.getElementById('f-empresa').value || '').trim();
     var problema = (document.getElementById('f-problema').value || '').trim();
-    var lines = EN ? ['Hello! I came from the ChordIQ website.', '', 'Name: ' + nome, 'E-mail: ' + email] : ['Olá! Vim pelo site da ChordIQ.', '', 'Nome: ' + nome, 'E-mail: ' + email];
+    var lines = EN ? ['Hello! I came from the ChordIQ + Domus website.', '', 'Name: ' + nome, 'E-mail: ' + email] : ['Olá! Vim pelo site da ChordIQ + Domus.', '', 'Nome: ' + nome, 'E-mail: ' + email];
     if (empresa) lines.push((EN ? 'Company: ' : 'Empresa: ') + empresa);
     lines.push('', (EN ? 'Problem: ' : 'Problema: ') + problema);
     return lines.join('\n');
@@ -131,7 +131,7 @@
   if (emailBtn && form) {
     emailBtn.addEventListener('click', function () {
       if (!form.reportValidity()) return;
-      var subject = EN ? 'Contact from the ChordIQ website' : 'Contato pelo site da ChordIQ';
+      var subject = EN ? 'Contact from the ChordIQ + Domus website' : 'Contato pelo site da ChordIQ + Domus';
       window.location.href = 'mailto:yan@pinneapple.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(buildMessage());
       okNote.classList.add('show');
     });

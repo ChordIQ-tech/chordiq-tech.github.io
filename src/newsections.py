@@ -40,13 +40,13 @@ T = {
         about_person="Yan Barros", about_role="autor e mantenedor do PINNeAPPle · Natal/RN",
         about_btn="Conhecer a equipe e a parceria", about_code="Ver o código no GitHub",
         # about page
-        ab_title="Sobre a ChordIQ — equipe, propósito e parceria", ab_desc="Quem está por trás da ChordIQ: o PINNeAPPle, uma biblioteca de Physics AI de código aberto, o propósito, o posicionamento e a parceria com a Domus.",
-        ab_h1="Sobre a ChordIQ", ab_lead="Engenharia aplicada com IA científica, construída sobre uma biblioteca aberta que qualquer pessoa pode auditar.",
+        ab_title="Sobre a ChordIQ + Domus — equipe, propósito e parceria", ab_desc="Sobre a ChordIQ + Domus: o PINNeAPPle, uma biblioteca de Physics AI de código aberto, o propósito, o posicionamento e a parceria com a Domus.",
+        ab_h1="Sobre a ChordIQ + Domus", ab_lead="Engenharia aplicada com IA científica, construída sobre uma biblioteca aberta que qualquer pessoa pode auditar.",
         who_h2="Quem está por trás", who_lines=[
             ("Código aberto", "O PINNeAPPle é uma biblioteca de Physics AI (redes informadas pela física, operadores neurais, solvers e pipelines reprodutíveis) sob licença Apache 2.0, publicada no PyPI, com repositório público, changelog e testes. Cada projeto do portfólio roda sobre ela."),
         ],
         # capabilities page
-        cap_title="Capacidades — ChordIQ", cap_desc="Os formatos de aplicação que a ChordIQ já sabe construir, as chamadas reais por trás das entregas e a visualização 3D de resultados.",
+        cap_title="Capacidades — ChordIQ + Domus", cap_desc="Os formatos de aplicação que a ChordIQ + Domus já sabem construir, as chamadas reais por trás das entregas e a visualização 3D de resultados.",
         cap_h1="Capacidades", cap_lead="Os formatos de aplicação que já sabemos construir, as chamadas reais por trás de algumas entregas e como mostramos qualquer resultado de simulação em 3D.",
         studio_h2="Visualização 3D de qualquer resultado",
         studio_p="Resultados de OpenFOAM, CalculiX, Abaqus, Gmsh ou VTK viram cenas 3D (glTF, USD para Omniverse, visualizador web e renders em Blender). Abaixo, o corpo de Ahmed, uma referência de aerodinâmica veicular: escoamento em OpenFOAM (RANS k-ω SST, 40 m/s, inclinação de 25°), com CD de 0,298 contra cerca de 0,285 medido, em malha média de 0,20 milhão de células e 10 minutos em 2 núcleos.",
@@ -57,7 +57,7 @@ T = {
                 ("studio-airliner-cp.jpg", "Avião com o Cp calculado em OpenFOAM"),
                 ("studio-cantilever-von-mises.jpg", "Viga em balanço com tensão de von Mises (CalculiX)")],
         # privacy
-        pv_title="Política de privacidade — ChordIQ", pv_desc="Como este site trata dados pessoais.", pv_h1="Política de privacidade",
+        pv_title="Política de privacidade — ChordIQ + Domus", pv_desc="Como este site trata dados pessoais.", pv_h1="Política de privacidade",
         legal=["Privacidade", "Sobre", "Capacidades"],
     ),
     "en": dict(
@@ -93,12 +93,12 @@ T = {
         about_p="Every project on this site is built on PINNeAPPle, an open-source Physics AI library (Apache 2.0 licence), published on PyPI, with a public repository, a changelog and tests.",
         about_person="Yan Barros", about_role="author and maintainer of PINNeAPPle · Natal, Brazil",
         about_btn="Meet the team and the partnership", about_code="See the code on GitHub",
-        ab_title="About ChordIQ — team, purpose and partnership", ab_desc="Who is behind ChordIQ: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",
-        ab_h1="About ChordIQ", ab_lead="Applied engineering with scientific AI, built on an open library that anyone can audit.",
+        ab_title="About ChordIQ + Domus — team, purpose and partnership", ab_desc="About ChordIQ + Domus: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",
+        ab_h1="About ChordIQ + Domus", ab_lead="Applied engineering with scientific AI, built on an open library that anyone can audit.",
         who_h2="Who is behind it", who_lines=[
             ("Open source", "PINNeAPPle is a Physics AI library (physics-informed networks, neural operators, solvers and reproducible pipelines) under the Apache 2.0 licence, published on PyPI, with a public repository, a changelog and tests. Every project in the portfolio runs on it."),
         ],
-        cap_title="Capabilities — ChordIQ", cap_desc="The application formats ChordIQ already knows how to build, the real calls behind the deliverables and 3D visualization of results.",
+        cap_title="Capabilities — ChordIQ + Domus", cap_desc="The application formats ChordIQ + Domus already know how to build, the real calls behind the deliverables and 3D visualization of results.",
         cap_h1="Capabilities", cap_lead="The application formats we already know how to build, the real calls behind some deliverables and how we show any simulation result in 3D.",
         studio_h2="3D visualization of any result",
         studio_p="Results from OpenFOAM, CalculiX, Abaqus, Gmsh or VTK become 3D scenes (glTF, USD for Omniverse, a web viewer and Blender renders). Below, the Ahmed body, a vehicle-aerodynamics reference: OpenFOAM flow (RANS k-ω SST, 40 m/s, 25° slant), with CD of 0.298 against about 0.285 measured, on a medium mesh of 0.20 million cells and 10 minutes on 2 cores.",
@@ -108,14 +108,14 @@ T = {
                 ("studio-ahmed-wake-vorticity.jpg", "Ahmed body: wake vorticity"),
                 ("studio-airliner-cp.jpg", "An airliner with the Cp computed in OpenFOAM"),
                 ("studio-cantilever-von-mises.jpg", "Cantilever beam with von Mises stress (CalculiX)")],
-        pv_title="Privacy policy — ChordIQ", pv_desc="How this website handles personal data.", pv_h1="Privacy policy",
+        pv_title="Privacy policy — ChordIQ + Domus", pv_desc="How this website handles personal data.", pv_h1="Privacy policy",
         legal=["Privacy", "About", "Capabilities"],
     ),
 }
 
 PRIVACY = {
     "pt": [
-        ("Quem somos", "Este site é da ChordIQ{legal}. Para qualquer pedido sobre dados pessoais, escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
+        ("Quem somos", "Este site é da ChordIQ + Domus{legal}. Para qualquer pedido sobre dados pessoais, escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
         ("O que o site coleta", "O site é estático e não define cookies. O formulário de contato não envia nada para um servidor nosso: ele monta a mensagem no seu navegador e abre o seu WhatsApp ou o seu aplicativo de e-mail, e só vai adiante se você confirmar o envio. Os dados que você escrever (nome, e-mail, empresa e descrição do problema) só chegam até nós por esse canal, e só se você enviar."),
         ("Para que usamos", "Os dados que você nos envia servem apenas para responder ao seu contato e para preparar uma proposta ou um escopo, se houver interesse. Não vendemos nem compartilhamos esses dados."),
         ("Estatísticas de acesso", "{analytics}"),
@@ -123,7 +123,7 @@ PRIVACY = {
         ("Seus direitos", "Pela LGPD, você pode pedir acesso, correção ou exclusão dos dados que nos enviou, e a revogação de qualquer consentimento. Escreva para <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
     ],
     "en": [
-        ("Who we are", "This site belongs to ChordIQ{legal}. For any request about personal data, write to <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
+        ("Who we are", "This site belongs to ChordIQ + Domus{legal}. For any request about personal data, write to <a href=\"mailto:yan@pinneapple.org\">yan@pinneapple.org</a>."),
         ("What the site collects", "The site is static and sets no cookies. The contact form does not send anything to a server of ours: it builds the message in your browser and opens your WhatsApp or e-mail app, and it only goes further if you confirm the sending. The data you write (name, e-mail, company and a description of the problem) reaches us only through that channel, and only if you send it."),
         ("What we use it for", "The data you send us is used only to answer your contact and to prepare a proposal or a scope, if there is interest. We do not sell or share it."),
         ("Visit statistics", "{analytics}"),
