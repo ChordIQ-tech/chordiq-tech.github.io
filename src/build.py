@@ -215,7 +215,11 @@ def footer(lang):
     s = translate(s, EN) if lang == "en" else s
     t = T[lang]
     links = " &middot; ".join(f'<a href="{path_for(lang, k)}">{lbl}</a>' for k, lbl in zip(("privacy", "about", "capabilities"), t["legal"]))
-    return s.replace("</footer>", f'  <div class="wrap legal-links">{links}</div>\n</footer>')
+    ent = (f'ChordIQ &middot; {E(CFG["legal_name"])} &middot; CNPJ {CFG["cnpj"]} &middot; Natal/RN' if CFG.get("legal_name") else "")
+    if CFG.get("partner_legal_name"):
+        ent += f' &nbsp;|&nbsp; Domus &middot; {E(CFG["partner_legal_name"])} &middot; CNPJ {CFG["partner_cnpj"]} &middot; Volta Redonda/RJ'
+    ent_html = f'<div class="wrap legal-entity">{ent}</div>\n  ' if ent else ""
+    return s.replace("</footer>", f'  {ent_html}<div class="wrap legal-links">{links}</div>\n</footer>')
 
 
 def card(lang, p):
@@ -344,13 +348,20 @@ def portfolio(lang):
     return absolutize(head(lang, u["pf_title"], u["pf_desc"], "portfolio") + header(lang, "portfolio") + body + contact_cta(lang) + footer(lang) + tail(lang, "portfolio"))
 
 
+def book_btn(lang):
+    bk = CFG.get("booking_url", "").strip()
+    if not bk:
+        return ""
+    return f' <a class="btn btn-ghost" href="{E(bk)}" target="_blank" rel="noopener">{"Agendar uma conversa" if lang == "pt" else "Book a call"} &rarr;</a>'
+
+
 def contact_cta(lang):
     u = UI[lang]
     return f'''<section class="cta-band">
   <div class="wrap">
     <h2>{u["cta_h"]}</h2>
     <p>{u["cta_p"]}</p>
-    <p><a class="btn btn-primary" href="{u["prefix"]}/#contato">{u["cta_b"]} &rarr;</a></p>
+    <p><a class="btn btn-primary" href="{u["prefix"]}/#contato">{u["cta_b"]} &rarr;</a>{book_btn(lang)}</p>
   </div>
 </section>
 '''
@@ -474,11 +485,29 @@ def pilot(lang):
     <div class="pilot-grid">
 {chr(10).join(cols)}
     </div>
-    <p class="show-cta"><a class="btn btn-primary" href="#contato">{t["pilot_btn"]} &rarr;</a></p>
+    <p class="show-cta"><a class="btn btn-primary" href="#contato">{t["pilot_btn"]} &rarr;</a>{book_btn(lang)}</p>
   </div>
 </section>
 
 '''
+
+
+def person_cards(lang):
+    out = []
+    for m in CFG.get("team", []):
+        name = m["name"]
+        initials = "".join(w[0] for w in name.split()[:2]).upper()
+        mark = (f'<img class="person-photo" loading="lazy" decoding="async" src="/img/team/{E(m["photo"])}" alt="{E(name)}">' if m.get("photo")
+                else f'<div class="person-mark" aria-hidden="true">{E(initials)}</div>')
+        bio = m.get("bio_" + lang, "")
+        bio_html = f'<p class="person-bio">{E(bio)}</p>' if bio else ""
+        li = f'<a class="ext" href="{E(m["linkedin"])}" target="_blank" rel="noopener">LinkedIn &rarr;</a>' if m.get("linkedin") else ""
+        out.append(f'''    <div class="person">
+      {mark}
+      <div><strong>{E(name)}</strong><span>{E(m.get("role_" + lang, ""))}</span>{bio_html}</div>
+      {li}
+    </div>''')
+    return "\n".join(out)
 
 
 def about_teaser(lang):
@@ -490,11 +519,7 @@ def about_teaser(lang):
       <h2>{t["about_h2"]}</h2>
       <p>{t["about_p"]}</p>
     </div>
-    <div class="person">
-      <div class="person-mark" aria-hidden="true">YB</div>
-      <div><strong>{t["about_person"]}</strong><span>{t["about_role"]}</span></div>
-      <a class="ext" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn &rarr;</a>
-    </div>
+{person_cards(lang)}
     <p class="show-cta"><a class="btn btn-primary" href="{path_for(lang, "about")}">{t["about_btn"]} &rarr;</a>
       <a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a></p>
   </div>
@@ -525,6 +550,7 @@ def about_page(lang):
       <p class="lead">{t["ab_lead"]}</p>
     </div>
     <h2 class="gal-h">{t["who_h2"]}</h2>
+    <div class="people">{person_cards(lang)}</div>
     <div class="who">{lines}</div>
     <p class="show-cta"><a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a>
       <a class="btn btn-ghost" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn &rarr;</a></p>

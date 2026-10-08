@@ -1,6 +1,19 @@
 {
- "booking_url": "",
- "analytics_goatcounter": "",
- "legal_name": "",
- "cnpj": ""
+ "booking_url": "https://calendly.com/yanbarrosyan/30min",
+ "analytics_goatcounter": "yanbarros",
+ "legal_name": "LAIS & YAN LTDA",
+ "cnpj": "62.766.371/0001-36",
+ "partner_legal_name": "DOMUS SOLUCOES E SERVICOS LTDA - ME",
+ "partner_cnpj": "67.501.624/0001-63",
+ "team": [
+  {
+   "name": "Yan Barros",
+   "role_pt": "autor e mantenedor do PINNeAPPle · Natal/RN",
+   "role_en": "author and maintainer of PINNeAPPle · Natal, Brazil",
+   "bio_pt": "",
+   "bio_en": "",
+   "photo": "",
+   "linkedin": "https://www.linkedin.com/in/yan-barros-yan"
+  }
+ ]
 }
