@@ -115,6 +115,19 @@ def head(lang, title, desc, kind, slug=None):
   <meta property="og:description" content="{E(desc)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{here}">
+  <meta property="og:image" content="{SITE}/img/og-{lang}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ChordIQ">
+  <meta property="og:locale" content="{"pt_BR" if lang == "pt" else "en_US"}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{E(title)}">
+  <meta name="twitter:description" content="{E(desc)}">
+  <meta name="twitter:image" content="{SITE}/img/og-{lang}.jpg">
+  <meta name="theme-color" content="#060910">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
