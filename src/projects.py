@@ -24,7 +24,11 @@ add(
              ("13-aircraft-render-friction.jpg", "Cf", "Atrito na pele (Cf)", "Skin friction (Cf)"),
              ("13-aircraft-render-flight.jpg", "flight", "Projeto escolhido, renderizado em voo", "The chosen design, rendered in flight"),
              ("aero_pareto.jpg", "pareto", "1.920 projetos voados, com os motivos de rejeição", "1,920 designs flown, with the reasons for rejection"),
-             ("aero_blender.jpg", "blender", "Renders em Blender: classe A320 e escolha equilibrada", "Blender renders: A320 class and the balanced pick")],
+             ("aero_blender.jpg", "blender", "Renders em Blender: classe A320 e escolha equilibrada", "Blender renders: A320 class and the balanced pick"),
+             ("aero-pick-greenest_flight.jpg", "greenest", "Escolha mais verde, em voo", "The greenest pick, in flight"),
+             ("aero-pick-fastest_lines.jpg", "fastest", "Escolha mais rápida: linhas de corrente por velocidade", "The fastest pick: streamlines by speed"),
+             ("aero-pick-short-field_flight.jpg", "short", "Escolha para pista curta, em voo", "The short-field pick, in flight"),
+             ("aero-pick-short-field_cp.jpg", "shortcp", "Escolha para pista curta: pressão na pele (Cp)", "The short-field pick: skin pressure (Cp)")],
     tags={"pt": ["CFD", "NSGA-II", "Otimização", "OpenFOAM"], "en": ["CFD", "NSGA-II", "Optimization", "OpenFOAM"]},
     pt=dict(
         tagline="1.920 projetos de avião comercial voados antes do almoço, e quais seriam certificáveis.",
