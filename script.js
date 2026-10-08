@@ -122,6 +122,15 @@
       okNote.classList.add('show');
     });
   }
+  var emailBtn = document.getElementById('send-email');
+  if (emailBtn && form) {
+    emailBtn.addEventListener('click', function () {
+      if (!form.reportValidity()) return;
+      var subject = EN ? 'Contact from the ChordIQ website' : 'Contato pelo site da ChordIQ';
+      window.location.href = 'mailto:yan@pinneapple.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(buildMessage());
+      okNote.classList.add('show');
+    });
+  }
   var copyMsgBtn = document.getElementById('copy-msg');
   if (copyMsgBtn) {
     copyMsgBtn.addEventListener('click', function () {

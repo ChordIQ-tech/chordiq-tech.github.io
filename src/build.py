@@ -18,6 +18,7 @@ from i18n import translate  # noqa: E402
 from projects import BY_SLUG, CATEGORIES, CATEGORY_ORDER, HOME_HIGHLIGHTS, P  # noqa: E402
 
 EN = json.load(open(os.path.join(ROOT, "src", "en.json"), encoding="utf-8"))
+CFG = json.load(open(os.path.join(ROOT, "src", "site.json"), encoding="utf-8"))
 E = html.escape
 SITE = "https://chordiq-tech.github.io"
 
@@ -263,6 +264,10 @@ def home(lang):
             if name == "exemplos":
                 s = s.replace('<div class="wrap">', f'<div class="wrap">\n    <details class="more"><summary>{u["ex_summary"]}</summary>', 1)
                 s = s.replace("  </div>\n</section>", "    </details>\n  </div>\n</section>")
+            if name == "contato":
+                bk = CFG.get("booking_url", "").strip()
+                btn = f'<p><a class="btn btn-ghost" href="{E(bk)}" target="_blank" rel="noopener">{"Agendar uma conversa" if lang == "pt" else "Book a call"} &rarr;</a></p>' if bk else ""
+                s = s.replace("<!--BOOKING-->", btn)
             out.append(translate(s, EN) if lang == "en" else s)
             out.append("\n")
     out.append(footer(lang))

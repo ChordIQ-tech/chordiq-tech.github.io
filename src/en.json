@@ -353,5 +353,8 @@
  "54b3fc": "# response: mesh with no duplicates, no degenerate faces, normals ok",
  "7c9fd4": "# campo[\"u\"], campo[\"v\"]: velocity per interrogation window",
  "8b2c24": "# same algorithm as the /v1/analyze_sequence endpoint, called directly",
- "a5acaa": "# checks physical consistency and convergence, not just whether it \"solved\""
+ "a5acaa": "# checks physical consistency and convergence, not just whether it \"solved\"",
+ "607cae": "“Discuss a pilot” opens a WhatsApp conversation with your message already written; “Send by e-mail” opens your e-mail app. Nothing is sent without you confirming on your side.",
+ "8d783e": "Send by e-mail",
+ "e0c7ab": "Book a call"
 }

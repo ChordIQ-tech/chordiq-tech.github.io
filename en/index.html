@@ -907,6 +907,7 @@ curl -X POST https://api.../v1/convert \
           <a class="ext" href="mailto:yan@pinneapple.org">Open →</a>
         </div>
       </div>
+      
       <p class="form-note">E-mail and phone links sometimes do not open the right app on their own, depending on the device, so each contact above can also be copied directly. Domus contact and LinkedIn are in the footer.</p>
     </div>
 
@@ -932,11 +933,12 @@ curl -X POST https://api.../v1/convert \
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-wa">Discuss a pilot →</button>
+          <button type="button" id="send-email" class="btn btn-ghost">Send by e-mail</button>
           <button type="button" id="copy-msg" class="btn btn-ghost">Copy message</button>
         </div>
         <p class="ok-note" id="ok-note">Message ready. If WhatsApp did not open on its own, use "Copy message" and paste it into a chat or an e-mail to
           <span style="font-weight:600">yan@pinneapple.org</span>.</p>
-        <p class="form-note">When you send, we open a WhatsApp conversation with your message already written. Nothing is sent without you confirming on your side.</p>
+        <p class="form-note">“Discuss a pilot” opens a WhatsApp conversation with your message already written; “Send by e-mail” opens your e-mail app. Nothing is sent without you confirming on your side.</p>
       </form>
     </div>
   </div>
