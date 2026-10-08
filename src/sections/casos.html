@@ -1,0 +1,366 @@
+<section id="casos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Casos reais &middot; artigos técnicos</p>
+      <h2>O que os métodos entregam, com número e imagem.</h2>
+      <p>Cada caso abaixo foi rodado de ponta a ponta e comparado contra uma referência real,
+        experimento publicado, solver numérico ou linha de base da indústria. Clique
+        para abrir o detalhe.</p>
+    </div>
+    <div class="case-list">
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/erosao.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Óleo &amp; gás &middot; mineração &middot; transporte pneumático</p>
+            <h3>Erosão numa curva de 90°: CFD valida contra ensaio aberto</h3>
+            <p class="sum">Simulação ponta a ponta em OpenFOAM, comparada contra um experimento publicado, com um modelo de IA treinado por cima.</p>
+            <div class="stats">
+              <div class="stat"><b>1,05&ndash;1,49&times;</b><span>erosão simulada / medida (meta: fator 2)</span></div>
+              <div class="stat"><b>1,0%</b><span>erro da IA na perda de carga, em casos novos</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">A simulação ficou entre <strong>1,05&times; e 1,49&times;</strong> da taxa de
+            erosão medida em laboratório nos três ensaios testados (Vieira et al., 2016), dentro
+            do critério de fator 2 usado na indústria para aceitar um modelo de erosão.
+            A fórmula de mão tradicional, sem CFD, ficou cerca de <strong>100&times; abaixo</strong>
+            do valor medido no mesmo regime. A campanha completa, 32 simulações da
+            geometria ao modelo treinado, rodou em 23 minutos por menos de R$0,30 de
+            custo computacional, e o modelo de IA resultante responde em milissegundos, com a
+            perda de carga a 1% de erro em pontos nunca vistos no treino.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/surrogate_speed_rerun.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Eletrônica de potência &middot; otimização térmica &middot; engenharia de produto</p>
+            <h3>Modelo substituto bate simulação 3D real 227.000× mais rápido</h3>
+            <p class="sum">Rede neural treinada prevê a temperatura de junção de um dissipador em microssegundos, conferida a cada rodada contra uma simulação 3D real em FEniCS.</p>
+            <div class="stats">
+              <div class="stat"><b>227.059&times;</b><span>mais rápido que a simulação 3D real, em média</span></div>
+              <div class="stat"><b>4,46%</b><span>erro médio de temperatura vs. FEA 3D (pior caso: 7,35%)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Sete geometrias de dissipador real e significativamente diferentes
+            entre si (aletas densas, esparsas, altas, curtas, alta e baixa potência), cada uma
+            conferida contra uma simulação 3D de elementos finitos de verdade (dolfinx/
+            FEniCS, malha via gmsh), não contra outro modelo de IA. O substituto respondeu
+            em microssegundos onde a simulação real levou de 0,6 a 5,9 segundos, com erro de
+            temperatura dentro de 10% em todos os 7 casos. Essa mesma rodada foi repetida
+            três vezes em dias diferentes: a previsão de temperatura é determinística
+            (4,46%/7,35% idênticos todas as vezes), só o fator de aceleração muda com a
+            carga da máquina no momento do teste.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/aerofolio.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Aeroespacial &middot; automotivo &middot; eficiência energética</p>
+            <h3>Otimização real de aerofólio corta 18% do arrasto</h3>
+            <p class="sum">Otimizador por gradiente guiado por um modelo treinado na física real do perfil, com reverificação a cada passo.</p>
+            <div class="stats">
+              <div class="stat"><b>&minus;18,2%</b><span>de arrasto de perfil</span></div>
+              <div class="stat"><b>0,04%</b><span>de variação na sustentação-alvo</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">104 iterações reais de um otimizador por gradiente, cada ponto da
+            trajetória recalculado contra o modelo físico (não só contra o que a rede
+            aprendeu), convergindo num perfil final dentro dos limites estruturais de
+            fabricação. É o mesmo método, otimização guiada por modelo substituto com
+            reverificação física a cada passo, que aplicamos a geometria em qualquer
+            domínio: dutos, trocadores de calor, estruturas e peças mecânicas.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/automotive_aero.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; aerodinâmica &middot; P&amp;D</p>
+            <h3>Gêmeo digital de aerodinâmica veicular responde em milissegundos</h3>
+            <p class="sum">10 simulações reais em OpenFOAM (simpleFoam) de uma silhueta de carro, reduzidas por POD e aprendidas por um substituto, viram um gêmeo digital interativo.</p>
+            <div class="stats">
+              <div class="stat"><b>0,05%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
+              <div class="stat"><b>1,3%</b><span>erro médio nos coeficientes (Cd, Cl, velocidade)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Dez rodadas reais de OpenFOAM entre 12 e 48 m/s de vento relativo,
+            reduzidas a 6 modos POD (0,006% de erro de reconstrução) e aprendidas por um
+            substituto que prevê o campo completo de velocidade e os coeficientes
+            aerodinâmicos (Cd, Cl) a partir de qualquer velocidade intermediária, nunca vista
+            no treino. O Cd previsto segue a curva real captada pelo próprio
+            <code>forceCoeffs</code> do OpenFOAM, incluindo a inflexão acima de 44 m/s, com
+            <strong>0,17% de erro</strong> especificamente no Cd.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/gap.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Verificação de engenharia &middot; design mecânico</p>
+            <h3>Monte Carlo revela a margem real de um projeto "aprovado"</h3>
+            <p class="sum">Um disco de freio passa no teste nominal. A tolerância real de fabricação conta outra história.</p>
+            <div class="stats">
+              <div class="stat"><b>495,9&nbsp;&deg;C</b><span>nominal (limite de segurança: 500&nbsp;&deg;C)</span></div>
+              <div class="stat"><b>1,9&nbsp;&deg;C</b><span>margem real sob tolerância de fabricação</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">No papel, o projeto tinha 4,1&nbsp;&deg;C de folga até o limite de
+            segurança. Propagando a tolerância real de fabricação (&plusmn;0,05&nbsp;mm na
+            espessura) em 200 peças simuladas por Monte Carlo, o percentil 95 chega a
+            498,1&nbsp;&deg;C, uma margem real de só 1,9&nbsp;&deg;C. Nenhuma peça falha
+            no teste, mas a confiança do "aprovado" muda por completo. É exatamente este tipo
+            de verificação que aplicamos antes de qualquer decisão de engenharia sair da tela
+            para a produção.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="img/rover.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Robótica espacial &middot; agro &middot; máquinas fora de estrada</p>
+            <h3>Mobilidade de rover: o substituto físico bate o solver de referência</h3>
+            <p class="sum">Um modelo de IA publicado falhava fisicamente. Diagnosticamos o problema, construímos uma versão robusta e recomendamos não usá-la em produção.</p>
+            <div class="stats">
+              <div class="stat"><b>0,7&ndash;3,8%</b><span>erro contra o solver de referência</span></div>
+              <div class="stat"><b>45&times;</b><span>menos erro de tração que o modelo original</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">A versão corrigida reproduz a força de tração do modelo físico clássico
+            (Bekker&ndash;Wong) com erro de tração <strong>45&times; menor</strong> que a versão
+            original publicada, e três restrições físicas passaram a ser garantidas por
+            construção, não só por treino. A parte mais honesta do trabalho veio depois: a
+            análise de custo mostrou que, para este problema específico, um método numérico
+            clássico bem implementado é mais rápido e mais exato que a própria IA, e
+            recomendamos isso ao cliente, não o caminho mais chamativo. Veja mais sobre essa
+            decisão em <a href="#principio">Princípio</a>.</p>
+        </div>
+      </details>
+
+      <details class="mais-casos">
+        <summary>Ver mais 7 casos técnicos</summary>
+        <div class="case-list">
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/sst.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Pesca &middot; clima &middot; energia offshore</p>
+                <h3>Previsão da temperatura do mar vence a persistência em todos os horizontes</h3>
+                <p class="sum">Ensemble treinado em 43 anos de dado real de satélite, testado contra a referência padrão da indústria.</p>
+                <div class="stats">
+                  <div class="stat"><b>&minus;12%</b><span>de erro em 7 dias, vs. persistência</span></div>
+                  <div class="stat"><b>7/7</b><span>horizontes (1 a 7 dias) em que o modelo vence</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Testado em dados nunca vistos no treino (2018&ndash;2024), numa das
+                regiões mais turbulentas do Atlântico Sul, o modelo vence a persistência, a
+                referência mais difícil de bater em previsão de curto prazo, em <strong>todos os
+                horizontes</strong>, de 1 a 7 dias, com intervalo de confiança calibrado contra o
+                dado real. O ganho é real, mas moderado, útil para operação offshore e
+                pesca, não uma promessa de precisão perfeita.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/flowtrace_vortex.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Laboratório de fluidos &middot; túnel de vento &middot; P&amp;D</p>
+                <h3>PIV por software recupera um campo de vórtice com 3,9% de erro</h3>
+                <p class="sum">Par de imagens sintéticas de partículas, campo de vórtice com solução analítica exata, processado pelo mesmo algoritmo de correlação cruzada que roda em produção.</p>
+                <div class="stats">
+                  <div class="stat"><b>3,94%</b><span>erro relativo médio vs. campo analítico exato</span></div>
+                  <div class="stat"><b>81</b><span>vetores de velocidade recuperados numa única passada</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Cada partícula sintética foi deslocada pela matriz de rotação exata
+                de um vórtice de corpo rígido, não por uma aproximação de imagem, então a
+                referência não carrega erro de discretização próprio. Rodando o algoritmo real
+                de correlação cruzada (o mesmo que atende o endpoint de produção) sobre o par de
+                imagens, os vetores recuperados reproduzem a estrutura rotacional do escoamento
+                com <strong>3,94% de erro médio</strong> e <strong>16% no pior ponto</strong>
+                (perto do centro do vórtice, onde a velocidade real tende a zero) — sem hardware
+                de câmera, laser ou software proprietário, apenas vídeo e processamento.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/meshbridge_repair.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">CAD/CAE &middot; interoperabilidade &middot; engenharia de dados</p>
+                <h3>Conversor de malha remove 100% dos defeitos de uma exportação legada</h3>
+                <p class="sum">Malha com defeitos típicos de exportação legada (faces duplicadas, degeneradas, normais invertidas) processada pelo endpoint real de conversão e reparo.</p>
+                <div class="stats">
+                  <div class="stat"><b>25/25</b><span>faces defeituosas removidas (duplicadas + degeneradas)</span></div>
+                  <div class="stat"><b>100%</b><span>normais consistentes após o reparo</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Uma malha real foi deliberadamente danificada do jeito que
+                exportações legadas de CFD/CAD costumam vir: 15 faces duplicadas exatas, 10
+                faces degeneradas (área zero) e 20 faces com normais invertidas. Rodando pelo
+                endpoint HTTP real de conversão, com reparo ativado, o resultado ficou com
+                <strong>zero faces duplicadas, zero degeneradas e normais consistentes</strong> —
+                as três verificações passando contra o endpoint de produção, não uma simulação
+                isolada. Nota honesta: o reparo automático hoje não preenche buracos por
+                padrão, só remove duplicatas/degeneradas e corrige normais — o que está no ar
+                é exatamente isso, nada além.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/wind_turbine.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Energia eólica &middot; turbomáquinas</p>
+                <h3>Gêmeo digital de rotor eólico prevê esteira, empuxo e torque</h3>
+                <p class="sum">9 simulações reais de um rotor por disco atuador em OpenFOAM, cobrindo de 200 a 2.300 RPM, aprendidas por um substituto que prevê o campo de esteira e os três escalares operacionais.</p>
+                <div class="stats">
+                  <div class="stat"><b>0,24%</b><span>erro do campo de esteira vs. OpenFOAM</span></div>
+                  <div class="stat"><b>0,9%</b><span>erro médio em empuxo, potência e torque</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Nove rodadas reais do caso de rotor por disco atuador do OpenFOAM
+                (modelo de momento de elemento de pá, malha única reaproveitada), cada uma só
+                variando a rotação. Empuxo, potência e torque vêm da teoria de momento de disco
+                atuador aplicada à esteira resolvida de verdade, não de um escritor nativo do
+                solver. O substituto reproduz tanto o campo de esteira quanto os três escalares
+                com menos de 1% de erro médio, em qualquer rotação entre os pontos simulados.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/mixing_tank.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Processos químicos &middot; farmacêutica &middot; mistura industrial</p>
+                <h3>Gêmeo digital de tanque agitado acerta a lei de escala física conhecida</h3>
+                <p class="sum">10 simulações reais em OpenFOAM (MRF) de um tanque agitado, cobrindo de 15 a 190 rad/s, com o substituto recuperando a física conhecida de potência vs. rotação.</p>
+                <div class="stats">
+                  <div class="stat"><b>0,01%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
+                  <div class="stat"><b>1,9%</b><span>erro médio nos escalares (potência, Re, TKE)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Dez rodadas reais de OpenFOAM com referencial móvel (MRF) de um
+                tanque agitado, de 15 a 190 rad/s de rotação do impelidor. Fisicamente, a
+                varredura recupera <code>potência &prop; &omega;^2,7</code>, muito próximo da lei
+                clássica de tanques agitados turbulentos (P &prop; &rho;N&sup3;D&#8309;), um sinal
+                de que o substituto aprendeu a física real do problema, não só a interpolar
+                pontos. O campo de velocidade previsto reproduz até a esteira de cada uma das 4
+                pás do impelidor, com 0,01% de erro.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/self_healing.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Equipes de ciência de dados &middot; operação de modelos de IA</p>
+                <h3>Copiloto de treino diagnostica e corrige um modelo quebrado sozinho</h3>
+                <p class="sum">Uma rede neural informada por física, lançada com uma configuração ruim, é diagnosticada e corrigida automaticamente em 4 rodadas, sem intervenção humana.</p>
+                <div class="stats">
+                  <div class="stat"><b>100%&rarr;5%</b><span>erro real contra a solução exata, em 4 rodadas</span></div>
+                  <div class="stat"><b>17s</b><span>tempo total de diagnóstico e correção, em CPU</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">A rodada 0 não aprende nada, 100% de erro contra a solução exata de
+                um problema de Poisson com resposta conhecida. Um diagnosticador automático lê
+                o histórico de perda, classifica a causa (plateau, oscilação, desequilíbrio entre
+                física e condição de contorno) e propõe o próximo ajuste de configuração. Quatro
+                rodadas depois, sem nenhuma intervenção humana, o erro real cai para
+                <strong>5%</strong>, uma redução de <strong>20×</strong>. É a mesma lógica, em
+                escala, por trás do nosso serviço de copiloto operacional: memória de episódios
+                passados guiando a próxima decisão, com confiança explícita sobre o que mudou.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/crash_surrogate.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; estruturas &middot; segurança veicular</p>
+                <h3>Intervalo de confiança de um substituto de colisão bate a meta estatística</h3>
+                <p class="sum">Substituto de absorção de energia em colisão, transferido entre programas de veículo, com intervalos de predição que realmente cobrem o que prometem.</p>
+                <div class="stats">
+                  <div class="stat"><b>1,7&ndash;2,5%</b><span>erro após transferência SUV &rarr; sedã</span></div>
+                  <div class="stat"><b>94&ndash;100%</b><span>cobertura real dos intervalos de 90% prometidos</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Um substituto treinado na física de colapso progressivo de tubos de
+                parede fina (modelo de Abramowicz&ndash;Jones) para um programa de SUV generaliza
+                mal para um sedã sem ajuste (erro de 17&ndash;32%, o esperado quando o regime
+                muda), mas depois de um ajuste fino por transferência com 180 amostras do sedã,
+                o erro cai para <strong>1,7&ndash;2,5%</strong>. Mais importante: os intervalos de
+                predição de 90% construídos por predição conforme <em>realmente cobrem</em> o
+                valor real entre 94% e 100% das vezes, não um número de confiança inventado — a
+                mesma honestidade estatística que aplicamos em qualquer verificação antes de uma
+                decisão de engenharia.</p>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>

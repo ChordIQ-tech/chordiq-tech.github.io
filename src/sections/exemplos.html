@@ -1,0 +1,55 @@
+<section id="exemplos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Na prática</p>
+      <h2>A chamada real por trás de 4 das nossas entregas.</h2>
+      <p>Serviço sem código auditável é promessa, não entrega. Isto não é pseudocódigo
+        ilustrativo: são assinaturas reais das nossas próprias bibliotecas e endpoints.</p>
+    </div>
+    <div class="example-grid">
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Gêmeo digital &middot; modelo substituto</span>
+        <pre class="code"><span class="cm"># treina o substituto e confere contra uma simulação 3D real</span>
+surrogate, _ = engine.train_surrogate()
+resultado = engine.run_sweep(surrogate)
+<span class="cm"># resultado: erro de temperatura vs. FEA, por design</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="img/surrogate_speed_rerun.jpg" alt="Gráfico de concordância entre o substituto treinado e a simulação 3D real"></div>
+        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, 227.000× mais rápido.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verificação &middot; física antes da decisão</span>
+        <pre class="code"><span class="cm"># confere consistência física e convergência, não só se "resolveu"</span>
+from pinneapple_analysis.verification import physics_confidence_score as pcs
+
+confianca = pcs.compute_physics_confidence(
+    guardrail_report=guardrail_report,
+    convergence_result=convergence_result,
+)</pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança"></div>
+        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Medição de escoamento &middot; PIV por software</span>
+        <pre class="code"><span class="cm"># mesmo algoritmo do endpoint /v1/analyze_sequence, direto</span>
+from pinneapple_perception.video_piv import piv_velocity_field
+
+campo = piv_velocity_field(
+    frame_a, frame_b, window_size=32, search_margin=12, dt=1.0,
+)
+<span class="cm"># campo["u"], campo["v"]: velocidade por janela de interrogação</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="img/flowtrace_vortex.jpg" alt="Campo de velocidade recuperado por PIV comparado ao campo real"></div>
+        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperabilidade &middot; conversão e reparo de malha</span>
+        <pre class="code"><span class="cm"># endpoint real de produção, upload multipart de verdade</span>
+curl -X POST https://api.../v1/convert \
+  -F "file=@malha_legada.stl" \
+  -F "output=stl" -F "repair=true"
+<span class="cm"># resposta: malha sem duplicatas, sem degeneradas, normais ok</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="img/meshbridge_repair.jpg" alt="Malha com defeitos antes e depois do reparo automático"></div>
+        <div class="body2"><p>Saída real: 25 de 25 faces defeituosas removidas, normais 100% consistentes depois do reparo.</p></div>
+      </article>
+    </div>
+  </div>
+</section>

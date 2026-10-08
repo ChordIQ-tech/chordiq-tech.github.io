@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering Data Standardizer — Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes — ChordIQ</title>
+  <meta name="description" content="Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/portfolio/engineering-data-standardizer.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/portfolio/engineering-data-standardizer.html">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/portfolio/engineering-data-standardizer.html">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/portfolio/engineering-data-standardizer.html">
+  <meta property="og:title" content="Engineering Data Standardizer — Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes — ChordIQ">
+  <meta property="og:description" content="Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/portfolio/engineering-data-standardizer.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <nav>
+      <a href="/#servicos">Serviços</a>
+      <a href="/portfolio/">Portfólio</a>
+      <a href="/#casos">Casos reais</a>
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#principio">Princípio</a>
+      <a href="/#metodo">Como trabalhamos</a>
+      <a href="/#parceria">Parceria</a>
+      <a href="/#contato">Contato</a>
+    </nav>
+    <a class="lang-switch" href="/en/portfolio/engineering-data-standardizer.html" hreflang="en" lang="en" title="Read in English">EN</a>
+    <a class="btn btn-ghost" href="/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Falar com a gente</a>
+  </div>
+</header>
+<main class="page project">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Início</a> / <a href="/portfolio/">Portfólio</a> / Engineering Data Standardizer</p>
+    <p class="eyebrow">Dados industriais</p>
+    <h1>Engineering Data Standardizer</h1>
+    <p class="lead">Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes.</p>
+    <div class="show-video">
+      <video controls preload="metadata" playsinline poster="/videos/app4.jpg" aria-label="Demonstração em vídeo: Engineering Data Standardizer">
+        <source src="/videos/app4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-text">
+        <h2>O problema</h2>
+        <p>Um sistema de gestão predial exporta CSV em horário local, °C e vírgula decimal. Uma API SCADA devolve JSON com milissegundos Unix, °F, galões por minuto e toneladas de refrigeração. Uma bancada de teste grava Excel em kelvin, litros por segundo e watts. Antes de comparar, alguém gasta um dia em conversões e fusos. No mês seguinte, de novo.</p>
+        <h2>Como funciona</h2>
+        <p>Com até 8 arquivos, a ferramenta propõe o mapeamento de cada coluna (grandeza física, nome canônico, unidade-alvo), deixa você revisar e editar, converte tudo para um esquema único em UTC (métrico, SI ou unidades dos EUA) e confere se as fontes concordam onde duas delas medem a mesma coisa. A saída é CSV, Parquet ou HDF5 com as unidades nos metadados e um manifesto com cada conversão aplicada. O mapeamento revisado vira uma receita em JSON, reaplicável por API nas exportações seguintes.</p>
+      </div>
+      <aside class="proj-side">
+        <h2>Resultados medidos</h2>
+        <ul class="app-list">
+          <li>No exemplo, as 9 comparações entre fontes concordam após a conversão, com diferenças medianas de 0,01 a 0,04 na unidade-alvo</li>
+          <li>Quando um arquivo foi declarado no fuso errado, a ferramenta apontou: as séries casam melhor deslocadas em 3 horas</li>
+        </ul>
+      <div class="callout"><b>Limite declarado.</b> As unidades vêm dos cabeçalhos ou do seu mapeamento: um cabeçalho errado é convertido fielmente e errado. É exatamente por isso que existe a checagem de concordância.</div>
+        <p class="side-k">Temas</p>
+        <div class="tag-row"><span class="tag">Interoperabilidade</span><span class="tag">Dados industriais</span></div>
+      </aside>
+    </div>
+    <h2 class="gal-h">Imagens</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/04-data-standardizer.jpg" alt="Engineering Data Standardizer"></figure>
+    </div>
+    <p class="proj-nav"><a href="/portfolio/">&larr; Todos os projetos</a>
+      <a href="/portfolio/simulation-metadata.html">Próximo projeto: Simulation Metadata API &rarr;</a></p>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Quer algo assim para a sua operação?</h2>
+    <p>Conte o problema. A gente volta com um escopo fechado e uma métrica de sucesso, sem compromisso.</p>
+    <p><a class="btn btn-primary" href="/#contato">Discutir um piloto &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI e tecnologia agêntica aplicadas à indústria &middot;
+      Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Natal/RN</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 (function () {
+  var EN = document.documentElement.lang === 'en';
   // diffusion-field hero background
   var cv = document.getElementById('field');
   if (cv) {
@@ -74,7 +75,7 @@
   function copyText(text, btn) {
     var done = function (ok) {
       var old = btn.textContent;
-      btn.textContent = ok ? 'Copiado' : 'Selecione e copie';
+      btn.textContent = ok ? (EN ? 'Copied' : 'Copiado') : (EN ? 'Select and copy' : 'Selecione e copie');
       setTimeout(function () { btn.textContent = old; }, 1600);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -93,9 +94,9 @@
     var email = (document.getElementById('f-email').value || '').trim();
     var empresa = (document.getElementById('f-empresa').value || '').trim();
     var problema = (document.getElementById('f-problema').value || '').trim();
-    var lines = ['Olá! Vim pelo site da ChordIQ.', '', 'Nome: ' + nome, 'E-mail: ' + email];
-    if (empresa) lines.push('Empresa: ' + empresa);
-    lines.push('', 'Problema: ' + problema);
+    var lines = EN ? ['Hello! I came from the ChordIQ website.', '', 'Name: ' + nome, 'E-mail: ' + email] : ['Olá! Vim pelo site da ChordIQ.', '', 'Nome: ' + nome, 'E-mail: ' + email];
+    if (empresa) lines.push((EN ? 'Company: ' : 'Empresa: ') + empresa);
+    lines.push('', (EN ? 'Problem: ' : 'Problema: ') + problema);
     return lines.join('\n');
   }
   if (form) {

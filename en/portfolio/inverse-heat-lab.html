@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inverse Heat Lab — From a handful of thermocouple readings to the heat-transfer coefficient h, the whole field and the temperatures nobody measured — ChordIQ</title>
+  <meta name="description" content="From a handful of thermocouple readings to the heat-transfer coefficient h, the whole field and the temperatures nobody measured.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/en/portfolio/inverse-heat-lab.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/portfolio/inverse-heat-lab.html">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/portfolio/inverse-heat-lab.html">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/portfolio/inverse-heat-lab.html">
+  <meta property="og:title" content="Inverse Heat Lab — From a handful of thermocouple readings to the heat-transfer coefficient h, the whole field and the temperatures nobody measured — ChordIQ">
+  <meta property="og:description" content="From a handful of thermocouple readings to the heat-transfer coefficient h, the whole field and the temperatures nobody measured.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/en/portfolio/inverse-heat-lab.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/en/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <nav>
+      <a href="/en/#servicos">Services</a>
+      <a href="/en/portfolio/">Portfolio</a>
+      <a href="/en/#casos">Real cases</a>
+      <a href="/en/#capacidades">Capabilities</a>
+      <a href="/en/#principio">Principle</a>
+      <a href="/en/#metodo">How we work</a>
+      <a href="/en/#parceria">Partnership</a>
+      <a href="/en/#contato">Contact</a>
+    </nav>
+    <a class="lang-switch" href="/portfolio/inverse-heat-lab.html" hreflang="pt" lang="pt" title="Ler em português">PT</a>
+    <a class="btn btn-ghost" href="/en/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Talk to us</a>
+  </div>
+</header>
+<main class="page project">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/portfolio/">Portfolio</a> / Inverse Heat Lab</p>
+    <p class="eyebrow">Thermal and inversion</p>
+    <h1>Inverse Heat Lab</h1>
+    <p class="lead">From a handful of thermocouple readings to the heat-transfer coefficient h, the whole field and the temperatures nobody measured.</p>
+    <div class="show-video">
+      <video controls preload="metadata" playsinline poster="/videos/app7.jpg" aria-label="Video demonstration: Inverse Heat Lab">
+        <source src="/videos/app7.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-text">
+        <h2>The problem</h2>
+        <p>h is the number every thermal calculation depends on, and nobody can measure it directly. Correlations typically promise ±25%. Thermocouples, on the other hand, are cheap.</p>
+        <h2>How it works</h2>
+        <p>A physics-informed neural network built with PINNeAPPle: you write the equation as text, h becomes a trainable parameter, and the network learns the field and h together. Every case comes with its complete script filled with your inputs: install the package, run it, get the same answer.</p>
+      </div>
+      <aside class="proj-side">
+        <h2>Measured results</h2>
+        <ul class="app-list">
+          <li>1D fin: h in about 20 s, cross-checked against the analytic solution</li>
+          <li>2D plate: h = 14.8 ± 0.3 for a true 15; hot spot at 79.2 °C vs 79.1 °C from an independent finite-volume solver</li>
+          <li>3D block: the chip&#x27;s temperature, which no sensor reaches, comes out at 74.6 °C vs 74.5 °C, from thermocouples on top only</li>
+        </ul>
+        <p class="side-k">Topics</p>
+        <div class="tag-row"><span class="tag">PINN</span><span class="tag">Inverse problem</span><span class="tag">Thermal</span></div>
+      </aside>
+    </div>
+    <h2 class="gal-h">Images</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/07-inverse-heat-lab.jpg" alt="Inverse Heat Lab"></figure>
+    </div>
+    <p class="proj-nav"><a href="/en/portfolio/">&larr; All projects</a>
+      <a href="/en/portfolio/heatsink-sizer.html">Next project: HeatSink Sizer &rarr;</a></p>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Want something like this for your operation?</h2>
+    <p>Tell us the problem. We come back with a closed scope and a success metric, no commitment.</p>
+    <p><a class="btn btn-primary" href="/en/#contato">Discuss a pilot &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI and agentic technology applied to industry · Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Natal, Brazil</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

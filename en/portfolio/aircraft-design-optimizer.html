@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aircraft Design Optimizer — 1,920 airliner designs flown before lunch, and which of them would actually be certifiable — ChordIQ</title>
+  <meta name="description" content="1,920 airliner designs flown before lunch, and which of them would actually be certifiable.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/en/portfolio/aircraft-design-optimizer.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/portfolio/aircraft-design-optimizer.html">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/portfolio/aircraft-design-optimizer.html">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/portfolio/aircraft-design-optimizer.html">
+  <meta property="og:title" content="Aircraft Design Optimizer — 1,920 airliner designs flown before lunch, and which of them would actually be certifiable — ChordIQ">
+  <meta property="og:description" content="1,920 airliner designs flown before lunch, and which of them would actually be certifiable.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/en/portfolio/aircraft-design-optimizer.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/en/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <nav>
+      <a href="/en/#servicos">Services</a>
+      <a href="/en/portfolio/">Portfolio</a>
+      <a href="/en/#casos">Real cases</a>
+      <a href="/en/#capacidades">Capabilities</a>
+      <a href="/en/#principio">Principle</a>
+      <a href="/en/#metodo">How we work</a>
+      <a href="/en/#parceria">Partnership</a>
+      <a href="/en/#contato">Contact</a>
+    </nav>
+    <a class="lang-switch" href="/portfolio/aircraft-design-optimizer.html" hreflang="pt" lang="pt" title="Ler em português">PT</a>
+    <a class="btn btn-ghost" href="/en/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Talk to us</a>
+  </div>
+</header>
+<main class="page project">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/portfolio/">Portfolio</a> / Aircraft Design Optimizer</p>
+    <p class="eyebrow">Aerospace and optimization</p>
+    <h1>Aircraft Design Optimizer</h1>
+    <p class="lead">1,920 airliner designs flown before lunch, and which of them would actually be certifiable.</p>
+    <div class="show-video">
+      <video controls preload="metadata" playsinline poster="/videos/app13.jpg" aria-label="Video demonstration: Aircraft Design Optimizer">
+        <source src="/videos/app13.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-text">
+        <h2>The problem</h2>
+        <p>Designing the wing of a single-aisle airliner is a game of competing goals: less CO₂ per passenger, faster cruise, slower approach. Evaluating every candidate with full CFD is not feasible; evaluating with a formula alone hides the flaws.</p>
+        <h2>How it works</h2>
+        <p>A genetic algorithm (NSGA-II) varies the wing (area, span, taper, sweep, twist, position) and the cruise Mach, for an A320 / 737-class airliner with 150+ seats. Every design flies a full mission: compressible vortex lattice, transonic wave drag, transport-category weights, Breguet range, approach speed with slats and flaps, stability and buffet margins. The picks are checked in 3D OpenFOAM, and every design exports to glTF, USD (Omniverse) and STL.</p>
+      </div>
+      <aside class="proj-side">
+        <h2>Measured results</h2>
+        <ul class="app-list">
+          <li>Calibrated on the A320 first, before any optimization: MTOW 73.5 t, L/D 16.4, Vref 131 kt</li>
+          <li>Three goals that really fight: less CO₂ per passenger-km, higher cruise Mach, slower approach</li>
+          <li>Greenest feasible design: −13% CO₂ per passenger-km, at Mach 0.735 and still inside the 36 m airport gate</li>
+          <li>Balanced pick: −7.5% CO₂ at Mach 0.80, with the same 130 kt approach</li>
+          <li>Designs that fail say why: gate span, buffet margin, fuel volume, tip stall, static margin, trim</li>
+          <li>Checked in 3D OpenFOAM: pressure on the skin, streamlines and wake, coloured from blue (low) to red (high)</li>
+        </ul>
+      <div class="callout"><b>Stated limit.</b> A conceptual-design tool, not a certified one: an engineer still has to own the numbers.</div>
+        <p class="side-k">Topics</p>
+        <div class="tag-row"><span class="tag">CFD</span><span class="tag">NSGA-II</span><span class="tag">Optimization</span><span class="tag">OpenFOAM</span></div>
+      </aside>
+    </div>
+    <h2 class="gal-h">Images</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-design-optimizer.jpg" alt="Aircraft Design Optimizer"></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-pressure.jpg" alt="Skin pressure (Cp), computed in 3D OpenFOAM"><figcaption>Skin pressure (Cp), computed in 3D OpenFOAM</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-streamlines.jpg" alt="Streamlines coloured by speed"><figcaption>Streamlines coloured by speed</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-friction.jpg" alt="Skin friction (Cf)"><figcaption>Skin friction (Cf)</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-flight.jpg" alt="The chosen design, rendered in flight"><figcaption>The chosen design, rendered in flight</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/aero_pareto.jpg" alt="1,920 designs flown, with the reasons for rejection"><figcaption>1,920 designs flown, with the reasons for rejection</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/aero_blender.jpg" alt="Blender renders: A320 class and the balanced pick"><figcaption>Blender renders: A320 class and the balanced pick</figcaption></figure>
+    </div>
+    <p class="proj-nav"><a href="/en/portfolio/">&larr; All projects</a>
+      <a href="/en/portfolio/pcb-hotspot.html">Next project: PCB Hotspot &rarr;</a></p>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Want something like this for your operation?</h2>
+    <p>Tell us the problem. We come back with a closed scope and a success metric, no commitment.</p>
+    <p><a class="btn btn-primary" href="/en/#contato">Discuss a pilot &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI and agentic technology applied to industry · Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Natal, Brazil</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

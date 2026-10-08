@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCB Hotspot — Temperatura de junção de cada componente da placa em cerca de um segundo — ChordIQ</title>
+  <meta name="description" content="Temperatura de junção de cada componente da placa em cerca de um segundo.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/portfolio/pcb-hotspot.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/portfolio/pcb-hotspot.html">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/portfolio/pcb-hotspot.html">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/portfolio/pcb-hotspot.html">
+  <meta property="og:title" content="PCB Hotspot — Temperatura de junção de cada componente da placa em cerca de um segundo — ChordIQ">
+  <meta property="og:description" content="Temperatura de junção de cada componente da placa em cerca de um segundo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/portfolio/pcb-hotspot.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <nav>
+      <a href="/#servicos">Serviços</a>
+      <a href="/portfolio/">Portfólio</a>
+      <a href="/#casos">Casos reais</a>
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#principio">Princípio</a>
+      <a href="/#metodo">Como trabalhamos</a>
+      <a href="/#parceria">Parceria</a>
+      <a href="/#contato">Contato</a>
+    </nav>
+    <a class="lang-switch" href="/en/portfolio/pcb-hotspot.html" hreflang="en" lang="en" title="Read in English">EN</a>
+    <a class="btn btn-ghost" href="/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Falar com a gente</a>
+  </div>
+</header>
+<main class="page project">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Início</a> / <a href="/portfolio/">Portfólio</a> / PCB Hotspot</p>
+    <p class="eyebrow">Térmica e inversão</p>
+    <h1>PCB Hotspot</h1>
+    <p class="lead">Temperatura de junção de cada componente da placa em cerca de um segundo.</p>
+    <div class="show-video">
+      <video controls preload="metadata" playsinline poster="/videos/app2.jpg" aria-label="Demonstração em vídeo: PCB Hotspot">
+        <source src="/videos/app2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-text">
+        <h2>O problema</h2>
+        <p>Muita equipe ainda confere a térmica da placa com uma planilha de valores de θJA. Esse número vem de uma placa de teste JEDEC, não do seu layout, e pode errar feio num produto real. A alternativa é esperar dias por um especialista em CFD.</p>
+        <h2>Como funciona</h2>
+        <p>Você descreve a placa (tamanho, camadas de cobre, componentes e potência, vias térmicas, fluxo de ar) e recebe um modelo volumétrico em camadas, com cobre e dielétrico, em que cada encapsulamento entra como modelo JEDEC de duas resistências. Se você tiver algumas temperaturas medidas (termopar, ponto de IR, sensor no die), a Ensemble Kalman Inversion calibra o resfriamento real e o espalhamento de cobre da sua placa e refaz a previsão com faixa de incerteza.</p>
+      </div>
+      <aside class="proj-side">
+        <h2>Resultados medidos</h2>
+        <ul class="app-list">
+          <li>Reproduz o θJA publicado dentro de 8% em oito famílias de encapsulamento, do SOIC-8 a um BGA de 35 mm</li>
+          <li>Componente crítico sinalizado, mapa de temperatura das duas faces, vista 3D e para onde o calor realmente vai (placa, ar, chassi)</li>
+          <li>Lista ordenada de “e se”: vias térmicas, cobre de 2 oz, mais planos, fluxo de ar, fixação ao chassi, cada uma com os graus que ganha</li>
+          <li>No exemplo, o modelo sem calibrar põe a FPGA a 99 °C, no limite de 100 °C; calibrado com sete leituras, ela chega a 111 °C, acima do limite</li>
+          <li>Se as medições contradizem o modelo, ele diz isso em vez de fingir</li>
+        </ul>
+        <p class="side-k">Temas</p>
+        <div class="tag-row"><span class="tag">Eletrônica</span><span class="tag">Calibração</span><span class="tag">EKI</span></div>
+      </aside>
+    </div>
+    <h2 class="gal-h">Imagens</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/02-pcb-hotspot.jpg" alt="PCB Hotspot"></figure>
+    </div>
+    <p class="proj-nav"><a href="/portfolio/">&larr; Todos os projetos</a>
+      <a href="/portfolio/inverse-heat-lab.html">Próximo projeto: Inverse Heat Lab &rarr;</a></p>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Quer algo assim para a sua operação?</h2>
+    <p>Conte o problema. A gente volta com um escopo fechado e uma métrica de sucesso, sem compromisso.</p>
+    <p><a class="btn btn-primary" href="/#contato">Discutir um piloto &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI e tecnologia agêntica aplicadas à indústria &middot;
+      Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Natal/RN</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

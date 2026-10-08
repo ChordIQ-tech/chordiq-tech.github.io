@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulation Metadata API — A structured record of every simulation: what ran and whether it converged — ChordIQ</title>
+  <meta name="description" content="A structured record of every simulation: what ran and whether it converged.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/en/portfolio/simulation-metadata.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/portfolio/simulation-metadata.html">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/portfolio/simulation-metadata.html">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/portfolio/simulation-metadata.html">
+  <meta property="og:title" content="Simulation Metadata API — A structured record of every simulation: what ran and whether it converged — ChordIQ">
+  <meta property="og:description" content="A structured record of every simulation: what ran and whether it converged.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/en/portfolio/simulation-metadata.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/en/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <nav>
+      <a href="/en/#servicos">Services</a>
+      <a href="/en/portfolio/">Portfolio</a>
+      <a href="/en/#casos">Real cases</a>
+      <a href="/en/#capacidades">Capabilities</a>
+      <a href="/en/#principio">Principle</a>
+      <a href="/en/#metodo">How we work</a>
+      <a href="/en/#parceria">Partnership</a>
+      <a href="/en/#contato">Contact</a>
+    </nav>
+    <a class="lang-switch" href="/portfolio/simulation-metadata.html" hreflang="pt" lang="pt" title="Ler em português">PT</a>
+    <a class="btn btn-ghost" href="/en/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Talk to us</a>
+  </div>
+</header>
+<main class="page project">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/portfolio/">Portfolio</a> / Simulation Metadata API</p>
+    <p class="eyebrow">Industrial data</p>
+    <h1>Simulation Metadata API</h1>
+    <p class="lead">A structured record of every simulation: what ran and whether it converged.</p>
+    <div class="show-video">
+      <video controls preload="metadata" playsinline poster="/videos/app5.jpg" aria-label="Video demonstration: Simulation Metadata API">
+        <source src="/videos/app5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-text">
+        <h2>The problem</h2>
+        <p>Months after a CFD or FEA study, nobody remembers which mesh, time step or turbulence model produced a result, or whether the run had actually converged. The answer is scattered across a dozen text files.</p>
+        <h2>How it works</h2>
+        <p>Upload an OpenFOAM case (zip), a CalculiX or Abaqus deck with its output files, or a residual history. The API returns one structured record: solver (application, version, run time), mesh (cells, quality, patches), time stepping (Δt, Courant, steps actually run), boundary conditions (every field on every patch, plus loads and supports for FEA), parameters and numerics (viscosity, inlet velocity, materials, schemes, tolerances) and a convergence verdict with the reasons and what to do next. It only reads the files; it never runs them.</p>
+      </div>
+      <aside class="proj-side">
+        <h2>Measured results</h2>
+        <ul class="app-list">
+          <li>Tested on five real runs made with OpenFOAM v1912 and CalculiX 2.21: a converged turbulent case (282 iterations), the same case cut at 60 iterations (still falling), one that diverged with a floating-point exception after 5 iterations, a transient cavity (completed, max Courant 0.85) and a nonlinear cantilever (converged in 6 increments)</li>
+          <li>The verdicts match what the solver did; mesh counts match checkMesh</li>
+          <li>Beam tip deflection read from the output file, 7.58 mm, within 1% of the Euler–Bernoulli value, 7.62 mm</li>
+          <li>Useful to index a simulation archive, document a study, or make sure every sample you train a surrogate on comes from a converged run</li>
+        </ul>
+      <div class="callout"><b>Stated limit.</b> Flat residuals don&#x27;t prove that quantities like drag or pressure drop have settled. Fluent, STAR-CCM+ and SU2 are read from their residual history only, for now.</div>
+        <p class="side-k">Topics</p>
+        <div class="tag-row"><span class="tag">CFD</span><span class="tag">FEA</span><span class="tag">Traceability</span></div>
+      </aside>
+    </div>
+    <h2 class="gal-h">Images</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="/img/portfolio/05-simulation-metadata.jpg" alt="Simulation Metadata API"></figure>
+    </div>
+    <p class="proj-nav"><a href="/en/portfolio/">&larr; All projects</a>
+      <a href="/en/portfolio/simulation-preflight.html">Next project: Simulation Preflight &rarr;</a></p>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Want something like this for your operation?</h2>
+    <p>Tell us the problem. We come back with a closed scope and a success metric, no commitment.</p>
+    <p><a class="btn btn-primary" href="/en/#contato">Discuss a pilot &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI and agentic technology applied to industry · Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Natal, Brazil</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

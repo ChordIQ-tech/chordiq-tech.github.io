@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ChordIQ — Physics AI para engenharia industrial</title>
   <meta name="description" content="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/">
+  <meta property="og:title" content="ChordIQ — Physics AI para engenharia industrial">
+  <meta property="og:description" content="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
 <header>
   <div class="bar">
-    <a class="brand" href="#top">
+    <a class="brand" href="/#top">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
         <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
@@ -24,18 +31,18 @@
     </a>
     <nav>
       <a href="#servicos">Serviços</a>
-      <a href="#capacidades">Capacidades</a>
-      <a href="#casos">Casos reais</a>
       <a href="#portfolio">Portfólio</a>
+      <a href="#casos">Casos reais</a>
+      <a href="#capacidades">Capacidades</a>
       <a href="#principio">Princípio</a>
       <a href="#metodo">Como trabalhamos</a>
       <a href="#parceria">Parceria</a>
       <a href="#contato">Contato</a>
     </nav>
+    <a class="lang-switch" href="/en/" hreflang="en" lang="en" title="Read in English">EN</a>
     <a class="btn btn-ghost" href="#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Falar com a gente</a>
   </div>
 </header>
-
 <div class="hero" id="top">
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="wrap">
@@ -58,6 +65,23 @@
     </div>
   </div>
 </div>
+
+<section id="vitrine" class="showcase">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Veja funcionando</p>
+      <h2>Um avião comercial projetado por IA e física, em 96 segundos.</h2>
+      <p>O Aircraft Design Optimizer voa 1.920 projetos de avião de corredor único, descarta os que não seriam certificáveis e confere os escolhidos em CFD 3D. Calibrado primeiro no A320, depois otimizado: até −13% de CO₂ por passageiro-km, dentro do portão de 36 m do aeroporto.</p>
+    </div>
+    <div class="show-video">
+      <video controls preload="none" playsinline poster="/videos/app13.jpg" aria-label="Demonstração em vídeo: Aircraft Design Optimizer">
+        <source src="/videos/app13.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="show-imgs"><a href="/portfolio/aircraft-design-optimizer.html"><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-pressure.jpg" alt="Pressão na pele (Cp), calculada em OpenFOAM 3D"></a><a href="/portfolio/aircraft-design-optimizer.html"><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-streamlines.jpg" alt="Linhas de corrente coloridas por velocidade"></a><a href="/portfolio/aircraft-design-optimizer.html"><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-friction.jpg" alt="Atrito na pele (Cf)"></a></div>
+    <p class="show-cta"><a class="btn btn-primary" href="/portfolio/aircraft-design-optimizer.html">Ver o projeto completo &rarr;</a></p>
+  </div>
+</section>
 
 <section class="proof">
   <div class="wrap">
@@ -115,6 +139,73 @@
   </div>
 </section>
 
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Portfólio</p>
+      <h2>O que já construímos, funcionando.</h2>
+      <p>Ferramentas de engenharia que combinam física e IA, do dimensionamento térmico ao projeto de uma aeronave. Cada projeto traz o vídeo de uso, os números medidos e, quando existe, o limite do que ele ainda não cobre.</p>
+    </div>
+    <div class="pf-grid">
+      <a class="pf-card" href="/portfolio/aircraft-design-optimizer.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/13-aircraft-render-pressure.jpg" alt="Aircraft Design Optimizer"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Aeroespacial e otimização</span>
+          <h3>Aircraft Design Optimizer</h3>
+          <p>1.920 projetos de avião comercial voados antes do almoço, e quais seriam certificáveis.</p>
+          <div class="tag-row"><span class="tag">CFD</span><span class="tag">NSGA-II</span><span class="tag">Otimização</span></div>
+        </div>
+      </a>
+      <a class="pf-card" href="/portfolio/pcb-hotspot.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/02-pcb-hotspot.jpg" alt="PCB Hotspot"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Térmica e inversão</span>
+          <h3>PCB Hotspot</h3>
+          <p>Temperatura de junção de cada componente da placa em cerca de um segundo.</p>
+          <div class="tag-row"><span class="tag">Eletrônica</span><span class="tag">Calibração</span><span class="tag">EKI</span></div>
+        </div>
+      </a>
+      <a class="pf-card" href="/portfolio/inverse-heat-lab.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/07-inverse-heat-lab.jpg" alt="Inverse Heat Lab"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Térmica e inversão</span>
+          <h3>Inverse Heat Lab</h3>
+          <p>Do punhado de leituras de termopar ao coeficiente de transferência de calor h, ao campo inteiro e às temperaturas que ninguém mediu.</p>
+          <div class="tag-row"><span class="tag">PINN</span><span class="tag">Problema inverso</span><span class="tag">Térmica</span></div>
+        </div>
+      </a>
+      <a class="pf-card" href="/portfolio/mesh-quality.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/09-mesh-quality.jpg" alt="Mesh Quality"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Simulação e malha</span>
+          <h3>Mesh Quality</h3>
+          <p>A malha é boa o bastante? E, se não, onde exatamente ela é ruim?</p>
+          <div class="tag-row"><span class="tag">Malha</span><span class="tag">CFD</span><span class="tag">FEA</span></div>
+        </div>
+      </a>
+      <a class="pf-card" href="/portfolio/heatsink-sizer.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/01-heatsink-sizer.jpg" alt="HeatSink Sizer"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Térmica e inversão</span>
+          <h3>HeatSink Sizer</h3>
+          <p>Dimensionamento de dissipadores de calor em segundos, com a confiança declarada.</p>
+          <div class="tag-row"><span class="tag">Térmica</span><span class="tag">Substituto neural</span></div>
+        </div>
+      </a>
+      <a class="pf-card" href="/portfolio/engineering-data-health.html">
+        <div class="pf-thumb"><img loading="lazy" decoding="async" src="/img/portfolio/03-engineering-data-health.jpg" alt="Engineering Data Health"><span class="pf-play" aria-hidden="true">&#9654;</span></div>
+        <div class="pf-body">
+          <span class="card-k">Dados industriais</span>
+          <h3>Engineering Data Health</h3>
+          <p>Diagnóstico de dados de planta antes que eles contaminem qualquer modelo.</p>
+          <div class="tag-row"><span class="tag">Qualidade de dados</span><span class="tag">Eficiência energética</span></div>
+        </div>
+      </a>
+    </div>
+    <p class="show-cta"><a class="btn btn-ghost" href="/portfolio/">Ver todos os projetos (+7) &rarr;</a></p>
+  </div>
+</section>
+
 <section id="servicos">
   <div class="wrap">
     <div class="section-head">
@@ -125,7 +216,7 @@
     </div>
     <div class="svc-grid">
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/erosao.jpg" alt="Mapa 3D de erosão numa curva de tubulação, calculado por CFD"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/erosao.jpg" alt="Mapa 3D de erosão numa curva de tubulação, calculado por CFD"></div>
         <div class="body">
           <h3>Simulações mais rápidas</h3>
           <span class="card-k">CFD + modelos substitutos &middot; PINNeAPPle-CFD</span>
@@ -136,7 +227,7 @@
         </div>
       </article>
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/twin.jpg" alt="Visão 3D em tempo real de um gêmeo digital de reator industrial"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/twin.jpg" alt="Visão 3D em tempo real de um gêmeo digital de reator industrial"></div>
         <div class="body">
           <h3>Processos observáveis</h3>
           <span class="card-k">Gêmeos digitais + soft sensors</span>
@@ -146,7 +237,7 @@
         </div>
       </article>
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/brakecool.jpg" alt="Peça mecânica em 3D colorida pela temperatura, otimizada por IA"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/brakecool.jpg" alt="Peça mecânica em 3D colorida pela temperatura, otimizada por IA"></div>
         <div class="body">
           <h3>Projetos melhores</h3>
           <span class="card-k">Otimização de engenharia assistida por IA</span>
@@ -157,7 +248,7 @@
         </div>
       </article>
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/copiloto.jpg" alt="Tela de recomendação de um copiloto industrial com histórico de episódios"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/copiloto.jpg" alt="Tela de recomendação de um copiloto industrial com histórico de episódios"></div>
         <div class="body">
           <h3>Operações assistidas</h3>
           <span class="card-k">IA operacional</span>
@@ -168,7 +259,7 @@
         </div>
       </article>
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança e cobertura"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança e cobertura"></div>
         <div class="body">
           <h3>Decisões verificáveis</h3>
           <span class="card-k">Verificação física e de incerteza</span>
@@ -179,7 +270,7 @@
         </div>
       </article>
       <article class="svc">
-        <div class="shot"><img loading="lazy" decoding="async" src="img/sensores.jpg" alt="Gráfico comparando previsão de IA com e sem assimilação de sensores"></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="/img/sensores.jpg" alt="Gráfico comparando previsão de IA com e sem assimilação de sensores"></div>
         <div class="body">
           <h3>Modelos atualizados</h3>
           <span class="card-k">Assimilação de dados</span>
@@ -188,164 +279,6 @@
             a planta inteira.</p>
           <span class="out">ganho de precisão medido com a instrumentação que você já tem</span>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="capacidades">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Capacidades</p>
-      <h2>Sete formatos de aplicação que já sabemos construir.</h2>
-      <p>As imagens abaixo ilustram o tipo de entrega, não são todas um caso já publicado com
-        número verificado — para isso, veja <a href="#casos">Casos reais</a> logo abaixo. Aqui
-        é para você reconhecer rápido se o seu problema cabe em algum destes formatos.</p>
-    </div>
-    <div class="cap-grid">
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_estrutural.jpg" alt="À esquerda, peça mecânica colorida por tensão estrutural; à direita, linhas de corrente coloridas por velocidade num cotovelo de tubulação">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Simulação estrutural e CFD</span>
-          <h3>Tensão (esquerda) e escoamento (direita), com número por trás da cor</h3>
-          <p>Elementos finitos para estrutura e volumes finitos para fluido e troca de calor —
-            no trabalho real, cada cor do mapa corresponde a um valor conferível contra a
-            física, não só uma ilustração bonita.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_surrogate.jpg" alt="Render de um dissipador térmico colorido por temperatura">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Modelos substitutos a partir da física</span>
-          <h3>Da simulação pesada ao modelo que responde em microssegundos</h3>
-          <p>Treinamos um substituto sobre a física real do seu processo e o conferimos
-            contra a simulação original a cada entrega — nunca contra ele mesmo.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_twin.jpg" alt="Render de uma turbina eólica com painel de leitura ao vivo sobreposto">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Gêmeos digitais</span>
-          <h3>O ativo em 3D, com a leitura ao vivo ao lado</h3>
-          <p>Modelo físico + dado real do equipamento num só lugar: o que não é medido
-            diretamente é estimado, com a origem de cada número sempre visível.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_automacao.jpg" alt="Render de um vaso industrial com tubulações e sensores conectados">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Automação e otimização de processos</span>
-          <h3>Do sensor ao ponto de operação, com um agente no meio</h3>
-          <p>Leitura de planta, modelo físico e um agente que sugere (ou ajusta) o setpoint
-            — sempre dentro dos limites de segurança definidos pela sua equipe.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_design.jpg" alt="Varredura paramétrica de perfis aerodinâmicos coloridos por desempenho">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Design experimentation</span>
-          <h3>Dezenas de variantes de geometria, uma varredura só</h3>
-          <p>Otimização guiada por modelo substituto sobre o espaço de design, com cada
-            variante final reconferida contra o modelo físico antes de virar recomendação.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_parametros.jpg" alt="Gráfico de convergência de um parâmetro físico escondido recuperado a partir de sensores">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Descoberta de parâmetros em dados</span>
-          <h3>A propriedade que ninguém mediu, estimada a partir do que já existe</h3>
-          <p>Inversão bayesiana (Ensemble Kalman) ou SINDy para recuperar parâmetros físicos
-            e até equações de governo a partir só de leituras de sensores já instalados.</p>
-        </div>
-      </article>
-      <article class="cap">
-        <div class="shot3">
-          <img loading="lazy" decoding="async" src="img/cap_benchmark.jpg" alt="Gráfico radar comparando arquiteturas de modelos de IA física">
-          <span class="pill-cap">Capacidade</span>
-        </div>
-        <div class="body3">
-          <span class="card-k">Benchmark de arquiteturas de modelos</span>
-          <h3>Qual rede resolve melhor o seu problema, não o do paper</h3>
-          <p>Comparação honesta entre arquiteturas (PINN, FNO, Transformer físico, MLP) no
-            mesmo dado e orçamento de treino — incluindo quando a nossa escolha não vence.</p>
-        </div>
-      </article>
-    </div>
-    <p class="cap-note">As sete imagens acima foram produzidas para este site ilustrar a capacidade —
-      nenhuma substitui um caso validado. Onde já existe um resultado numérico conferido para o
-      mesmo tipo de aplicação, ele está na seção <a href="#casos">Casos reais</a>.</p>
-  </div>
-</section>
-
-<section id="exemplos">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Na prática</p>
-      <h2>A chamada real por trás de 4 das nossas entregas.</h2>
-      <p>Serviço sem código auditável é promessa, não entrega. Isto não é pseudocódigo
-        ilustrativo: são assinaturas reais das nossas próprias bibliotecas e endpoints.</p>
-    </div>
-    <div class="example-grid">
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Gêmeo digital &middot; modelo substituto</span>
-        <pre class="code"><span class="cm"># treina o substituto e confere contra uma simulação 3D real</span>
-surrogate, _ = engine.train_surrogate()
-resultado = engine.run_sweep(surrogate)
-<span class="cm"># resultado: erro de temperatura vs. FEA, por design</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="img/surrogate_speed_rerun.jpg" alt="Gráfico de concordância entre o substituto treinado e a simulação 3D real"></div>
-        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, 227.000× mais rápido.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verificação &middot; física antes da decisão</span>
-        <pre class="code"><span class="cm"># confere consistência física e convergência, não só se "resolveu"</span>
-from pinneapple_analysis.verification import physics_confidence_score as pcs
-
-confianca = pcs.compute_physics_confidence(
-    guardrail_report=guardrail_report,
-    convergence_result=convergence_result,
-)</pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança"></div>
-        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Medição de escoamento &middot; PIV por software</span>
-        <pre class="code"><span class="cm"># mesmo algoritmo do endpoint /v1/analyze_sequence, direto</span>
-from pinneapple_perception.video_piv import piv_velocity_field
-
-campo = piv_velocity_field(
-    frame_a, frame_b, window_size=32, search_margin=12, dt=1.0,
-)
-<span class="cm"># campo["u"], campo["v"]: velocidade por janela de interrogação</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="img/flowtrace_vortex.jpg" alt="Campo de velocidade recuperado por PIV comparado ao campo real"></div>
-        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p></div>
-      </article>
-      <article class="example">
-        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperabilidade &middot; conversão e reparo de malha</span>
-        <pre class="code"><span class="cm"># endpoint real de produção, upload multipart de verdade</span>
-curl -X POST https://api.../v1/convert \
-  -F "file=@malha_legada.stl" \
-  -F "output=stl" -F "repair=true"
-<span class="cm"># resposta: malha sem duplicatas, sem degeneradas, normais ok</span></pre>
-        <div class="shot2"><img loading="lazy" decoding="async" src="img/meshbridge_repair.jpg" alt="Malha com defeitos antes e depois do reparo automático"></div>
-        <div class="body2"><p>Saída real: 25 de 25 faces defeituosas removidas, normais 100% consistentes depois do reparo.</p></div>
       </article>
     </div>
   </div>
@@ -364,7 +297,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/erosao.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/erosao.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Óleo &amp; gás &middot; mineração &middot; transporte pneumático</p>
             <h3>Erosão numa curva de 90°: CFD valida contra ensaio aberto</h3>
@@ -391,7 +324,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/surrogate_speed_rerun.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Eletrônica de potência &middot; otimização térmica &middot; engenharia de produto</p>
             <h3>Modelo substituto bate simulação 3D real 227.000× mais rápido</h3>
@@ -419,7 +352,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/aerofolio.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/aerofolio.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Aeroespacial &middot; automotivo &middot; eficiência energética</p>
             <h3>Otimização real de aerofólio corta 18% do arrasto</h3>
@@ -444,7 +377,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/automotive_aero.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/automotive_aero.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; aerodinâmica &middot; P&amp;D</p>
             <h3>Gêmeo digital de aerodinâmica veicular responde em milissegundos</h3>
@@ -470,7 +403,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/gap.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/gap.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Verificação de engenharia &middot; design mecânico</p>
             <h3>Monte Carlo revela a margem real de um projeto "aprovado"</h3>
@@ -496,7 +429,7 @@ curl -X POST https://api.../v1/convert \
 
       <details class="case">
         <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/rover.jpg" alt=""></div>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/rover.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Robótica espacial &middot; agro &middot; máquinas fora de estrada</p>
             <h3>Mobilidade de rover: o substituto físico bate o solver de referência</h3>
@@ -527,7 +460,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/sst.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/sst.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Pesca &middot; clima &middot; energia offshore</p>
                 <h3>Previsão da temperatura do mar vence a persistência em todos os horizontes</h3>
@@ -552,7 +485,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/flowtrace_vortex.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/flowtrace_vortex.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Laboratório de fluidos &middot; túnel de vento &middot; P&amp;D</p>
                 <h3>PIV por software recupera um campo de vórtice com 3,9% de erro</h3>
@@ -579,7 +512,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/meshbridge_repair.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/meshbridge_repair.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">CAD/CAE &middot; interoperabilidade &middot; engenharia de dados</p>
                 <h3>Conversor de malha remove 100% dos defeitos de uma exportação legada</h3>
@@ -607,7 +540,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/wind_turbine.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/wind_turbine.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Energia eólica &middot; turbomáquinas</p>
                 <h3>Gêmeo digital de rotor eólico prevê esteira, empuxo e torque</h3>
@@ -632,7 +565,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/mixing_tank.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/mixing_tank.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Processos químicos &middot; farmacêutica &middot; mistura industrial</p>
                 <h3>Gêmeo digital de tanque agitado acerta a lei de escala física conhecida</h3>
@@ -658,7 +591,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/self_healing.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/self_healing.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Equipes de ciência de dados &middot; operação de modelos de IA</p>
                 <h3>Copiloto de treino diagnostica e corrige um modelo quebrado sozinho</h3>
@@ -685,7 +618,7 @@ curl -X POST https://api.../v1/convert \
 
           <details class="case">
             <summary>
-              <div class="thumb"><img loading="lazy" decoding="async" src="img/crash_surrogate.jpg" alt=""></div>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/crash_surrogate.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; estruturas &middot; segurança veicular</p>
                 <h3>Intervalo de confiança de um substituto de colisão bate a meta estatística</h3>
@@ -718,264 +651,163 @@ curl -X POST https://api.../v1/convert \
   </div>
 </section>
 
-<section id="portfolio">
+<section id="capacidades">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Portfólio</p>
-      <h2>O que já construímos, funcionando, em vídeo.</h2>
-      <p>Ferramentas de engenharia que combinam física e IA, do dimensionamento térmico ao projeto
-        de uma aeronave, passando por qualidade de dados, malhas e rastreabilidade de simulações.
-        Cada projeto traz a demonstração em vídeo, os números medidos e, quando existe, o limite
-        do que ele ainda não cobre. É a forma mais direta de ver do que somos capazes.</p>
+      <p class="eyebrow">Capacidades</p>
+      <h2>Sete formatos de aplicação que já sabemos construir.</h2>
+      <p>As imagens abaixo ilustram o tipo de entrega, não são todas um caso já publicado com
+        número verificado — para isso, veja <a href="#casos">Casos reais</a> logo acima. Aqui
+        é para você reconhecer rápido se o seu problema cabe em algum destes formatos.</p>
     </div>
-    <div class="app-grid">
-      <article class="app-card" id="portfolio-1">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app1.jpg" aria-label="Demonstração: HeatSink Sizer">
-            <source src="videos/app1.mp4" type="video/mp4">
-          </video>
+    <div class="cap-grid">
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_estrutural.jpg" alt="À esquerda, peça mecânica colorida por tensão estrutural; à direita, linhas de corrente coloridas por velocidade num cotovelo de tubulação">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">Térmica</span>
-          <h3>HeatSink Sizer</h3>
-          <p class="app-tag">Dimensionamento de dissipadores de calor em segundos, com a confiança declarada.</p>
-          <p>Você informa a potência do componente, a temperatura máxima, o espaço disponível e o tipo de resfriamento (ar natural ou forçado). A ferramenta varre milhares de geometrias de aletas com um modelo substituto de rede neural treinado na física e confere o melhor candidato com correlações clássicas de transferência de calor.</p>
-          <ul class="app-list">
-            <li>Temperatura, perda de carga e margem térmica, com vista 3D do campo de temperatura</li>
-            <li>Física conferida contra métodos independentes da literatura: concordância de 0–5%</li>
-            <li>Substituto com 4,5% de erro médio contra elementos finitos 3D, em casos que não viu no treino</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Térmica</span><span class="tag">Substituto neural</span></div>
+        <div class="body3">
+          <span class="card-k">Simulação estrutural e CFD</span>
+          <h3>Tensão (esquerda) e escoamento (direita), com número por trás da cor</h3>
+          <p>Elementos finitos para estrutura e volumes finitos para fluido e troca de calor —
+            no trabalho real, cada cor do mapa corresponde a um valor conferível contra a
+            física, não só uma ilustração bonita.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-2">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app2.jpg" aria-label="Demonstração: PCB Hotspot">
-            <source src="videos/app2.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_surrogate.jpg" alt="Render de um dissipador térmico colorido por temperatura">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">Eletrônica</span>
-          <h3>PCB Hotspot</h3>
-          <p class="app-tag">Temperatura de junção de cada componente da placa em cerca de um segundo.</p>
-          <p>Em vez de confiar em valores de θJA de uma placa de teste JEDEC, o modelo é volumétrico em camadas (cobre e dielétrico) com cada encapsulamento como modelo de duas resistências. Reproduz o θJA publicado dentro de 8% em oito famílias de encapsulamento, do SOIC-8 ao BGA de 35 mm.</p>
-          <ul class="app-list">
-            <li>Componente crítico sinalizado, mapa das duas faces, vista 3D e para onde o calor realmente vai</li>
-            <li>Lista ordenada de “e se”: vias térmicas, cobre de 2 oz, mais planos, fluxo de ar, cada um com os graus que ganha</li>
-            <li>Calibração por Ensemble Kalman Inversion com poucas medições: no exemplo, a FPGA passa de 99 °C para 111 °C, acima do limite, e a ferramenta mostra isso antes do protótipo</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Eletrônica</span><span class="tag">Calibração</span></div>
+        <div class="body3">
+          <span class="card-k">Modelos substitutos a partir da física</span>
+          <h3>Da simulação pesada ao modelo que responde em microssegundos</h3>
+          <p>Treinamos um substituto sobre a física real do seu processo e o conferimos
+            contra a simulação original a cada entrega — nunca contra ele mesmo.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-3">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app3.jpg" aria-label="Demonstração: Engineering Data Health">
-            <source src="videos/app3.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_twin.jpg" alt="Render de uma turbina eólica com painel de leitura ao vivo sobreposto">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">Qualidade de dados</span>
-          <h3>Engineering Data Health</h3>
-          <p class="app-tag">Diagnóstico de dados de planta antes que eles contaminem qualquer modelo.</p>
-          <p>Sobe-se um CSV, Excel, Parquet, JSON ou HDF5. A ferramenta reconhece a grandeza física e a unidade de cada coluna e verifica tempo, física, sensores e balanço de energia, com a evidência de cada achado, a correção sugerida e uma nota de 0 a 100.</p>
-          <ul class="app-list">
-            <li>Em uma semana de dados de água gelada com 8 falhas injetadas, encontrou as 8; a mesma planta sem falhas recebe 99,8</li>
-            <li>Aba Optimize: aprende como a potência depende dos setpoints e recomenda ajustes dentro de limites seguros</li>
-            <li>Em planta simulada, previu 8,3% de economia e o valor real era 9,0%; é estimativa, confirme com teste A/B</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Qualidade de dados</span><span class="tag">Eficiência energética</span></div>
+        <div class="body3">
+          <span class="card-k">Gêmeos digitais</span>
+          <h3>O ativo em 3D, com a leitura ao vivo ao lado</h3>
+          <p>Modelo físico + dado real do equipamento num só lugar: o que não é medido
+            diretamente é estimado, com a origem de cada número sempre visível.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-4">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app4.jpg" aria-label="Demonstração: Engineering Data Standardizer">
-            <source src="videos/app4.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_automacao.jpg" alt="Render de um vaso industrial com tubulações e sensores conectados">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">Interoperabilidade</span>
-          <h3>Engineering Data Standardizer</h3>
-          <p class="app-tag">Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes.</p>
-          <p>Sistemas que registram a mesma planta discordam em fuso, unidade e formato. Com até 8 arquivos, a ferramenta propõe o mapeamento de cada coluna, deixa você revisar e converte tudo para um esquema único, e confere se as fontes concordam onde medem a mesma coisa.</p>
-          <ul class="app-list">
-            <li>No exemplo, as 9 comparações entre fontes concordam após a conversão; um arquivo com fuso declarado errado foi apontado (melhor alinhamento com 3 horas de deslocamento)</li>
-            <li>Saída em CSV, Parquet ou HDF5 com unidades nos metadados e manifesto das conversões</li>
-            <li>O mapeamento revisado vira uma receita em JSON, reaplicável por API nos próximos meses</li>
-          </ul>
-          <p class="app-limit">Limite declarado: unidades vêm de cabeçalhos ou do seu mapeamento; um cabeçalho errado é convertido fielmente e errado, por isso existe a checagem de concordância.</p>
-          <div class="tag-row"><span class="tag">Interoperabilidade</span><span class="tag">Dados industriais</span></div>
+        <div class="body3">
+          <span class="card-k">Automação e otimização de processos</span>
+          <h3>Do sensor ao ponto de operação, com um agente no meio</h3>
+          <p>Leitura de planta, modelo físico e um agente que sugere (ou ajusta) o setpoint
+            — sempre dentro dos limites de segurança definidos pela sua equipe.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-5">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app5.jpg" aria-label="Demonstração: Simulation Metadata API">
-            <source src="videos/app5.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_design.jpg" alt="Varredura paramétrica de perfis aerodinâmicos coloridos por desempenho">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">CFD</span>
-          <h3>Simulation Metadata API</h3>
-          <p class="app-tag">Um registro estruturado de cada simulação: o que rodou e se convergiu.</p>
-          <p>Sobe-se um caso OpenFOAM (zip), um deck CalculiX ou Abaqus com as saídas, ou um histórico de resíduos. A API devolve solver, malha, passo de tempo, condições de contorno, parâmetros e numérica, e um veredito de convergência com os motivos. Só lê os arquivos, nunca os executa.</p>
-          <ul class="app-list">
-            <li>Testada em cinco execuções reais (OpenFOAM v1912 e CalculiX 2.21): convergida, truncada, divergida, cavidade transiente e viga não linear; os vereditos batem com o que o solver fez</li>
-            <li>Contagens de malha iguais às do checkMesh; flecha da viga de 7,58 mm, dentro de 1% do valor de Euler–Bernoulli (7,62 mm)</li>
-            <li>Útil para indexar arquivos de simulação e garantir que cada amostra de treino de um substituto vem de uma execução convergida</li>
-          </ul>
-          <p class="app-limit">Limite declarado: resíduos estáveis não provam que grandezas como arrasto ou perda de carga estabilizaram; Fluent, STAR-CCM+ e SU2 são lidos só pelo histórico de resíduos.</p>
-          <div class="tag-row"><span class="tag">CFD</span><span class="tag">FEA</span></div>
+        <div class="body3">
+          <span class="card-k">Design experimentation</span>
+          <h3>Dezenas de variantes de geometria, uma varredura só</h3>
+          <p>Otimização guiada por modelo substituto sobre o espaço de design, com cada
+            variante final reconferida contra o modelo físico antes de virar recomendação.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-6">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app6.jpg" aria-label="Demonstração: Form Compiler">
-            <source src="videos/app6.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_parametros.jpg" alt="Gráfico de convergência de um parâmetro físico escondido recuperado a partir de sensores">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">Projeto de processo</span>
-          <h3>Form Compiler</h3>
-          <p class="app-tag">Datasheets e especificações viram o formulário preenchido, com a fonte de cada valor.</p>
-          <p>Escolhe-se o formato do documento, soltam-se os datasheets e o formulário sai compilado. Cada valor traz documento, página e o texto exato de onde foi lido; conflitos entre documentos são apontados e itens obrigatórios faltantes são listados, para você saber a quem perguntar antes do fornecedor.</p>
-          <ul class="app-list">
-            <li>PDFs escaneados lidos por OCR, com a confiança de cada valor; grandezas comparadas em SI, com pressão manométrica e absoluta separadas</li>
-            <li>Formatos: vaso de pressão (preenche o formulário oficial ASME U-DR-1), válvula de alívio, trocador casco-e-tubo, tanque de armazenamento e bomba centrífuga</li>
-            <li>LLM local opcional (Ollama) lê valores escritos em frases; os documentos nunca saem do seu servidor</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Projeto de processo</span><span class="tag">Documentos</span></div>
+        <div class="body3">
+          <span class="card-k">Descoberta de parâmetros em dados</span>
+          <h3>A propriedade que ninguém mediu, estimada a partir do que já existe</h3>
+          <p>Inversão bayesiana (Ensemble Kalman) ou SINDy para recuperar parâmetros físicos
+            e até equações de governo a partir só de leituras de sensores já instalados.</p>
         </div>
       </article>
-      <article class="app-card" id="portfolio-7">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app7.jpg" aria-label="Demonstração: Inverse Heat Lab">
-            <source src="videos/app7.mp4" type="video/mp4">
-          </video>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/cap_benchmark.jpg" alt="Gráfico radar comparando arquiteturas de modelos de IA física">
+          <span class="pill-cap">Capacidade</span>
         </div>
-        <div class="app-body">
-          <span class="card-k">PINN</span>
-          <h3>Inverse Heat Lab</h3>
-          <p class="app-tag">Do punhado de leituras de termopar ao coeficiente de transferência de calor h.</p>
-          <p>Uma rede neural informada pela física, construída com o PINNeAPPle: você escreve a equação como texto, h vira um parâmetro treinável e a rede aprende o campo e h juntos. As correlações costumam prometer ±25%; aqui h sai das suas medições.</p>
-          <ul class="app-list">
-            <li>Aleta 1D: h em cerca de 20 s, conferido com a solução analítica</li>
-            <li>Placa 2D: h = 14,8 ± 0,3 para um valor verdadeiro de 15; ponto quente a 79,2 °C contra 79,1 °C de um solver de volumes finitos independente</li>
-            <li>Bloco 3D: o chip, que nenhum sensor alcança, sai a 74,6 °C contra 74,5 °C, só com termopares no topo</li>
-          </ul>
-          <div class="tag-row"><span class="tag">PINN</span><span class="tag">Problema inverso</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-8">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app8.jpg" aria-label="Demonstração: Simulation Preflight">
-            <source src="videos/app8.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">CFD</span>
-          <h3>Simulation Preflight</h3>
-          <p class="app-tag">Todos os problemas de um caso apontados antes de rodar a simulação.</p>
-          <p>Sobe-se um caso OpenFOAM ou um deck CalculiX e recebe-se um checklist exportável com PASS, WARNING ou FAIL, o arquivo e a linha, por que importa e como corrigir.</p>
-          <ul class="app-list">
-            <li>Viga sem apoios: o CalculiX diz “Job finished” e reporta deslocamento de 1,8e11 mm; o Preflight marca FAIL</li>
-            <li>Unidades misturadas: a primeira frequência sai 0,16 Hz em vez de 209 Hz; o Preflight pega antes da execução</li>
-          </ul>
-          <div class="tag-row"><span class="tag">CFD</span><span class="tag">FEA</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-9">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app9.jpg" aria-label="Demonstração: Mesh Quality">
-            <source src="videos/app9.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">Malha</span>
-          <h3>Mesh Quality</h3>
-          <p class="app-tag">A malha é boa o bastante? E, se não, onde exatamente ela é ruim?</p>
-          <p>Aceita malhas OpenFOAM, Gmsh, VTK, Abaqus/CalculiX ou STL. Entrega métricas de qualidade, histogramas, mapa de calor 3D, os piores elementos, as regiões problemáticas e o que fazer em cada uma.</p>
-          <ul class="app-list">
-            <li>Métricas de volumes finitos idênticas às do checkMesh do OpenFOAM (pitzDaily: skewness 0,260575, não ortogonalidade 5,95°)</li>
-            <li>Jacobiano escalado, skewness e razão de arestas para malhas de elementos finitos</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Malha</span><span class="tag">CFD</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-10">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app10.jpg" aria-label="Demonstração: Simulation Comparator">
-            <source src="videos/app10.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">Verificação</span>
-          <h3>Simulation Comparator</h3>
-          <p class="app-tag">Quão distantes estão dois resultados, campo a campo e ponto a ponto?</p>
-          <p>Referência contra candidato: simulação e simulação, simulação e experimento, simulação e IA, IA e experimento. Devolve o erro global e por campo e um mapa de erro, mesmo com malhas diferentes.</p>
-          <ul class="app-list">
-            <li>Cavidade com tampa móvel contra Ghia et al.: de 1,26% para 0,19% com refinamento de malha</li>
-            <li>Uma PINN contra volumes finitos: 0,39% de erro (máximo de 0,67 °C)</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Verificação</span><span class="tag">Validação</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-11">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app11.jpg" aria-label="Demonstração: Engineering Model Lineage">
-            <source src="videos/app11.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">Rastreabilidade</span>
-          <h3>Engineering Model Lineage</h3>
-          <p class="app-tag">Qual revisão da geometria gerou esta previsão?</p>
-          <p>Solta-se uma pasta de projeto e a ferramenta monta o fio digital: CAD, malha, simulação, conjunto de dados, modelo e previsão. Cada etapa carrega arquivo, versão, software, parâmetros, data, hash, responsável e origem.</p>
-          <ul class="app-list">
-            <li>Detecta arquivo que mudou depois de registrado, resultados mais velhos que seus insumos e conjuntos de dados que misturam revisões</li>
-            <li>Exporta W3C PROV-JSON</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Rastreabilidade</span><span class="tag">Fio digital</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-12">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app12.jpg" aria-label="Demonstração: Simulation Interoperability Hub">
-            <source src="videos/app12.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">Interoperabilidade</span>
-          <h3>Simulation Interoperability Hub</h3>
-          <p class="app-tag">Resultados de simulação em um conjunto de dados neutro, sem perder as unidades.</p>
-          <p>Sobe-se um resultado OpenFOAM, CalculiX, VTK ou Gmsh e recebe-se um conjunto de dados físico neutro: geometria, malha, campos com grandeza e unidade, e metadados. Dali exporta-se para VTK, HDF5, Parquet, CSV, NPZ, JSON ou um dataset do PINNeAPPle.</p>
-          <ul class="app-list">
-            <li>Em vez de um script por par de formatos, uma representação única</li>
-            <li>OpenFOAM para VTU, relido pelo VTK com o mesmo volume que o checkMesh reporta</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Interoperabilidade</span><span class="tag">CAE</span></div>
-        </div>
-      </article>
-      <article class="app-card" id="portfolio-13">
-        <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app13.jpg" aria-label="Demonstração: Aircraft Design Optimizer">
-            <source src="videos/app13.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="app-body">
-          <span class="card-k">Aeroespacial</span>
-          <h3>Aircraft Design Optimizer</h3>
-          <p class="app-tag">1.920 projetos de avião comercial voados antes do almoço, e quais seriam certificáveis.</p>
-          <p>Para um avião de corredor único (classe A320 / 737, 150+ assentos), um algoritmo genético (NSGA-II) varia a asa (área, envergadura, afilamento, enflechamento, torção, posição) e o Mach de cruzeiro. Cada projeto voa uma missão completa: vortex lattice compressível, arrasto de onda transônico, pesos de categoria transporte, alcance de Breguet, velocidade de aproximação, estabilidade e margem de buffet.</p>
-          <ul class="app-list">
-            <li>Calibrado primeiro no A320: MTOW 73,5 t, L/D 16,4, Vref 131 kt, antes de qualquer otimização</li>
-            <li>Projeto mais verde viável: −13% de CO₂ por passageiro-km, em Mach 0,735 e ainda dentro do portão de 36 m; escolha equilibrada: −7,5% de CO₂ em Mach 0,80</li>
-            <li>Projetos que falham dizem por quê; conferido em OpenFOAM 3D (pressão na pele, linhas de corrente e esteira); exporta glTF, USD (Omniverse) e STL</li>
-          </ul>
-          <p class="app-limit">Ferramenta de projeto conceitual, não certificada: um engenheiro ainda precisa assumir os números.</p>
-          <div class="tag-row"><span class="tag">Aeroespacial</span><span class="tag">Otimização</span></div>
+        <div class="body3">
+          <span class="card-k">Benchmark de arquiteturas de modelos</span>
+          <h3>Qual rede resolve melhor o seu problema, não o do paper</h3>
+          <p>Comparação honesta entre arquiteturas (PINN, FNO, Transformer físico, MLP) no
+            mesmo dado e orçamento de treino — incluindo quando a nossa escolha não vence.</p>
         </div>
       </article>
     </div>
-    <p style="margin-top:2rem"><a class="btn btn-primary" href="#contato">Discutir um projeto parecido &rarr;</a></p>
+    <p class="cap-note">As sete imagens acima foram produzidas para este site ilustrar a capacidade —
+      nenhuma substitui um caso validado. Onde já existe um resultado numérico conferido para o
+      mesmo tipo de aplicação, ele está na seção <a href="#casos">Casos reais</a>.</p>
+  </div>
+</section>
+
+<section id="exemplos">
+  <div class="wrap">
+    <details class="more"><summary>Ver a chamada real por trás de quatro das nossas entregas</summary>
+    <div class="section-head">
+      <p class="eyebrow">Na prática</p>
+      <h2>A chamada real por trás de 4 das nossas entregas.</h2>
+      <p>Serviço sem código auditável é promessa, não entrega. Isto não é pseudocódigo
+        ilustrativo: são assinaturas reais das nossas próprias bibliotecas e endpoints.</p>
+    </div>
+    <div class="example-grid">
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Gêmeo digital &middot; modelo substituto</span>
+        <pre class="code"><span class="cm"># treina o substituto e confere contra uma simulação 3D real</span>
+surrogate, _ = engine.train_surrogate()
+resultado = engine.run_sweep(surrogate)
+<span class="cm"># resultado: erro de temperatura vs. FEA, por design</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt="Gráfico de concordância entre o substituto treinado e a simulação 3D real"></div>
+        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, 227.000× mais rápido.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verificação &middot; física antes da decisão</span>
+        <pre class="code"><span class="cm"># confere consistência física e convergência, não só se "resolveu"</span>
+from pinneapple_analysis.verification import physics_confidence_score as pcs
+
+confianca = pcs.compute_physics_confidence(
+    guardrail_report=guardrail_report,
+    convergence_result=convergence_result,
+)</pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="/img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança"></div>
+        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Medição de escoamento &middot; PIV por software</span>
+        <pre class="code"><span class="cm"># mesmo algoritmo do endpoint /v1/analyze_sequence, direto</span>
+from pinneapple_perception.video_piv import piv_velocity_field
+
+campo = piv_velocity_field(
+    frame_a, frame_b, window_size=32, search_margin=12, dt=1.0,
+)
+<span class="cm"># campo["u"], campo["v"]: velocidade por janela de interrogação</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="/img/flowtrace_vortex.jpg" alt="Campo de velocidade recuperado por PIV comparado ao campo real"></div>
+        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p></div>
+      </article>
+      <article class="example">
+        <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperabilidade &middot; conversão e reparo de malha</span>
+        <pre class="code"><span class="cm"># endpoint real de produção, upload multipart de verdade</span>
+curl -X POST https://api.../v1/convert \
+  -F "file=@malha_legada.stl" \
+  -F "output=stl" -F "repair=true"
+<span class="cm"># resposta: malha sem duplicatas, sem degeneradas, normais ok</span></pre>
+        <div class="shot2"><img loading="lazy" decoding="async" src="/img/meshbridge_repair.jpg" alt="Malha com defeitos antes e depois do reparo automático"></div>
+        <div class="body2"><p>Saída real: 25 de 25 faces defeituosas removidas, normais 100% consistentes depois do reparo.</p></div>
+      </article>
+    </div>
+    </details>
   </div>
 </section>
 
@@ -1249,6 +1081,6 @@ curl -X POST https://api.../v1/convert \
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
