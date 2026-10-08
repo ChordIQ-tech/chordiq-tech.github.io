@@ -420,7 +420,7 @@ def project(lang, p):
 def hero_media(lang):
     u = UI[lang]
     p = BY_SLUG["aircraft-design-optimizer"]
-    return f'''<a class="hero-media" href="{path_for(lang, "project", p["slug"])}" aria-label="{E(u["hero_media_label"])}">
+    return f'''<a class="hero-media" href="{path_for(lang, "project", p["slug"])}">
       <video autoplay muted loop playsinline preload="auto" poster="/videos/hero-aero.jpg" aria-hidden="true">
         <source src="/videos/hero-aero.mp4" type="video/mp4">
       </video>

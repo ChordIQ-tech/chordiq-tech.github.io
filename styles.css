@@ -498,3 +498,4 @@ details.more[open] > summary { margin-bottom: 1.6rem; }
 .hero-media { border: 0; background: none; box-shadow: none; overflow: visible; }
 .hero-media video { border: 1px solid var(--hairline); border-radius: 14px; box-shadow: 0 18px 60px rgba(0,0,0,.45); background: #000; }
 .hero-media-cap { position: static; display: block; background: none; padding: 0.7rem 0.2rem 0; color: var(--on-surface-dim); }
+footer .legal-links { display: flex; justify-content: flex-start; gap: 0.5rem; flex-wrap: wrap; width: 100%; }
