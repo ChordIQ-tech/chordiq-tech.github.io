@@ -26,7 +26,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#capacidades">Capacidades</a>
       <a href="#casos">Casos reais</a>
-      <a href="#apps">30 apps</a>
+      <a href="#portfolio">Portfólio</a>
       <a href="#principio">Princípio</a>
       <a href="#metodo">Como trabalhamos</a>
       <a href="#parceria">Parceria</a>
@@ -718,26 +718,25 @@ curl -X POST https://api.../v1/convert \
   </div>
 </section>
 
-<section id="apps">
+<section id="portfolio">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">30 apps em 30 dias</p>
-      <h2>Um projeto de Physics AI por dia, todos funcionando e abertos para testar.</h2>
-      <p>Em outubro de 2026 publicamos uma ferramenta por dia, cada uma Physics AI ou algo
-        próximo, construída com o PINNeAPPle. A ideia é simples: há muita conversa sobre IA para
-        engenharia e pouca coisa rodando onde você possa testar. Cada app traz o vídeo de uso, os
-        números medidos e, quando existe, o limite do que ele ainda não cobre. Abaixo, os 13
-        primeiros; os demais entram à medida que forem publicados.</p>
+      <p class="eyebrow">Portfólio</p>
+      <h2>O que já construímos, funcionando, em vídeo.</h2>
+      <p>Ferramentas de engenharia que combinam física e IA, do dimensionamento térmico ao projeto
+        de uma aeronave, passando por qualidade de dados, malhas e rastreabilidade de simulações.
+        Cada projeto traz a demonstração em vídeo, os números medidos e, quando existe, o limite
+        do que ele ainda não cobre. É a forma mais direta de ver do que somos capazes.</p>
     </div>
     <div class="app-grid">
-      <article class="app-card" id="app-1">
+      <article class="app-card" id="portfolio-1">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app1.jpg" aria-label="Demonstração do HeatSink Sizer">
+          <video controls preload="none" playsinline poster="videos/app1.jpg" aria-label="Demonstração: HeatSink Sizer">
             <source src="videos/app1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 1 de 30 &middot; 01/10</span>
+          <span class="card-k">Térmica</span>
           <h3>HeatSink Sizer</h3>
           <p class="app-tag">Dimensionamento de dissipadores de calor em segundos, com a confiança declarada.</p>
           <p>Você informa a potência do componente, a temperatura máxima, o espaço disponível e o tipo de resfriamento (ar natural ou forçado). A ferramenta varre milhares de geometrias de aletas com um modelo substituto de rede neural treinado na física e confere o melhor candidato com correlações clássicas de transferência de calor.</p>
@@ -747,19 +746,16 @@ curl -X POST https://api.../v1/convert \
             <li>Substituto com 4,5% de erro médio contra elementos finitos 3D, em casos que não viu no treino</li>
           </ul>
           <div class="tag-row"><span class="tag">Térmica</span><span class="tag">Substituto neural</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://heatsink.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/heatsink_sizer" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso sob pedido: fale com a gente no formulário de contato.</p>
         </div>
       </article>
-      <article class="app-card" id="app-2">
+      <article class="app-card" id="portfolio-2">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app2.jpg" aria-label="Demonstração do PCB Hotspot">
+          <video controls preload="none" playsinline poster="videos/app2.jpg" aria-label="Demonstração: PCB Hotspot">
             <source src="videos/app2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 2 de 30 &middot; 02/10</span>
+          <span class="card-k">Eletrônica</span>
           <h3>PCB Hotspot</h3>
           <p class="app-tag">Temperatura de junção de cada componente da placa em cerca de um segundo.</p>
           <p>Em vez de confiar em valores de θJA de uma placa de teste JEDEC, o modelo é volumétrico em camadas (cobre e dielétrico) com cada encapsulamento como modelo de duas resistências. Reproduz o θJA publicado dentro de 8% em oito famílias de encapsulamento, do SOIC-8 ao BGA de 35 mm.</p>
@@ -769,19 +765,16 @@ curl -X POST https://api.../v1/convert \
             <li>Calibração por Ensemble Kalman Inversion com poucas medições: no exemplo, a FPGA passa de 99 °C para 111 °C, acima do limite, e a ferramenta mostra isso antes do protótipo</li>
           </ul>
           <div class="tag-row"><span class="tag">Eletrônica</span><span class="tag">Calibração</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://pcb.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/pcb_hotspot" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso sob pedido: fale com a gente no formulário de contato.</p>
         </div>
       </article>
-      <article class="app-card" id="app-3">
+      <article class="app-card" id="portfolio-3">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app3.jpg" aria-label="Demonstração do Engineering Data Health">
+          <video controls preload="none" playsinline poster="videos/app3.jpg" aria-label="Demonstração: Engineering Data Health">
             <source src="videos/app3.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 3 de 30 &middot; 03/10</span>
+          <span class="card-k">Qualidade de dados</span>
           <h3>Engineering Data Health</h3>
           <p class="app-tag">Diagnóstico de dados de planta antes que eles contaminem qualquer modelo.</p>
           <p>Sobe-se um CSV, Excel, Parquet, JSON ou HDF5. A ferramenta reconhece a grandeza física e a unidade de cada coluna e verifica tempo, física, sensores e balanço de energia, com a evidência de cada achado, a correção sugerida e uma nota de 0 a 100.</p>
@@ -791,19 +784,16 @@ curl -X POST https://api.../v1/convert \
             <li>Em planta simulada, previu 8,3% de economia e o valor real era 9,0%; é estimativa, confirme com teste A/B</li>
           </ul>
           <div class="tag-row"><span class="tag">Qualidade de dados</span><span class="tag">Eficiência energética</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://datahealth.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/data_health" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso sob pedido: fale com a gente no formulário de contato.</p>
         </div>
       </article>
-      <article class="app-card" id="app-4">
+      <article class="app-card" id="portfolio-4">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app4.jpg" aria-label="Demonstração do Engineering Data Standardizer">
+          <video controls preload="none" playsinline poster="videos/app4.jpg" aria-label="Demonstração: Engineering Data Standardizer">
             <source src="videos/app4.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 4 de 30 &middot; 04/10</span>
+          <span class="card-k">Interoperabilidade</span>
           <h3>Engineering Data Standardizer</h3>
           <p class="app-tag">Várias fontes, uma única tabela limpa, em UTC e com unidades coerentes.</p>
           <p>Sistemas que registram a mesma planta discordam em fuso, unidade e formato. Com até 8 arquivos, a ferramenta propõe o mapeamento de cada coluna, deixa você revisar e converte tudo para um esquema único, e confere se as fontes concordam onde medem a mesma coisa.</p>
@@ -814,19 +804,16 @@ curl -X POST https://api.../v1/convert \
           </ul>
           <p class="app-limit">Limite declarado: unidades vêm de cabeçalhos ou do seu mapeamento; um cabeçalho errado é convertido fielmente e errado, por isso existe a checagem de concordância.</p>
           <div class="tag-row"><span class="tag">Interoperabilidade</span><span class="tag">Dados industriais</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://standardizer.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/data_standardizer" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso sob pedido: fale com a gente no formulário de contato.</p>
         </div>
       </article>
-      <article class="app-card" id="app-5">
+      <article class="app-card" id="portfolio-5">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app5.jpg" aria-label="Demonstração do Simulation Metadata API">
+          <video controls preload="none" playsinline poster="videos/app5.jpg" aria-label="Demonstração: Simulation Metadata API">
             <source src="videos/app5.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 5 de 30 &middot; 05/10</span>
+          <span class="card-k">CFD</span>
           <h3>Simulation Metadata API</h3>
           <p class="app-tag">Um registro estruturado de cada simulação: o que rodou e se convergiu.</p>
           <p>Sobe-se um caso OpenFOAM (zip), um deck CalculiX ou Abaqus com as saídas, ou um histórico de resíduos. A API devolve solver, malha, passo de tempo, condições de contorno, parâmetros e numérica, e um veredito de convergência com os motivos. Só lê os arquivos, nunca os executa.</p>
@@ -837,19 +824,16 @@ curl -X POST https://api.../v1/convert \
           </ul>
           <p class="app-limit">Limite declarado: resíduos estáveis não provam que grandezas como arrasto ou perda de carga estabilizaram; Fluent, STAR-CCM+ e SU2 são lidos só pelo histórico de resíduos.</p>
           <div class="tag-row"><span class="tag">CFD</span><span class="tag">FEA</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://simmeta.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/simulation_metadata" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso sob pedido: fale com a gente no formulário de contato.</p>
         </div>
       </article>
-      <article class="app-card" id="app-6">
+      <article class="app-card" id="portfolio-6">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app6.jpg" aria-label="Demonstração do Form Compiler">
+          <video controls preload="none" playsinline poster="videos/app6.jpg" aria-label="Demonstração: Form Compiler">
             <source src="videos/app6.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 6 de 30 &middot; 06/10</span>
+          <span class="card-k">Projeto de processo</span>
           <h3>Form Compiler</h3>
           <p class="app-tag">Datasheets e especificações viram o formulário preenchido, com a fonte de cada valor.</p>
           <p>Escolhe-se o formato do documento, soltam-se os datasheets e o formulário sai compilado. Cada valor traz documento, página e o texto exato de onde foi lido; conflitos entre documentos são apontados e itens obrigatórios faltantes são listados, para você saber a quem perguntar antes do fornecedor.</p>
@@ -859,19 +843,16 @@ curl -X POST https://api.../v1/convert \
             <li>LLM local opcional (Ollama) lê valores escritos em frases; os documentos nunca saem do seu servidor</li>
           </ul>
           <div class="tag-row"><span class="tag">Projeto de processo</span><span class="tag">Documentos</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://udr.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/design_requirements" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-udr</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-7">
+      <article class="app-card" id="portfolio-7">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app7.jpg" aria-label="Demonstração do Inverse Heat Lab">
+          <video controls preload="none" playsinline poster="videos/app7.jpg" aria-label="Demonstração: Inverse Heat Lab">
             <source src="videos/app7.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 7 de 30 &middot; 07/10</span>
+          <span class="card-k">PINN</span>
           <h3>Inverse Heat Lab</h3>
           <p class="app-tag">Do punhado de leituras de termopar ao coeficiente de transferência de calor h.</p>
           <p>Uma rede neural informada pela física, construída com o PINNeAPPle: você escreve a equação como texto, h vira um parâmetro treinável e a rede aprende o campo e h juntos. As correlações costumam prometer ±25%; aqui h sai das suas medições.</p>
@@ -881,19 +862,16 @@ curl -X POST https://api.../v1/convert \
             <li>Bloco 3D: o chip, que nenhum sensor alcança, sai a 74,6 °C contra 74,5 °C, só com termopares no topo</li>
           </ul>
           <div class="tag-row"><span class="tag">PINN</span><span class="tag">Problema inverso</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://inverse.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/inverse_heat" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-heat</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-8">
+      <article class="app-card" id="portfolio-8">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app8.jpg" aria-label="Demonstração do Simulation Preflight">
+          <video controls preload="none" playsinline poster="videos/app8.jpg" aria-label="Demonstração: Simulation Preflight">
             <source src="videos/app8.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 8 de 30 &middot; 08/10</span>
+          <span class="card-k">CFD</span>
           <h3>Simulation Preflight</h3>
           <p class="app-tag">Todos os problemas de um caso apontados antes de rodar a simulação.</p>
           <p>Sobe-se um caso OpenFOAM ou um deck CalculiX e recebe-se um checklist exportável com PASS, WARNING ou FAIL, o arquivo e a linha, por que importa e como corrigir.</p>
@@ -902,19 +880,16 @@ curl -X POST https://api.../v1/convert \
             <li>Unidades misturadas: a primeira frequência sai 0,16 Hz em vez de 209 Hz; o Preflight pega antes da execução</li>
           </ul>
           <div class="tag-row"><span class="tag">CFD</span><span class="tag">FEA</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://preflight.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/simulation_preflight" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-preflight</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-9">
+      <article class="app-card" id="portfolio-9">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app9.jpg" aria-label="Demonstração do Mesh Quality">
+          <video controls preload="none" playsinline poster="videos/app9.jpg" aria-label="Demonstração: Mesh Quality">
             <source src="videos/app9.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 9 de 30 &middot; 09/10</span>
+          <span class="card-k">Malha</span>
           <h3>Mesh Quality</h3>
           <p class="app-tag">A malha é boa o bastante? E, se não, onde exatamente ela é ruim?</p>
           <p>Aceita malhas OpenFOAM, Gmsh, VTK, Abaqus/CalculiX ou STL. Entrega métricas de qualidade, histogramas, mapa de calor 3D, os piores elementos, as regiões problemáticas e o que fazer em cada uma.</p>
@@ -923,19 +898,16 @@ curl -X POST https://api.../v1/convert \
             <li>Jacobiano escalado, skewness e razão de arestas para malhas de elementos finitos</li>
           </ul>
           <div class="tag-row"><span class="tag">Malha</span><span class="tag">CFD</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://mesh.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/mesh_quality" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-mesh</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-10">
+      <article class="app-card" id="portfolio-10">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app10.jpg" aria-label="Demonstração do Simulation Comparator">
+          <video controls preload="none" playsinline poster="videos/app10.jpg" aria-label="Demonstração: Simulation Comparator">
             <source src="videos/app10.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 10 de 30 &middot; 10/10</span>
+          <span class="card-k">Verificação</span>
           <h3>Simulation Comparator</h3>
           <p class="app-tag">Quão distantes estão dois resultados, campo a campo e ponto a ponto?</p>
           <p>Referência contra candidato: simulação e simulação, simulação e experimento, simulação e IA, IA e experimento. Devolve o erro global e por campo e um mapa de erro, mesmo com malhas diferentes.</p>
@@ -944,19 +916,16 @@ curl -X POST https://api.../v1/convert \
             <li>Uma PINN contra volumes finitos: 0,39% de erro (máximo de 0,67 °C)</li>
           </ul>
           <div class="tag-row"><span class="tag">Verificação</span><span class="tag">Validação</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://compare.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/simulation_comparator" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-compare</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-11">
+      <article class="app-card" id="portfolio-11">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app11.jpg" aria-label="Demonstração do Engineering Model Lineage">
+          <video controls preload="none" playsinline poster="videos/app11.jpg" aria-label="Demonstração: Engineering Model Lineage">
             <source src="videos/app11.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 11 de 30 &middot; 11/10</span>
+          <span class="card-k">Rastreabilidade</span>
           <h3>Engineering Model Lineage</h3>
           <p class="app-tag">Qual revisão da geometria gerou esta previsão?</p>
           <p>Solta-se uma pasta de projeto e a ferramenta monta o fio digital: CAD, malha, simulação, conjunto de dados, modelo e previsão. Cada etapa carrega arquivo, versão, software, parâmetros, data, hash, responsável e origem.</p>
@@ -965,19 +934,16 @@ curl -X POST https://api.../v1/convert \
             <li>Exporta W3C PROV-JSON</li>
           </ul>
           <div class="tag-row"><span class="tag">Rastreabilidade</span><span class="tag">Fio digital</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://lineage.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/model_lineage" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-lineage</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-12">
+      <article class="app-card" id="portfolio-12">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app12.jpg" aria-label="Demonstração do Simulation Interoperability Hub">
+          <video controls preload="none" playsinline poster="videos/app12.jpg" aria-label="Demonstração: Simulation Interoperability Hub">
             <source src="videos/app12.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 12 de 30 &middot; 12/10</span>
+          <span class="card-k">Interoperabilidade</span>
           <h3>Simulation Interoperability Hub</h3>
           <p class="app-tag">Resultados de simulação em um conjunto de dados neutro, sem perder as unidades.</p>
           <p>Sobe-se um resultado OpenFOAM, CalculiX, VTK ou Gmsh e recebe-se um conjunto de dados físico neutro: geometria, malha, campos com grandeza e unidade, e metadados. Dali exporta-se para VTK, HDF5, Parquet, CSV, NPZ, JSON ou um dataset do PINNeAPPle.</p>
@@ -986,19 +952,16 @@ curl -X POST https://api.../v1/convert \
             <li>OpenFOAM para VTU, relido pelo VTK com o mesmo volume que o checkMesh reporta</li>
           </ul>
           <div class="tag-row"><span class="tag">Interoperabilidade</span><span class="tag">CAE</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://interop.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/interop_hub" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-interop</code></p>
         </div>
       </article>
-      <article class="app-card" id="app-13">
+      <article class="app-card" id="portfolio-13">
         <div class="app-video">
-          <video controls preload="none" playsinline poster="videos/app13.jpg" aria-label="Demonstração do Aircraft Design Optimizer">
+          <video controls preload="none" playsinline poster="videos/app13.jpg" aria-label="Demonstração: Aircraft Design Optimizer">
             <source src="videos/app13.mp4" type="video/mp4">
           </video>
         </div>
         <div class="app-body">
-          <span class="card-k">Dia 13 de 30 &middot; 13/10</span>
+          <span class="card-k">Aeroespacial</span>
           <h3>Aircraft Design Optimizer</h3>
           <p class="app-tag">1.920 projetos de avião comercial voados antes do almoço, e quais seriam certificáveis.</p>
           <p>Para um avião de corredor único (classe A320 / 737, 150+ assentos), um algoritmo genético (NSGA-II) varia a asa (área, envergadura, afilamento, enflechamento, torção, posição) e o Mach de cruzeiro. Cada projeto voa uma missão completa: vortex lattice compressível, arrasto de onda transônico, pesos de categoria transporte, alcance de Breguet, velocidade de aproximação, estabilidade e margem de buffet.</p>
@@ -1009,12 +972,10 @@ curl -X POST https://api.../v1/convert \
           </ul>
           <p class="app-limit">Ferramenta de projeto conceitual, não certificada: um engenheiro ainda precisa assumir os números.</p>
           <div class="tag-row"><span class="tag">Aeroespacial</span><span class="tag">Otimização</span></div>
-          <p class="app-links"><a class="btn btn-ghost" href="https://aero.pinneapple.org" target="_blank" rel="noopener">Abrir o app &rarr;</a>
-            <a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/tree/main/apps/aero_optimizer" target="_blank" rel="noopener">Código no GitHub</a></p>
-          <p class="app-access">Acesso de demonstração: usuário <code>demo</code> · senha <code>pinneapple-aero</code></p>
         </div>
       </article>
     </div>
+    <p style="margin-top:2rem"><a class="btn btn-primary" href="#contato">Discutir um projeto parecido &rarr;</a></p>
   </div>
 </section>
 
