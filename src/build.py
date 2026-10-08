@@ -107,7 +107,6 @@ def jsonld(kind):
         return ""
     data = {"@context": "https://schema.org", "@type": "Organization", "name": "ChordIQ", "url": SITE + "/",
             "logo": SITE + "/apple-touch-icon.png", "email": "yan@pinneapple.org",
-            "address": {"@type": "PostalAddress", "addressLocality": "Natal", "addressRegion": "RN", "addressCountry": "BR"},
             "sameAs": [LINKEDIN, GITHUB]}
     if CFG.get("legal_name"):
         data["legalName"] = CFG["legal_name"]
