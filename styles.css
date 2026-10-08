@@ -79,7 +79,7 @@ header {
 nav { display: flex; gap: 1.5rem; font-size: 0.82rem; font-weight: 500; }
 nav a { text-decoration: none; color: var(--on-surface-dim); }
 nav a:hover { color: var(--on-surface); }
-@media (max-width: 760px) { nav { display: none; } }
+
 
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--hairline);
   margin-inline: -1.5rem; padding-inline: 1.5rem; }
@@ -425,4 +425,26 @@ details.more[open] > summary { margin-bottom: 1.6rem; }
   .bar { gap: 0.6rem; }
   .bar > .btn { display: none; }
   .page { padding-block: 1.4rem 2.2rem; }
+}
+
+/* mobile navigation + sticky contact button */
+.menu-btn { display: none; background: none; border: 1px solid var(--hairline); border-radius: 8px; width: 2.5rem; height: 2.3rem;
+  padding: 0; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 4px; color: var(--on-surface); }
+.menu-btn span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 1px; transition: transform .15s, opacity .15s; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.mobile-cta { display: none; }
+@media (max-width: 760px) {
+  .bar { position: relative; }
+  .bar .brand { margin-right: auto; }
+  .menu-btn { display: flex; }
+  header nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; padding: 0.4rem 0 0.8rem;
+    background: var(--surface); border-bottom: 1px solid var(--hairline); z-index: 20; }
+  header nav.open { display: flex; }
+  header nav a { padding: 0.8rem 1.1rem; font-size: 0.95rem; }
+  .mobile-cta { display: block; position: fixed; left: 0.8rem; right: 0.8rem; bottom: 0.8rem; z-index: 30; text-align: center; text-decoration: none;
+    background: var(--accent); color: #03120f; font-weight: 600; font-size: 0.95rem; padding: 0.85rem 1rem; border-radius: 999px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.45); }
+  body { padding-bottom: 4.6rem; }
 }

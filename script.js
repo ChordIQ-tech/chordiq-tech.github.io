@@ -71,6 +71,19 @@
     }
   }
 
+  // mobile menu
+  var menuBtn = document.querySelector('.menu-btn');
+  var siteNav = document.getElementById('site-nav');
+  if (menuBtn && siteNav) {
+    menuBtn.addEventListener('click', function () {
+      var open = siteNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    siteNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { siteNav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
   // copy-to-clipboard
   function copyText(text, btn) {
     var done = function (ok) {

@@ -28,7 +28,7 @@ UI = {
         desc="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.",
         nav=[("servicos", "Serviços"), ("portfolio", "Portfólio"), ("casos", "Casos reais"), ("capacidades", "Capacidades"),
              ("principio", "Princípio"), ("metodo", "Como trabalhamos"), ("parceria", "Parceria"), ("contato", "Contato")],
-        cta="Falar com a gente",
+        cta="Falar com a gente", menu="Menu",
         show_eyebrow="Veja funcionando", show_h2="Um avião comercial projetado por IA e física, em 96 segundos.",
         show_p="O Aircraft Design Optimizer voa 1.920 projetos de avião de corredor único, descarta os que não seriam certificáveis e confere os escolhidos em CFD 3D. Calibrado primeiro no A320, depois otimizado: até −13% de CO₂ por passageiro-km, dentro do portão de 36 m do aeroporto.",
         show_btn="Ver o projeto completo", show_cap="Demonstração em vídeo do Aircraft Design Optimizer.",
@@ -51,7 +51,7 @@ UI = {
         desc="We turn industrial simulations and processes into fast, physical and verifiable AI models. CFD, digital twins, surrogate models and verification, with real cases and measured numbers.",
         nav=[("servicos", "Services"), ("portfolio", "Portfolio"), ("casos", "Real cases"), ("capacidades", "Capabilities"),
              ("principio", "Principle"), ("metodo", "How we work"), ("parceria", "Partnership"), ("contato", "Contact")],
-        cta="Talk to us",
+        cta="Talk to us", menu="Menu",
         show_eyebrow="See it working", show_h2="An airliner designed by AI and physics, in 96 seconds.",
         show_p="The Aircraft Design Optimizer flies 1,920 single-aisle airliner designs, discards the ones that would not be certifiable and checks the picks in 3D CFD. Calibrated on the A320 first, then optimized: up to −13% CO₂ per passenger-km, inside the 36 m airport gate.",
         show_btn="See the full project", show_cap="Video demonstration of the Aircraft Design Optimizer.",
@@ -143,7 +143,8 @@ def header(lang, kind, slug=None):
       </svg>
       ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
     </a>
-    <nav>
+    <button class="menu-btn" type="button" aria-label="{u["menu"]}" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav id="site-nav">
 {chr(10).join(nav)}
     </nav>
     <a class="lang-switch" href="{sw}" hreflang="{u["other"]}" lang="{u["other"]}" title="{u["other_title"]}">{u["other_label"]}</a>
@@ -153,8 +154,15 @@ def header(lang, kind, slug=None):
 '''
 
 
-def tail():
-    return '\n<script src="/script.js"></script>\n</body>\n</html>\n'
+def tail(lang="pt", kind="home"):
+    u = UI[lang]
+    base = "" if kind == "home" else u["prefix"] + "/"
+    return f'''
+<a class="mobile-cta" href="{base}#contato">{u["cta"]}</a>
+<script src="/script.js"></script>
+</body>
+</html>
+'''
 
 
 def footer(lang):
@@ -245,7 +253,7 @@ def home(lang):
             out.append(translate(s, EN) if lang == "en" else s)
             out.append("\n")
     out.append(footer(lang))
-    out.append(tail())
+    out.append(tail(lang, "home"))
     return absolutize("".join(out))
 
 
@@ -273,7 +281,7 @@ def portfolio(lang):
   </div>
 </main>
 '''
-    return absolutize(head(lang, u["pf_title"], u["pf_desc"], "portfolio") + header(lang, "portfolio") + body + contact_cta(lang) + footer(lang) + tail())
+    return absolutize(head(lang, u["pf_title"], u["pf_desc"], "portfolio") + header(lang, "portfolio") + body + contact_cta(lang) + footer(lang) + tail(lang, "portfolio"))
 
 
 def contact_cta(lang):
@@ -340,7 +348,7 @@ def project(lang, p):
 </main>
 '''
     title = p["name"] + " — " + d["tagline"].rstrip(".")
-    return absolutize(head(lang, title + u["proj_suffix"], d["tagline"], "project", p["slug"]) + header(lang, "project", p["slug"]) + body + contact_cta(lang) + footer(lang) + tail())
+    return absolutize(head(lang, title + u["proj_suffix"], d["tagline"], "project", p["slug"]) + header(lang, "project", p["slug"]) + body + contact_cta(lang) + footer(lang) + tail(lang, "project"))
 
 
 def write(path, content):
