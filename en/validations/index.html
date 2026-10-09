@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical validations — ChordIQ + Domus</title>
+  <meta name="description" content="Every ChordIQ + Domus technical validation, each compared against a real reference, with numbers and images.">
+  <link rel="canonical" href="https://chordiq-tech.github.io/en/validations/">
+  <link rel="alternate" hreflang="pt-BR" href="https://chordiq-tech.github.io/validacoes/">
+  <link rel="alternate" hreflang="en" href="https://chordiq-tech.github.io/en/validations/">
+  <link rel="alternate" hreflang="x-default" href="https://chordiq-tech.github.io/validacoes/">
+  <meta property="og:title" content="Technical validations — ChordIQ + Domus">
+  <meta property="og:description" content="Every ChordIQ + Domus technical validation, each compared against a real reference, with numbers and images.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chordiq-tech.github.io/en/validations/">
+  <meta property="og:image" content="https://chordiq-tech.github.io/img/og-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ChordIQ + Domus">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technical validations — ChordIQ + Domus">
+  <meta name="twitter:description" content="Every ChordIQ + Domus technical validation, each compared against a real reference, with numbers and images.">
+  <meta name="twitter:image" content="https://chordiq-tech.github.io/img/og-en.jpg">
+  <meta name="theme-color" content="#060910">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/fonts/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxKsv4Rn.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/en/#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.5 3 V19.5 H21" stroke="var(--on-surface-dim)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 16.5 C 9.5 16, 10.5 8.5, 14 7 S 18.5 4.5, 19.5 4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="7" r="2" fill="var(--signal-tok)"/>
+      </svg>
+      ChordIQ <span class="div">+</span> <span class="partner">Domus</span>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav id="site-nav">
+      <a href="/en/#servicos">Outcomes</a>
+      <a href="/en/portfolio/">Portfolio</a>
+      <a href="/en/validations/">Validations</a>
+      <a href="/en/capabilities/">Capabilities</a>
+      <a href="/en/#metodo">How we work</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/#contato">Contact</a>
+    </nav>
+    <a class="lang-switch" href="/validacoes/" hreflang="pt" lang="pt" title="Ler em português">PT</a>
+    <a class="btn btn-ghost" href="/en/#contato" style="font-size:.78rem;padding:.55rem 1.05rem">Talk to us</a>
+  </div>
+</header>
+<main class="page">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / Technical validations</p>
+  </div>
+</main>
+<section id="casos" class="page-val">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Technical validations · articles</p>
+      <h1>All technical validations, with numbers and images.</h1>
+      <p>Each validation below was run end to end and compared against a real reference: a published experiment, a numerical solver or an industry baseline. Click to open the details.</p>
+    </div>
+    <div class="case-list">
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/erosao.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Oil &amp; gas · mining · pneumatic conveying</p>
+            <h3>Erosion in a 90° bend: CFD validated against an open experiment</h3>
+            <p class="sum">End-to-end simulation in OpenFOAM, compared against a published experiment, with an AI model trained on top.</p>
+            <div class="stats">
+              <div class="stat"><b>1.05–1.49×</b><span>simulated / measured erosion (target: factor of 2)</span></div>
+              <div class="stat"><b>1.0%</b><span>AI error on pressure drop, on new cases</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">The simulation landed between <strong>1.05× and 1.49×</strong> of the erosion rate measured in the lab in the three experiments tested (Vieira et al., 2016), within the factor-of-2 criterion the industry uses to accept an erosion model. The traditional hand formula, with no CFD, came out about <strong>100× below</strong>
+            the measured value in the same regime. The full campaign, 32 simulations from geometry to trained model, ran in 23 minutes for less than R$0.30 of compute, and the resulting AI model answers in milliseconds, with pressure drop at 1% error on points never seen in training.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Power electronics · thermal optimization · product engineering</p>
+            <h3>Surrogate model matches real 3D simulation, 227,000× faster</h3>
+            <p class="sum">A trained neural network predicts the junction temperature of a heat sink in microseconds, checked every round against a real 3D FEniCS simulation.</p>
+            <div class="stats">
+              <div class="stat"><b>227,059×</b><span>faster than the real 3D simulation, on average</span></div>
+              <div class="stat"><b>4.46%</b><span>mean temperature error vs. 3D FEA (worst case: 7.35%)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Seven real heat-sink geometries, deliberately different from one another (dense, sparse, tall and short fins, high and low power), each checked against a real 3D finite-element simulation (dolfinx/FEniCS, mesh via gmsh), not against another AI model. The surrogate answered in microseconds where the real simulation took 0.6 to 5.9 seconds, with temperature error within 10% in all 7 cases. The same run was repeated three times on different days: the temperature prediction is deterministic (4.46%/7.35% identical every time); only the speed-up factor changes with the machine load at the time of the test.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img loading="lazy" decoding="async" src="/img/aerofolio.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Aerospace · automotive · energy efficiency</p>
+            <h3>Real airfoil optimization cuts drag by 18%</h3>
+            <p class="sum">A gradient optimizer guided by a model trained on the real physics of the profile, with re-verification at every step.</p>
+            <div class="stats">
+              <div class="stat"><b>&minus;18.2%</b><span>profile drag</span></div>
+              <div class="stat"><b>0.04%</b><span>change in the target lift</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">104 real iterations of a gradient optimizer, every point of the trajectory recomputed against the physical model (not only against what the network learned), converging on a final profile inside the structural manufacturing limits. It is the same method, surrogate-guided optimization with physical re-verification at every step, that we apply to geometry in any domain: ducts, heat exchangers, structures and mechanical parts.</p>
+        </div>
+      </details>
+
+      <div class="mais-casos">
+        <div class="case-list">
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/automotive_aero.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Automotive · aerodynamics · R&amp;D</p>
+                <h3>Vehicle aerodynamics digital twin answers in milliseconds</h3>
+                <p class="sum">10 real OpenFOAM (simpleFoam) simulations of a car silhouette, reduced by POD and learned by a surrogate, become an interactive digital twin.</p>
+                <div class="stats">
+                  <div class="stat"><b>0.05%</b><span>velocity-field error vs. OpenFOAM</span></div>
+                  <div class="stat"><b>1.3%</b><span>mean error on the coefficients (Cd, Cl, velocity)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Ten real OpenFOAM runs between 12 and 48 m/s of relative wind, reduced to 6 POD modes (0.006% reconstruction error) and learned by a surrogate that predicts the full velocity field and the aerodynamic coefficients (Cd, Cl) at any intermediate speed never seen in training. The predicted Cd follows the real curve captured by OpenFOAM's own
+                <code>forceCoeffs</code> , including the inflection above 44 m/s, with
+                <strong>0.17% error</strong> specifically on Cd.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/gap.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Engineering verification · mechanical design</p>
+                <h3>Monte Carlo reveals the real margin of an "approved" design</h3>
+                <p class="sum">A brake disc passes the nominal test. The real manufacturing tolerance tells a different story.</p>
+                <div class="stats">
+                  <div class="stat"><b>495.9 °C</b><span>nominal (safety limit: 500 °C)</span></div>
+                  <div class="stat"><b>1.9 °C</b><span>real margin under manufacturing tolerance</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">On paper, the design had 4.1 °C of headroom to the safety limit. Propagating the real manufacturing tolerance (±0.05 mm in thickness) through 200 Monte Carlo parts, the 95th percentile reaches 498.1 °C, a real margin of only 1.9 °C. No part fails the test, but the confidence in the "approved" changes completely. This is exactly the kind of check we apply before any engineering decision leaves the screen for production.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/rover.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Space robotics · agriculture · off-road machines</p>
+                <h3>Rover mobility: the physical surrogate beats the reference solver</h3>
+                <p class="sum">A published AI model failed physically. We diagnosed the problem, built a robust version and recommended not using it in production.</p>
+                <div class="stats">
+                  <div class="stat"><b>0.7&ndash;3.8%</b><span>error against the reference solver</span></div>
+                  <div class="stat"><b>45×</b><span>less traction error than the original model</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">The corrected version reproduces the traction force of the classical physical model (Bekker–Wong) with a traction error <strong>45× smaller</strong> than the original published version, and three physical constraints are now guaranteed by construction, not only by training. The most honest part of the work came after: the cost analysis showed that, for this specific problem, a well-implemented classical numerical method is faster and more accurate than the AI itself, and we recommended that to the client, not the flashier path. See more about that decision in <a href="/en/#principio">Principle</a>.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/sst.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Fishing · climate · offshore energy</p>
+                <h3>Sea-temperature forecast beats persistence at every horizon</h3>
+                <p class="sum">An ensemble trained on 43 years of real satellite data, tested against the industry-standard reference.</p>
+                <div class="stats">
+                  <div class="stat"><b>&minus;12%</b><span>lower error at 7 days, vs. persistence</span></div>
+                  <div class="stat"><b>7/7</b><span>horizons (1 to 7 days) where the model wins</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Tested on data never seen in training (2018–2024), in one of the most turbulent regions of the South Atlantic, the model beats persistence, the hardest reference to beat in short-term forecasting, at <strong>every horizon</strong>, from 1 to 7 days, with a confidence interval calibrated against real data. The gain is real but moderate, useful for offshore operations and fishing, not a promise of perfect accuracy.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/flowtrace_vortex.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Fluids lab · wind tunnel · R&amp;D</p>
+                <h3>Software PIV recovers a vortex field with 3.9% error</h3>
+                <p class="sum">A synthetic particle-image pair, a vortex field with an exact analytical solution, processed by the same cross-correlation algorithm that runs in production.</p>
+                <div class="stats">
+                  <div class="stat"><b>3.94%</b><span>mean relative error vs. the exact analytical field</span></div>
+                  <div class="stat"><b>81</b><span>velocity vectors recovered in a single pass</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Each synthetic particle was displaced by the exact rotation matrix of a rigid-body vortex, not by an image approximation, so the reference carries no discretization error of its own. Running the real cross-correlation algorithm (the same one that serves the production endpoint) on the image pair, the recovered vectors reproduce the rotational structure of the flow with <strong>3.94% mean error</strong> and <strong>16% at the worst point</strong>
+                (near the vortex centre, where the true velocity tends to zero), with no camera hardware, laser or proprietary software, just video and processing.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/meshbridge_repair.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">CAD/CAE · interoperability · data engineering</p>
+                <h3>Mesh converter removes 100% of the defects of a legacy export</h3>
+                <p class="sum">A mesh with typical legacy-export defects (duplicate faces, degenerate faces, flipped normals) processed by the real conversion and repair endpoint.</p>
+                <div class="stats">
+                  <div class="stat"><b>25/25</b><span>defective faces removed (duplicate + degenerate)</span></div>
+                  <div class="stat"><b>100%</b><span>consistent normals after the repair</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">A real mesh was deliberately damaged the way legacy CFD/CAD exports usually arrive: 15 exact duplicate faces, 10 degenerate (zero-area) faces and 20 faces with flipped normals. Run through the real HTTP conversion endpoint with repair enabled, the result had
+                <strong>zero duplicate faces, zero degenerate faces and consistent normals</strong> : all three checks passing against the production endpoint, not an isolated simulation. Honest note: the automatic repair does not fill holes by default today, it only removes duplicates/degenerates and fixes normals. That is exactly what is live, nothing more.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/wind_turbine.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Wind energy · turbomachinery</p>
+                <h3>Wind-rotor digital twin predicts wake, thrust and torque</h3>
+                <p class="sum">9 real actuator-disc simulations of a rotor in OpenFOAM, covering 200 to 2,300 RPM, learned by a surrogate that predicts the wake field and the three operating scalars.</p>
+                <div class="stats">
+                  <div class="stat"><b>0.24%</b><span>wake-field error vs. OpenFOAM</span></div>
+                  <div class="stat"><b>0.9%</b><span>mean error on thrust, power and torque</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Nine real runs of OpenFOAM's actuator-disc rotor case (blade-element momentum model, a single reused mesh), each varying only the rotation speed. Thrust, power and torque come from actuator-disc momentum theory applied to the truly resolved wake, not from a solver-native writer. The surrogate reproduces both the wake field and the three scalars with less than 1% mean error, at any rotation speed between the simulated points.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/mixing_tank.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Chemical processes · pharma · industrial mixing</p>
+                <h3>Stirred-tank digital twin gets the known physical scaling law right</h3>
+                <p class="sum">10 real OpenFOAM (MRF) simulations of a stirred tank, covering 15 to 190 rad/s, with the surrogate recovering the known power-vs-speed physics.</p>
+                <div class="stats">
+                  <div class="stat"><b>0.01%</b><span>velocity-field error vs. OpenFOAM</span></div>
+                  <div class="stat"><b>1.9%</b><span>mean error on the scalars (power, Re, TKE)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Ten real OpenFOAM runs with a moving reference frame (MRF) of a stirred tank, from 15 to 190 rad/s of impeller rotation. Physically, the sweep recovers <code>power ∝ ω^2.7</code>, very close to the classical law for turbulent stirred tanks (P ∝ ρN³D⁵), a sign that the surrogate learned the real physics of the problem, not just how to interpolate points. The predicted velocity field reproduces even the wake of each of the impeller's 4 blades, with 0.01% error.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/self_healing.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Data-science teams · AI model operations</p>
+                <h3>Training copilot diagnoses and fixes a broken model on its own</h3>
+                <p class="sum">A physics-informed neural network launched with a bad configuration is automatically diagnosed and corrected in 4 rounds, with no human intervention.</p>
+                <div class="stats">
+                  <div class="stat"><b>100%&rarr;5%</b><span>real error against the exact solution, in 4 rounds</span></div>
+                  <div class="stat"><b>17s</b><span>total diagnosis and correction time, on CPU</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Round 0 learns nothing, 100% error against the exact solution of a Poisson problem with a known answer. An automatic diagnoser reads the loss history, classifies the cause (plateau, oscillation, imbalance between physics and boundary condition) and proposes the next configuration change. Four rounds later, with no human intervention, the real error drops to
+                <strong>5%</strong>, a reduction of <strong>20×</strong>. It is the same logic, at scale, behind our operational copilot service: memory of past episodes guiding the next decision, with explicit confidence about what changed.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/crash_surrogate.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Automotive · structures · vehicle safety</p>
+                <h3>A crash surrogate's confidence interval hits the statistical target</h3>
+                <p class="sum">A crash energy-absorption surrogate, transferred between vehicle programs, with prediction intervals that really cover what they promise.</p>
+                <div class="stats">
+                  <div class="stat"><b>1.7&ndash;2.5%</b><span>error after SUV → sedan transfer</span></div>
+                  <div class="stat"><b>94&ndash;100%</b><span>real coverage of the promised 90% intervals</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">A surrogate trained on the physics of progressive collapse of thin-walled tubes (Abramowicz–Jones model) for an SUV program generalizes poorly to a sedan without adjustment (17–32% error, as expected when the regime changes), but after transfer fine-tuning with 180 sedan samples, the error drops to <strong>1.7&ndash;2.5%</strong>. More importantly: the 90% prediction intervals built by conformal prediction <em>really cover</em> the true value between 94% and 100% of the time, not an invented confidence number: the same statistical honesty we apply in any verification before an engineering decision.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Want something like this for your operation?</h2>
+    <p>Tell us the problem. We come back with a closed scope and a success metric, no commitment.</p>
+    <p><a class="btn btn-primary" href="/en/#contato">Bring us the problem &rarr;</a> <a class="btn btn-ghost" href="https://calendly.com/yanbarrosyan/30min" target="_blank" rel="noopener">Book a call &rarr;</a></p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>ChordIQ + Domus, Physics AI and agentic technology applied to industry · Domus: <a href="mailto:contato@domus.tech">contato@domus.tech</a> &middot;
+      <a href="https://www.linkedin.com/in/yan-barros-yan" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+  <div class="wrap legal-entity">ChordIQ: LAIS &amp; YAN LTDA &middot; CNPJ 62.766.371/0001-36 &nbsp;|&nbsp; Domus: DOMUS SOLUCOES E SERVICOS LTDA - ME &middot; CNPJ 67.501.624/0001-63 &middot; Volta Redonda/RJ</div>
+  <div class="wrap legal-links"><a href="/en/privacy/">Privacy</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/capabilities/">Capabilities</a></div>
+</footer>
+
+<a class="mobile-cta" href="/en/#contato">Talk to us</a>
+<script data-goatcounter="https://yanbarros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
