@@ -8,7 +8,7 @@ LINKEDIN = "https://www.linkedin.com/in/yan-barros-yan"
 T = {
     "pt": dict(
         entry_eyebrow="Por onde começar",
-        entry_h2="Qual é o seu problema?",
+        entry_h2="O que custa tempo à sua equipe hoje?",
         entry_p="Escolha o que mais se parece com a sua situação. Cada atalho leva a um projeto nosso, com vídeo, números medidos e limites.",
         entries=[
             ("Minha simulação demora demais para decidir", "heatsink-sizer", "Substitutos que respondem em milissegundos, conferidos contra a simulação real."),
@@ -31,12 +31,12 @@ T = {
                                   "O resultado comparado ao método atual, com o ganho medido, os limites e a incerteza."]),
             ("Condições", ["NDA antes de qualquer dado.",
                            "Diagnóstico inicial sem custo; prazo e valor definidos no escopo fechado.",
-                           "Na validação você paga só o custo aberto, sem margem; em produção, a remuneração acompanha o ganho."]),
+                           "Piloto de escopo fixo, métrica de sucesso definida e ganho de engenharia medido."]),
         ],
-        pilot_btn="Discutir um piloto",
+        pilot_btn="Trazer o problema",
         about_eyebrow="Quem somos",
-        about_h2="Engenharia aplicada, com código aberto que você pode auditar.",
-        about_p="Todos os projetos deste site são construídos sobre o PINNeAPPle, uma biblioteca de Physics AI de código aberto (licença Apache 2.0), publicada no PyPI, com repositório público, changelog e testes.",
+        about_h2="Feito por engenheiros que entendem os dois lados.",
+        about_p="Tecnologia aberta, entregue como engenharia. O PINNeAPPle é a nossa base aberta de Physics AI (Apache 2.0, PyPI, GitHub); a ChordIQ transforma essa tecnologia em sistemas de engenharia validados.",
         about_person="Yan Barros", about_role="autor e mantenedor do PINNeAPPle · Natal/RN",
         about_btn="Conhecer a equipe e a parceria", about_code="Ver o código no GitHub",
         # about page
@@ -62,7 +62,7 @@ T = {
     ),
     "en": dict(
         entry_eyebrow="Where to start",
-        entry_h2="What is your problem?",
+        entry_h2="What is costing your team time today?",
         entry_p="Pick the one that looks most like your situation. Each shortcut leads to one of our projects, with video, measured numbers and limits.",
         entries=[
             ("My simulation takes too long to decide", "heatsink-sizer", "Surrogates that answer in milliseconds, checked against the real simulation."),
@@ -85,12 +85,12 @@ T = {
                                  "The result compared with your current method, with the gain measured, the limits and the uncertainty."]),
             ("Conditions", ["An NDA before any data.",
                             "Initial diagnosis at no cost; timeline and price set in the closed scope.",
-                            "In validation you pay only the open cost, with no margin; in production, remuneration follows the gain."]),
+                            "Fixed-scope pilot, defined success metric and measured engineering gain."]),
         ],
-        pilot_btn="Discuss a pilot",
+        pilot_btn="Bring us the problem",
         about_eyebrow="Who we are",
-        about_h2="Applied engineering, with open-source code you can audit.",
-        about_p="Every project on this site is built on PINNeAPPle, an open-source Physics AI library (Apache 2.0 licence), published on PyPI, with a public repository, a changelog and tests.",
+        about_h2="Built by engineers who understand both sides.",
+        about_p="Open technology, delivered as engineering. PINNeAPPle is our open-source Physics AI foundation (Apache 2.0, PyPI, GitHub); ChordIQ turns that technology into validated engineering systems.",
         about_person="Yan Barros", about_role="author and maintainer of PINNeAPPle · Natal, Brazil",
         about_btn="Meet the team and the partnership", about_code="See the code on GitHub",
         ab_title="About ChordIQ + Domus — team, purpose and partnership", ab_desc="About ChordIQ + Domus: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",

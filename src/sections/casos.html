@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Validações técnicas &middot; artigos</p>
-      <h2>O que os métodos entregam, com número e imagem.</h2>
+      <h2>Três provas, com número e imagem.</h2>
       <p>Cada validação abaixo foi rodada de ponta a ponta e comparada contra uma referência real:
         experimento publicado, solver numérico ou linha de base da indústria. Clique para abrir o
         detalhe.</p>
@@ -89,88 +89,88 @@
         </div>
       </details>
 
-      <details class="case">
-        <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/automotive_aero.jpg" alt=""></div>
-          <div class="mid">
-            <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; aerodinâmica &middot; P&amp;D</p>
-            <h3>Gêmeo digital de aerodinâmica veicular responde em milissegundos</h3>
-            <p class="sum">10 simulações reais em OpenFOAM (simpleFoam) de uma silhueta de carro, reduzidas por POD e aprendidas por um substituto, viram um gêmeo digital interativo.</p>
-            <div class="stats">
-              <div class="stat"><b>0,05%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
-              <div class="stat"><b>1,3%</b><span>erro médio nos coeficientes (Cd, Cl, velocidade)</span></div>
-            </div>
-          </div>
-          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
-        </summary>
-        <div class="detail">
-          <div class="pad"></div>
-          <p class="txt">Dez rodadas reais de OpenFOAM entre 12 e 48 m/s de vento relativo,
-            reduzidas a 6 modos POD (0,006% de erro de reconstrução) e aprendidas por um
-            substituto que prevê o campo completo de velocidade e os coeficientes
-            aerodinâmicos (Cd, Cl) a partir de qualquer velocidade intermediária, nunca vista
-            no treino. O Cd previsto segue a curva real captada pelo próprio
-            <code>forceCoeffs</code> do OpenFOAM, incluindo a inflexão acima de 44 m/s, com
-            <strong>0,17% de erro</strong> especificamente no Cd.</p>
-        </div>
-      </details>
-
-      <details class="case">
-        <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/gap.jpg" alt=""></div>
-          <div class="mid">
-            <p class="eyebrow" style="margin-bottom:.2rem">Verificação de engenharia &middot; design mecânico</p>
-            <h3>Monte Carlo revela a margem real de um projeto "aprovado"</h3>
-            <p class="sum">Um disco de freio passa no teste nominal. A tolerância real de fabricação conta outra história.</p>
-            <div class="stats">
-              <div class="stat"><b>495,9&nbsp;&deg;C</b><span>nominal (limite de segurança: 500&nbsp;&deg;C)</span></div>
-              <div class="stat"><b>1,9&nbsp;&deg;C</b><span>margem real sob tolerância de fabricação</span></div>
-            </div>
-          </div>
-          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
-        </summary>
-        <div class="detail">
-          <div class="pad"></div>
-          <p class="txt">No papel, o projeto tinha 4,1&nbsp;&deg;C de folga até o limite de
-            segurança. Propagando a tolerância real de fabricação (&plusmn;0,05&nbsp;mm na
-            espessura) em 200 peças simuladas por Monte Carlo, o percentil 95 chega a
-            498,1&nbsp;&deg;C, uma margem real de só 1,9&nbsp;&deg;C. Nenhuma peça falha
-            no teste, mas a confiança do "aprovado" muda por completo. É exatamente este tipo
-            de verificação que aplicamos antes de qualquer decisão de engenharia sair da tela
-            para a produção.</p>
-        </div>
-      </details>
-
-      <details class="case">
-        <summary>
-          <div class="thumb"><img loading="lazy" decoding="async" src="img/rover.jpg" alt=""></div>
-          <div class="mid">
-            <p class="eyebrow" style="margin-bottom:.2rem">Robótica espacial &middot; agro &middot; máquinas fora de estrada</p>
-            <h3>Mobilidade de rover: o substituto físico bate o solver de referência</h3>
-            <p class="sum">Um modelo de IA publicado falhava fisicamente. Diagnosticamos o problema, construímos uma versão robusta e recomendamos não usá-la em produção.</p>
-            <div class="stats">
-              <div class="stat"><b>0,7&ndash;3,8%</b><span>erro contra o solver de referência</span></div>
-              <div class="stat"><b>45&times;</b><span>menos erro de tração que o modelo original</span></div>
-            </div>
-          </div>
-          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
-        </summary>
-        <div class="detail">
-          <div class="pad"></div>
-          <p class="txt">A versão corrigida reproduz a força de tração do modelo físico clássico
-            (Bekker&ndash;Wong) com erro de tração <strong>45&times; menor</strong> que a versão
-            original publicada, e três restrições físicas passaram a ser garantidas por
-            construção, não só por treino. A parte mais honesta do trabalho veio depois: a
-            análise de custo mostrou que, para este problema específico, um método numérico
-            clássico bem implementado é mais rápido e mais exato que a própria IA, e
-            recomendamos isso ao cliente, não o caminho mais chamativo. Veja mais sobre essa
-            decisão em <a href="#principio">Princípio</a>.</p>
-        </div>
-      </details>
-
       <details class="mais-casos">
-        <summary>Ver mais 7 validações técnicas</summary>
+        <summary>Ver todas as 13 validações técnicas</summary>
         <div class="case-list">
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/automotive_aero.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; aerodinâmica &middot; P&amp;D</p>
+                <h3>Gêmeo digital de aerodinâmica veicular responde em milissegundos</h3>
+                <p class="sum">10 simulações reais em OpenFOAM (simpleFoam) de uma silhueta de carro, reduzidas por POD e aprendidas por um substituto, viram um gêmeo digital interativo.</p>
+                <div class="stats">
+                  <div class="stat"><b>0,05%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
+                  <div class="stat"><b>1,3%</b><span>erro médio nos coeficientes (Cd, Cl, velocidade)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Dez rodadas reais de OpenFOAM entre 12 e 48 m/s de vento relativo,
+                reduzidas a 6 modos POD (0,006% de erro de reconstrução) e aprendidas por um
+                substituto que prevê o campo completo de velocidade e os coeficientes
+                aerodinâmicos (Cd, Cl) a partir de qualquer velocidade intermediária, nunca vista
+                no treino. O Cd previsto segue a curva real captada pelo próprio
+                <code>forceCoeffs</code> do OpenFOAM, incluindo a inflexão acima de 44 m/s, com
+                <strong>0,17% de erro</strong> especificamente no Cd.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/gap.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Verificação de engenharia &middot; design mecânico</p>
+                <h3>Monte Carlo revela a margem real de um projeto "aprovado"</h3>
+                <p class="sum">Um disco de freio passa no teste nominal. A tolerância real de fabricação conta outra história.</p>
+                <div class="stats">
+                  <div class="stat"><b>495,9&nbsp;&deg;C</b><span>nominal (limite de segurança: 500&nbsp;&deg;C)</span></div>
+                  <div class="stat"><b>1,9&nbsp;&deg;C</b><span>margem real sob tolerância de fabricação</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">No papel, o projeto tinha 4,1&nbsp;&deg;C de folga até o limite de
+                segurança. Propagando a tolerância real de fabricação (&plusmn;0,05&nbsp;mm na
+                espessura) em 200 peças simuladas por Monte Carlo, o percentil 95 chega a
+                498,1&nbsp;&deg;C, uma margem real de só 1,9&nbsp;&deg;C. Nenhuma peça falha
+                no teste, mas a confiança do "aprovado" muda por completo. É exatamente este tipo
+                de verificação que aplicamos antes de qualquer decisão de engenharia sair da tela
+                para a produção.</p>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="img/rover.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Robótica espacial &middot; agro &middot; máquinas fora de estrada</p>
+                <h3>Mobilidade de rover: o substituto físico bate o solver de referência</h3>
+                <p class="sum">Um modelo de IA publicado falhava fisicamente. Diagnosticamos o problema, construímos uma versão robusta e recomendamos não usá-la em produção.</p>
+                <div class="stats">
+                  <div class="stat"><b>0,7&ndash;3,8%</b><span>erro contra o solver de referência</span></div>
+                  <div class="stat"><b>45&times;</b><span>menos erro de tração que o modelo original</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">A versão corrigida reproduz a força de tração do modelo físico clássico
+                (Bekker&ndash;Wong) com erro de tração <strong>45&times; menor</strong> que a versão
+                original publicada, e três restrições físicas passaram a ser garantidas por
+                construção, não só por treino. A parte mais honesta do trabalho veio depois: a
+                análise de custo mostrou que, para este problema específico, um método numérico
+                clássico bem implementado é mais rápido e mais exato que a própria IA, e
+                recomendamos isso ao cliente, não o caminho mais chamativo. Veja mais sobre essa
+                decisão em <a href="#principio">Princípio</a>.</p>
+            </div>
+          </details>
 
           <details class="case">
             <summary>

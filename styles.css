@@ -508,3 +508,5 @@ footer .legal-entity { width: 100%; font-size: 0.7rem; opacity: .85; }
 .person-mark { width: 3.4rem; height: 3.4rem; }
 .person { max-width: 44rem; align-items: flex-start; }
 .person .ext { align-self: center; }
+.hero .hero-rel { margin-top: 1.1rem; max-width: 52ch; font-size: 0.95rem; color: var(--on-surface-dim); }
+.hero .hero-rel b { color: var(--on-surface); font-weight: 600; }
