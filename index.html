@@ -448,7 +448,7 @@
       </details>
 
       <details class="mais-casos">
-        <summary>Ver todas as 13 validações técnicas</summary>
+        <summary>Ver todas as 15 validações técnicas</summary>
         <div class="case-list">
 
           <details class="case">
@@ -713,6 +713,79 @@
                 valor real entre 94% e 100% das vezes, não um número de confiança inventado — a
                 mesma honestidade estatística que aplicamos em qualquer verificação antes de uma
                 decisão de engenharia.</p>
+            </div>
+          </details>
+
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/clima_onda_de_calor.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Clima &middot; energia &middot; agricultura &middot; defesa civil</p>
+                <h3>Previsão do tempo global: a onda de calor de 2021 já é bem prevista até 3,8 dias</h3>
+                <p class="sum">Modelo global treinado em 33 anos de reanálise pública (ERA5) e comparado, nas mesmas previsões de 2020, com IFS HRES, Pangu-Weather e NeuralGCM. Experimento em andamento: resultado da primeira fase de treino.</p>
+                <div class="stats">
+                  <div class="stat"><b>5,6 dias</b><span>de previsão útil (z500, correlação &ge; 0,6), contra 1,4 dia da persistência</span></div>
+                  <div class="stat"><b>9,1&ndash;9,6 dias</b><span>dos modelos de referência: a distância que as próximas fases de treino ainda precisam fechar</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-wip">Em andamento</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">Esta é uma <strong>prévia honesta</strong>. O treino tem fases; só a primeira
+                (passo de 6 horas, cerca de 2 horas em 4 núcleos de CPU) foi concluída. As fases de
+                rollout, que levam a habilidade além de 3 a 5 dias, ainda não rodaram. Por isso, em
+                21 previsões de 2020, o erro de geopotencial a 500 hPa no dia 3 é 397, contra 104&ndash;125
+                dos modelos de referência, e a persistência erra 923. Mesmo assim, o modelo já
+                reproduz a estrutura da <strong>onda de calor do Noroeste do Pacífico (junho de
+                2021)</strong> três dias antes: à direita, a previsão; à esquerda, o que aconteceu.
+                A mesma base de previsão em passos de tempo serve a qualquer campo que evolui
+                (vento, ondas, temperatura de processo), sempre com o horizonte útil medido contra
+                a persistência e a climatologia, não prometido.</p>
+              <div class="media">
+                <video controls muted loop playsinline preload="none" poster="/img/clima_onda_de_calor.jpg" aria-label="Animação da previsão da onda de calor de 2021: dados reais à esquerda, previsão do PINNeAPPle à direita">
+                  <source src="/videos/clima_onda_de_calor.mp4" type="video/mp4">
+                </video>
+                <img loading="lazy" decoding="async" src="/img/clima_habilidade.jpg" alt="Correlação de anomalia do geopotencial a 500 hPa por horizonte de previsão, para o PINNeAPPle (checkpoint da fase 1), NeuralGCM, Pangu-Weather, IFS HRES, Keisler e persistência">
+                <p class="legenda">Dados: reanálise ERA5 do Copernicus Climate Change Service (C3S), lida pelo WeatherBench2. Contém informação modificada do Copernicus Climate Change Service; nem a Comissão Europeia nem o ECMWF são responsáveis pelo uso. As previsões dos modelos publicados vêm do WeatherBench2; só as pontuações são usadas aqui.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/comite_modelos.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Gêmeos digitais &middot; simulação multifísica &middot; operação sem referência</p>
+                <h3>Comitê adaptativo de cinco famílias de modelos de física erra cerca de 3&times; menos que o melhor modelo sozinho</h3>
+                <p class="sum">FNO, rede de grafos, DeepONet, PINN e CNN no mesmo comitê, cada um treinado em um regime diferente. O comitê escolhe o modelo certo a cada caso, usando só o que já viu.</p>
+                <div class="stats">
+                  <div class="stat"><b>7,8%</b><span>de erro no fluxo inteiro de 80 casos, contra 24% do melhor modelo isolado</span></div>
+                  <div class="stat"><b>0 de 12</b><span>leituras de sensor ruidosas enganaram o comitê com a checagem física (8 de 12 sem ela)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">O problema é de advecção e difusão com <strong>solução exata</strong>, para o
+                erro ser medido contra a resposta certa e não contra outro modelo. O fluxo de 80 casos
+                passa por cinco regimes; nenhum modelo sozinho cobre todos. O comitê troca para a família
+                certa de 2 a 6 casos depois de cada mudança de regime e, olhando também o resíduo da
+                física do caso atual <em>antes</em> de prever, erra o modelo em 4 de 80 casos, contra
+                15 de 80 olhando só os erros passados. Os intervalos de 90% cobriram 90% dos pontos.
+                Limite declarado: é um problema de referência em uma dimensão, não ainda um caso
+                industrial, e o resíduo da física detecta falha, mas não ranqueia o modelo mais preciso.
+                Na operação, o ganho é o mesmo raciocínio aplicado a simulações caras: o modelo barato
+                enquanto ele serve, o solver quando ele deixa de servir.</p>
+              <div class="media">
+                <video controls muted loop playsinline preload="none" poster="/img/comite_modelos.jpg" aria-label="Animação do comitê adaptativo: campo de referência, previsão colorida pelo modelo escolhido, pesos e linha do tempo">
+                  <source src="/videos/comite_modelos.mp4" type="video/mp4">
+                </video>
+                <img loading="lazy" decoding="async" src="/img/comite_regime.jpg" alt="Linha do tempo do modelo escolhido em cada caso, com e sem o resíduo da física do caso atual">
+                <img loading="lazy" decoding="async" src="/img/comite_ruido.jpg" alt="Linha do tempo com leituras de sensor ruidosas, sem e com a checagem física da leitura">
+              </div>
             </div>
           </details>
 

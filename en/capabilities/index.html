@@ -68,7 +68,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Capabilities</p>
-      <h2>Seven application formats we already know how to build.</h2>
+      <h2>Nine application formats we already know how to build.</h2>
       <p>The images below illustrate the type of deliverable; they are not all a published case with a verified number. For that, see the <a href="/#casos">Technical validations</a>. This is so you can quickly recognize whether your problem fits one of these formats.</p>
     </div>
     <div class="cap-grid">
@@ -149,8 +149,30 @@
           <p>An honest comparison between architectures (PINN, FNO, physical Transformer, MLP) on the same data and training budget, including when our choice does not win.</p>
         </div>
       </article>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/clima_onda_de_calor.jpg" alt="Two globes side by side: observed and forecast air temperature during the 2021 heat dome in the Pacific Northwest">
+          <span class="pill-cap">Capability</span>
+        </div>
+        <div class="body3">
+          <span class="card-k">Time-step forecasting</span>
+          <h3>From the state now to the state tomorrow, step by step, without diverging</h3>
+          <p>Models that advance the field in time using their own predictions as input, trained not to accumulate error. The useful horizon is measured against persistence and climatology, never promised.</p>
+        </div>
+      </article>
+      <article class="cap">
+        <div class="shot3">
+          <img loading="lazy" decoding="async" src="/img/comite_modelos.jpg" alt="Model ensemble: reference field, prediction coloured by the chosen model and weight of each family">
+          <span class="pill-cap">Capability</span>
+        </div>
+        <div class="body3">
+          <span class="card-k">Adaptive model ensemble</span>
+          <h3>The right model for each case, chosen while the operation runs</h3>
+          <p>Neural operators, graph networks, PINNs and solvers in the same ensemble: the weights learn from the error, or from the physics residual when there is no measurement, and a noisy sensor reading does not knock the choice over.</p>
+        </div>
+      </article>
     </div>
-    <p class="cap-note">The seven images above were produced for this site to illustrate the capability; none replaces a validated case. Where a verified numerical result already exists for the same kind of application, it is in the <a href="/#casos">Technical validations</a>.</p>
+    <p class="cap-note">The images above illustrate the capability — the last two come from real experiments, in progress or validated on reference problems, and none replaces a validated case of your own process. Where a checked numerical result already exists for the same kind of application, it is in the <a href="/#casos">Technical validations</a>.</p>
   </div>
 </section>
 

@@ -131,6 +131,7 @@
       </details>
 
       <div class="mais-casos">
+        <summary>See all 15 technical validations</summary>
         <div class="case-list">
 
           <details class="case">
@@ -335,6 +336,61 @@
             <div class="detail">
               <div class="pad"></div>
               <p class="txt">A surrogate trained on the physics of progressive collapse of thin-walled tubes (Abramowicz–Jones model) for an SUV program generalizes poorly to a sedan without adjustment (17–32% error, as expected when the regime changes), but after transfer fine-tuning with 180 sedan samples, the error drops to <strong>1.7&ndash;2.5%</strong>. More importantly: the 90% prediction intervals built by conformal prediction <em>really cover</em> the true value between 94% and 100% of the time, not an invented confidence number: the same statistical honesty we apply in any verification before an engineering decision.</p>
+            </div>
+          </details>
+
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/clima_onda_de_calor.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Climate · energy · agriculture · civil defence</p>
+                <h3>Global weather forecast: the 2021 heat dome is already well forecast up to 3.8 days</h3>
+                <p class="sum">Global model trained on 33 years of public reanalysis (ERA5) and compared, on the same 2020 forecasts, with IFS HRES, Pangu-Weather and NeuralGCM. Experiment in progress: result of the first training phase.</p>
+                <div class="stats">
+                  <div class="stat"><b>5.6 days</b><span>of useful forecast (z500, correlation ≥ 0.6), against 1.4 days for persistence</span></div>
+                  <div class="stat"><b>9.1–9.6 days</b><span>for the reference models: the distance the next training phases still have to close</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-wip">In progress</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">This is an <strong>honest preview</strong>. Training has phases; only the first (6-hour step, about 2 hours on 4 CPU cores) is done. The rollout phases, which carry the skill beyond 3 to 5 days, have not run yet. So, over 21 forecasts of 2020, the 500 hPa geopotential error at day 3 is 397, against 104–125 for the reference models, and persistence errs by 923. Even so, the model already reproduces the structure of the <strong>Pacific Northwest heat dome (June 2021)</strong> three days ahead: on the right, the forecast; on the left, what happened. The same time-step forecasting base serves any field that evolves (wind, waves, process temperature), always with the useful horizon measured against persistence and climatology, not promised.</p>
+              <div class="media">
+                <video controls muted loop playsinline preload="none" poster="/img/clima_onda_de_calor.jpg" aria-label="Animation of the 2021 heat dome forecast: real data on the left, PINNeAPPle forecast on the right">
+                  <source src="/videos/clima_onda_de_calor.mp4" type="video/mp4">
+                </video>
+                <img loading="lazy" decoding="async" src="/img/clima_habilidade.jpg" alt="Anomaly correlation of the 500 hPa geopotential by forecast lead time, for PINNeAPPle (phase-1 checkpoint), NeuralGCM, Pangu-Weather, IFS HRES, Keisler and persistence">
+                <p class="legenda">Data: ERA5 reanalysis from the Copernicus Climate Change Service (C3S), read through WeatherBench2. Contains modified Copernicus Climate Change Service information; neither the European Commission nor ECMWF is responsible for any use of it. The published models' forecasts come from WeatherBench2; only their scores are used here.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>
+              <div class="thumb"><img loading="lazy" decoding="async" src="/img/comite_modelos.jpg" alt=""></div>
+              <div class="mid">
+                <p class="eyebrow" style="margin-bottom:.2rem">Digital twins · multiphysics simulation · operation without a reference</p>
+                <h3>An adaptive ensemble of five physics model families errs about 3× less than the best single model</h3>
+                <p class="sum">FNO, graph network, DeepONet, PINN and CNN in the same ensemble, each trained on a different regime. The ensemble picks the right model for each case, using only what it has already seen.</p>
+                <div class="stats">
+                  <div class="stat"><b>7.8%</b><span>error over the whole stream of 80 cases, against 24% for the best single model</span></div>
+                  <div class="stat"><b>0 of 12</b><span>noisy sensor readings fooled the ensemble with the physics check (8 of 12 without it)</span></div>
+                </div>
+              </div>
+              <div class="status"><span class="pill pill-ok">Validated</span><span class="toggle-ico">details ↓</span></div>
+            </summary>
+            <div class="detail">
+              <div class="pad"></div>
+              <p class="txt">The problem is advection and diffusion with an <strong>exact solution</strong>, so the error is measured against the right answer and not against another model. The 80-case stream goes through five regimes; no single model covers them all. The ensemble switches to the right family 2 to 6 cases after each regime change and, also looking at the physics residual of the current case <em>before</em> predicting, picks the wrong model in 4 of 80 cases, against 15 of 80 looking only at past errors. The 90% intervals covered 90% of the points. Stated limit: it is a one-dimensional reference problem, not yet an industrial case, and the physics residual detects failure but does not rank the most accurate model. In operation, the gain is the same reasoning applied to expensive simulations: the cheap model while it serves, the solver when it stops serving.</p>
+              <div class="media">
+                <video controls muted loop playsinline preload="none" poster="/img/comite_modelos.jpg" aria-label="Animation of the adaptive ensemble: reference field, prediction coloured by the chosen model, weights and timeline">
+                  <source src="/videos/comite_modelos.mp4" type="video/mp4">
+                </video>
+                <img loading="lazy" decoding="async" src="/img/comite_regime.jpg" alt="Timeline of the model chosen in each case, with and without the physics residual of the current case">
+                <img loading="lazy" decoding="async" src="/img/comite_ruido.jpg" alt="Timeline with noisy sensor readings, without and with the physics check of the reading">
+              </div>
             </div>
           </details>
 

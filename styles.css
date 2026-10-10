@@ -196,12 +196,16 @@ section { padding-block: clamp(3.2rem, 7vw, 5.8rem); }
 .pill { font-family: var(--f-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
   padding: 0.22rem 0.6rem; border-radius: 999px; }
 .pill-ok { background: var(--ok-bg); color: var(--ok); }
+.pill-wip { background: var(--surface-2); color: var(--on-surface-dim); border: 1px solid var(--hairline); }
 .case .toggle-ico { font-family: var(--f-mono); font-size: 0.72rem; color: var(--on-surface-dim); }
 .case[open] .toggle-ico { transform: rotate(180deg); }
 .case .detail { padding: 0 1.3rem 1.5rem; display: grid; grid-template-columns: 11rem 1fr; gap: 1.4rem; }
 .case .detail .pad { grid-column: 1; }
 .case .detail .txt { color: var(--on-surface-dim); font-size: 0.96rem; }
 .case .detail .txt strong { color: var(--on-surface); font-weight: 600; }
+.case .detail .media { grid-column: 2; display: grid; gap: 0.8rem; }
+.case .detail .media video, .case .detail .media img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--hairline); background: var(--surface-2); }
+.case .detail .media .legenda { margin: 0; font-size: 0.78rem; color: var(--on-surface-dim); }
 @media (max-width: 760px) {
   .case > summary { grid-template-columns: 5rem 1fr; }
   .case .status { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; }
