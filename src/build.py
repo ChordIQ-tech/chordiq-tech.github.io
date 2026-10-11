@@ -16,7 +16,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 from i18n import translate  # noqa: E402
-from newsections import ANALYTICS_OFF, ANALYTICS_ON, GITHUB, LINKEDIN, PRIVACY, T  # noqa: E402
+from newsections import ANALYTICS_OFF, ANALYTICS_ON, DOCS, GITHUB, LINKEDIN, PRIVACY, T  # noqa: E402
 from projects import BY_SLUG, CATEGORIES, CATEGORY_ORDER, HOME_HIGHLIGHTS, P  # noqa: E402
 
 EN = json.load(open(os.path.join(ROOT, "src", "en.json"), encoding="utf-8"))
@@ -525,7 +525,8 @@ def about_teaser(lang):
     </div>
 {person_cards(lang)}
     <p class="show-cta"><a class="btn btn-primary" href="{path_for(lang, "about")}">{t["about_btn"]} &rarr;</a>
-      <a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a></p>
+      <a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a>
+      <a class="btn btn-ghost" href="{DOCS}org/reference/" target="_blank" rel="noopener">{t["about_docs"]} &rarr;</a></p>
   </div>
 </section>
 
@@ -545,6 +546,8 @@ def about_page(lang):
     t = T[lang]
     u = UI[lang]
     lines = "".join(f'<div class="who-row"><span class="who-k">{E(k)}</span><p>{E(v)}</p></div>' for k, v in t["who_lines"])
+    docs = "".join(f'<div class="who-row"><span class="who-k"><a href="{DOCS}{path}" target="_blank" rel="noopener">{E(k)}</a></span><p>{E(v)}</p></div>'
+                   for k, path, v in t["docs"])
     body = f'''<main class="page">
   <div class="wrap">
     <p class="crumbs"><a href="{u["prefix"]}/">{u["crumb_home"]}</a> / {t["about_eyebrow"]}</p>
@@ -556,6 +559,9 @@ def about_page(lang):
     <h2 class="gal-h">{t["who_h2"]}</h2>
     <div class="people">{person_cards(lang)}</div>
     <div class="who">{lines}</div>
+    <h2 class="gal-h" id="documentacao">{t["docs_h2"]}</h2>
+    <p class="lead">{t["docs_p"]}</p>
+    <div class="who">{docs}</div>
     <p class="show-cta"><a class="btn btn-ghost" href="{GITHUB}" target="_blank" rel="noopener">{t["about_code"]} &rarr;</a>
       <a class="btn btn-ghost" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn &rarr;</a></p>
   </div>
