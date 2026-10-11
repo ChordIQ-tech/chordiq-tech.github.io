@@ -3,6 +3,7 @@ import html
 
 E = html.escape
 GITHUB = "https://github.com/PINNeAPPle-Labs/PINNeAPPle"
+DOCS = "https://pinneapple-labs.github.io/PINNeAPPle/"
 LINKEDIN = "https://www.linkedin.com/in/yan-barros-yan"
 
 T = {
@@ -37,6 +38,11 @@ T = {
         about_p="Tecnologia aberta, entregue como engenharia. O PINNeAPPle é a nossa base aberta de Physics AI (Apache 2.0, PyPI, GitHub); a ChordIQ transforma essa tecnologia em sistemas de engenharia validados.",
         about_person="Yan Barros", about_role="autor e mantenedor do PINNeAPPle · Natal/RN",
         about_btn="Conhecer a equipe e a parceria", about_code="Ver o código no GitHub",
+        about_docs="Documentação do PINNeAPPle", docs_h2="Documentação aberta", docs_p="A biblioteca inteira está documentada em público, com exemplos executados e cada experimento com as suas checagens.",
+        docs=[("Referência de módulos", "org/reference/", "Cada pacote e módulo do PINNeAPPle explicado, com exemplos executados, gráficos e a API completa."),
+              ("Catálogo de experimentos", "lab/", "CFD, FEA, partículas, surrogates e previsões, cada um com figuras, checagens e cartão de confiança."),
+              ("Guias", "", "Instalação, conceitos, o laboratório, o estúdio 3D, CFD e FEA, modelos de ordem reduzida."),
+              ("Contribua", "org/contribute/", "As issues abertas por tema, release, prioridade e esforço, com por onde começar.")],
         # about page
         ab_title="Sobre a ChordIQ + Domus — equipe, propósito e parceria", ab_desc="Sobre a ChordIQ + Domus: o PINNeAPPle, uma biblioteca de Physics AI de código aberto, o propósito, o posicionamento e a parceria com a Domus.",
         ab_h1="Sobre a ChordIQ + Domus", ab_lead="Engenharia aplicada com IA científica, construída sobre uma biblioteca aberta que qualquer pessoa pode auditar.",
@@ -90,6 +96,11 @@ T = {
         about_p="Open technology, delivered as engineering. PINNeAPPle is our open-source Physics AI foundation (Apache 2.0, PyPI, GitHub); ChordIQ turns that technology into validated engineering systems.",
         about_person="Yan Barros", about_role="author and maintainer of PINNeAPPle · Natal, Brazil",
         about_btn="Meet the team and the partnership", about_code="See the code on GitHub",
+        about_docs="PINNeAPPle documentation", docs_h2="Open documentation", docs_p="The whole library is documented in public, with executed examples and every experiment with its checks.",
+        docs=[("Module reference", "org/reference/", "Every PINNeAPPle package and module explained, with executed examples, plots and the full API."),
+              ("Experiment catalogue", "lab/", "CFD, FEA, particles, surrogates and forecasts, each with figures, checks and a trust card."),
+              ("Guides", "", "Installation, concepts, the lab, the 3-D studio, CFD and FEA, reduced-order models."),
+              ("Contribute", "org/contribute/", "The open issues by theme, release, priority and effort, with where to start.")],
         ab_title="About ChordIQ + Domus — team, purpose and partnership", ab_desc="About ChordIQ + Domus: PINNeAPPle, an open-source Physics AI library, the purpose, the positioning and the partnership with Domus.",
         ab_h1="About ChordIQ + Domus", ab_lead="Applied engineering with scientific AI, built on an open library that anyone can audit.",
         who_h2="Who is behind it", who_lines=[
