@@ -125,7 +125,7 @@
   <div class="wrap">
     <div class="proof-grid">
       <div class="proof-item">
-        <b>227.059&times;</b>
+        <b>~200.000&times;</b>
         <span>mais rápido que a simulação 3D real, num modelo substituto térmico</span>
       </div>
       <div class="proof-item">
@@ -262,8 +262,8 @@
     <div class="section-head">
       <p class="eyebrow">Resultados de engenharia</p>
       <h2>O que ajudamos equipes de engenharia a conseguir.</h2>
-      <p>Cada resultado abaixo já foi validado contra uma referência real; veja os números em
-        <a href="#casos">Validações técnicas</a>.</p>
+      <p>Onde já existe um número medido contra uma referência real, ele está em
+        <a href="#casos">Validações técnicas</a>. IA operacional e assimilação de dados aparecem em projetos do portfólio, ainda sem validação publicada aqui.</p>
     </div>
     <div class="svc-grid">
       <article class="svc">
@@ -399,10 +399,10 @@
           <div class="thumb"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Eletrônica de potência &middot; otimização térmica &middot; engenharia de produto</p>
-            <h3>Modelo substituto bate simulação 3D real 227.000× mais rápido</h3>
+            <h3>Modelo substituto responde cerca de 200.000× mais rápido que a simulação 3D real</h3>
             <p class="sum">Rede neural treinada prevê a temperatura de junção de um dissipador em microssegundos, conferida a cada rodada contra uma simulação 3D real em FEniCS.</p>
             <div class="stats">
-              <div class="stat"><b>227.059&times;</b><span>mais rápido que a simulação 3D real, em média</span></div>
+              <div class="stat"><b>~200.000&times;</b><span>mais rápido que a simulação 3D real (o fator exato varia com a carga da máquina)</span></div>
               <div class="stat"><b>4,46%</b><span>erro médio de temperatura vs. FEA 3D (pior caso: 7,35%)</span></div>
             </div>
           </div>
@@ -508,7 +508,7 @@
               <div class="thumb"><img loading="lazy" decoding="async" src="/img/rover.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Robótica espacial &middot; agro &middot; máquinas fora de estrada</p>
-                <h3>Mobilidade de rover: o substituto físico bate o solver de referência</h3>
+                <h3>Mobilidade de rover: corrigimos um modelo de IA publicado e recomendamos o método clássico</h3>
                 <p class="sum">Um modelo de IA publicado falhava fisicamente. Diagnosticamos o problema, construímos uma versão robusta e recomendamos não usá-la em produção.</p>
                 <div class="stats">
                   <div class="stat"><b>0,7&ndash;3,8%</b><span>erro contra o solver de referência</span></div>
@@ -525,7 +525,7 @@
                 construção, não só por treino. A parte mais honesta do trabalho veio depois: a
                 análise de custo mostrou que, para este problema específico, um método numérico
                 clássico bem implementado é mais rápido e mais exato que a própria IA, e
-                recomendamos isso ao cliente, não o caminho mais chamativo. Veja mais sobre essa
+                a nossa recomendação foi esse método, não o caminho mais chamativo. Veja mais sobre essa
                 decisão em <a href="#principio">Princípio</a>.</p>
             </div>
           </details>
@@ -722,7 +722,7 @@
               <div class="thumb"><img loading="lazy" decoding="async" src="/img/clima_onda_de_calor.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Clima &middot; energia &middot; agricultura &middot; defesa civil</p>
-                <h3>Previsão do tempo global: a onda de calor de 2021 já é bem prevista até 3,8 dias</h3>
+                <h3>Previsão do tempo global: 5,6 dias de previsão útil já na primeira fase de treino</h3>
                 <p class="sum">Modelo global treinado em 33 anos de reanálise pública (ERA5) e comparado, nas mesmas previsões de 2020, com IFS HRES, Pangu-Weather e NeuralGCM. Experimento em andamento: resultado da primeira fase de treino.</p>
                 <div class="stats">
                   <div class="stat"><b>5,6 dias</b><span>de previsão útil (z500, correlação &ge; 0,6), contra 1,4 dia da persistência</span></div>
@@ -736,7 +736,7 @@
               <p class="txt">Esta é uma <strong>prévia honesta</strong>. O treino tem fases; só a primeira
                 (passo de 6 horas, cerca de 2 horas em 4 núcleos de CPU) foi concluída. As fases de
                 rollout, que levam a habilidade além de 3 a 5 dias, ainda não rodaram. Por isso, em
-                21 previsões de 2020, o erro de geopotencial a 500 hPa no dia 3 é 397, contra 104&ndash;125
+                21 previsões de 2020, o erro de geopotencial a 500 hPa no dia 3 é 397 m²/s² (RMSE), contra 104&ndash;125
                 dos modelos de referência, e a persistência erra 923. Mesmo assim, o modelo já
                 reproduz a estrutura da <strong>onda de calor do Noroeste do Pacífico (junho de
                 2021)</strong> três dias antes: à direita, a previsão; à esquerda, o que aconteceu.
@@ -812,7 +812,7 @@
       <p>Num dos nossos casos de mobilidade de rover, a análise de custo mostrou que, para
         aquele problema específico, <span class="bold-line">um método numérico clássico bem
         implementado era mais rápido e mais exato que a própria rede neural</span>.
-        Recomendamos o método clássico ao cliente, não o caminho mais chamativo.</p>
+        Recomendamos o método clássico, não o caminho mais chamativo.</p>
       <p>Nosso objetivo é resolver o problema de engenharia, não vender IA. <a href="#casos">Ver a validação completa &rarr;</a></p>
     </div>
   </div>

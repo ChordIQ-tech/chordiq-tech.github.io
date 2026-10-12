@@ -95,10 +95,10 @@
           <div class="thumb"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt=""></div>
           <div class="mid">
             <p class="eyebrow" style="margin-bottom:.2rem">Power electronics · thermal optimization · product engineering</p>
-            <h3>Surrogate model matches real 3D simulation, 227,000× faster</h3>
+            <h3>Surrogate model answers about 200,000× faster than the real 3D simulation</h3>
             <p class="sum">A trained neural network predicts the junction temperature of a heat sink in microseconds, checked every round against a real 3D FEniCS simulation.</p>
             <div class="stats">
-              <div class="stat"><b>227,059×</b><span>faster than the real 3D simulation, on average</span></div>
+              <div class="stat"><b>~200,000×</b><span>faster than the real 3D simulation (the exact factor depends on the machine load)</span></div>
               <div class="stat"><b>4.46%</b><span>mean temperature error vs. 3D FEA (worst case: 7.35%)</span></div>
             </div>
           </div>
@@ -181,7 +181,7 @@
               <div class="thumb"><img loading="lazy" decoding="async" src="/img/rover.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Space robotics · agriculture · off-road machines</p>
-                <h3>Rover mobility: the physical surrogate beats the reference solver</h3>
+                <h3>Rover mobility: we fixed a published AI model and recommended the classical method</h3>
                 <p class="sum">A published AI model failed physically. We diagnosed the problem, built a robust version and recommended not using it in production.</p>
                 <div class="stats">
                   <div class="stat"><b>0.7&ndash;3.8%</b><span>error against the reference solver</span></div>
@@ -192,7 +192,7 @@
             </summary>
             <div class="detail">
               <div class="pad"></div>
-              <p class="txt">The corrected version reproduces the traction force of the classical physical model (Bekker–Wong) with a traction error <strong>45× smaller</strong> than the original published version, and three physical constraints are now guaranteed by construction, not only by training. The most honest part of the work came after: the cost analysis showed that, for this specific problem, a well-implemented classical numerical method is faster and more accurate than the AI itself, and we recommended that to the client, not the flashier path. See more about that decision in <a href="/en/#principio">Principle</a>.</p>
+              <p class="txt">The corrected version reproduces the traction force of the classical physical model (Bekker–Wong) with a traction error <strong>45× smaller</strong> than the original published version, and three physical constraints are now guaranteed by construction, not only by training. The most honest part of the work came after: the cost analysis showed that, for this specific problem, a well-implemented classical numerical method is faster and more accurate than the AI itself, and that method was our recommendation, not the flashier path. See more about that decision in <a href="/en/#principio">Principle</a>.</p>
             </div>
           </details>
 
@@ -345,7 +345,7 @@
               <div class="thumb"><img loading="lazy" decoding="async" src="/img/clima_onda_de_calor.jpg" alt=""></div>
               <div class="mid">
                 <p class="eyebrow" style="margin-bottom:.2rem">Climate · energy · agriculture · civil defence</p>
-                <h3>Global weather forecast: the 2021 heat dome is already well forecast up to 3.8 days</h3>
+                <h3>Global weather forecast: 5.6 days of useful forecast already in the first training phase</h3>
                 <p class="sum">Global model trained on 33 years of public reanalysis (ERA5) and compared, on the same 2020 forecasts, with IFS HRES, Pangu-Weather and NeuralGCM. Experiment in progress: result of the first training phase.</p>
                 <div class="stats">
                   <div class="stat"><b>5.6 days</b><span>of useful forecast (z500, correlation ≥ 0.6), against 1.4 days for persistence</span></div>
@@ -356,7 +356,7 @@
             </summary>
             <div class="detail">
               <div class="pad"></div>
-              <p class="txt">This is an <strong>honest preview</strong>. Training has phases; only the first (6-hour step, about 2 hours on 4 CPU cores) is done. The rollout phases, which carry the skill beyond 3 to 5 days, have not run yet. So, over 21 forecasts of 2020, the 500 hPa geopotential error at day 3 is 397, against 104–125 for the reference models, and persistence errs by 923. Even so, the model already reproduces the structure of the <strong>Pacific Northwest heat dome (June 2021)</strong> three days ahead: on the right, the forecast; on the left, what happened. The same time-step forecasting base serves any field that evolves (wind, waves, process temperature), always with the useful horizon measured against persistence and climatology, not promised.</p>
+              <p class="txt">This is an <strong>honest preview</strong>. Training has phases; only the first (6-hour step, about 2 hours on 4 CPU cores) is done. The rollout phases, which carry the skill beyond 3 to 5 days, have not run yet. So, over 21 forecasts of 2020, the 500 hPa geopotential error at day 3 is 397 m²/s² (RMSE), against 104–125 for the reference models, and persistence errs by 923. Even so, the model already reproduces the structure of the <strong>Pacific Northwest heat dome (June 2021)</strong> three days ahead: on the right, the forecast; on the left, what happened. The same time-step forecasting base serves any field that evolves (wind, waves, process temperature), always with the useful horizon measured against persistence and climatology, not promised.</p>
               <div class="media">
                 <video controls muted loop playsinline preload="none" poster="/img/clima_onda_de_calor.jpg" aria-label="Animation of the 2021 heat dome forecast: real data on the left, PINNeAPPle forecast on the right">
                   <source src="/videos/clima_onda_de_calor.mp4" type="video/mp4">

@@ -511,7 +511,7 @@ def person_cards(lang):
       <div><strong>{E(name)}</strong><span>{E(m.get("role_" + lang, ""))}</span>{bio_html}</div>
       {li}
     </div>''')
-    return "\n".join(out)
+    return '    <div class="people">\n' + "\n".join(out) + '\n    </div>'
 
 
 def about_teaser(lang):
