@@ -202,9 +202,15 @@
       <li><a href="/#portfolio"><img loading="lazy" decoding="async" src="/img/mosaico/projeto.jpg" alt="Avião de projeto otimizado em voo, renderizado em Cycles"><span>Projeto otimizado &middot; render em Cycles</span></a></li>
       <li><span class="sem-link"><img loading="lazy" decoding="async" src="/img/mosaico/dipolo.jpg" alt="Linhas de campo e equipotenciais de um dipolo elétrico calculadas por uma rede informada pela física"><span>Eletrostática &middot; linhas de campo por PINN</span></span></li>
       <li><a href="/#portfolio"><img loading="lazy" decoding="async" src="/img/mosaico/pcb.jpg" alt="Relatório térmico de uma placa eletrônica com os pontos quentes"><span>Pontos quentes em placa eletrônica</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/studio.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/formula_linhas.jpg" alt="Carro de Fórmula com linhas de corrente coloridas pela velocidade, de um cálculo OpenFOAM"><span>Carro de Fórmula &middot; linhas de corrente (OpenFOAM)</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/studio.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/formula_cp.jpg" alt="Fundo de um carro de Fórmula colorido pelo coeficiente de pressão"><span>Carro de Fórmula &middot; pressão no fundo e asas</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/geomechanics_mpm.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/colapso_granular.jpg" alt="Colapso de coluna de areia simulado por MPM comparado com o alcance medido por Lube et al."><span>Colapso granular (MPM) &middot; contra experimento</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/modelica.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/panela_surrogate.jpg" alt="Temperatura do metal em quatro rodadas não vistas: modelo físico Modelica e rede neural sobrepostos"><span>Modelica &rarr; IA &middot; surrogate testado em rodadas novas</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/lbm_wind_tunnel.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/lbm_esfera.jpg" alt="Velocidade em torno de uma esfera num túnel de vento lattice Boltzmann"><span>Túnel de vento lattice Boltzmann &middot; GPU, 16 bits</span></a></li>
+      <li><a href="https://github.com/PINNeAPPle-Labs/PINNeAPPle/blob/main/docs/core_concepts/free_surface.md" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="/img/mosaico/calha_superficie.jpg" alt="Jato de metal líquido caindo numa calha com superfície livre, para duas inclinações do fundo"><span>Superfície livre (VOF) &middot; jato numa calha</span></a></li>
     </ul>
-    <p class="cap-note">As imagens acima ilustram a capacidade — as duas últimas vêm de experimentos reais
-      em andamento ou validados em problemas de referência, e nenhuma substitui um caso validado do seu processo. Onde já existe um resultado numérico conferido para o
+    <p class="cap-note">As imagens acima ilustram a capacidade — as últimas vêm de experimentos reais
+      em andamento ou validados em problemas de referência (cada uma leva à documentação do experimento), e nenhuma substitui um caso validado do seu processo. Onde já existe um resultado numérico conferido para o
       mesmo tipo de aplicação, ele está nas <a href="/#casos">Validações técnicas</a>.</p>
   </div>
 </section>
@@ -225,7 +231,7 @@ surrogate, _ = engine.train_surrogate()
 resultado = engine.run_sweep(surrogate)
 <span class="cm"># resultado: erro de temperatura vs. FEA, por design</span></pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="/img/surrogate_speed_rerun.jpg" alt="Gráfico de concordância entre o substituto treinado e a simulação 3D real"></div>
-        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, 227.000× mais rápido.</p></div>
+        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, cerca de 200.000× mais rápido (o fator varia com a carga da máquina).</p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verificação &middot; física antes da decisão</span>
@@ -237,7 +243,8 @@ confianca = pcs.compute_physics_confidence(
     convergence_result=convergence_result,
 )</pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="/img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança"></div>
-        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p></div>
+        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p>
+          <p><a class="ext" href="https://pinneapple-labs.github.io/PINNeAPPle/org/reference/#pinneapple_analysis.verification.physics_confidence_score" target="_blank" rel="noopener">Ver no PINNeAPPle &rarr;</a></p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Medição de escoamento &middot; PIV por software</span>
@@ -249,7 +256,8 @@ campo = piv_velocity_field(
 )
 <span class="cm"># campo["u"], campo["v"]: velocidade por janela de interrogação</span></pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="/img/flowtrace_vortex.jpg" alt="Campo de velocidade recuperado por PIV comparado ao campo real"></div>
-        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p></div>
+        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p>
+          <p><a class="ext" href="https://pinneapple-labs.github.io/PINNeAPPle/org/reference/#pinneapple_perception.video_piv" target="_blank" rel="noopener">Ver no PINNeAPPle &rarr;</a></p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperabilidade &middot; conversão e reparo de malha</span>

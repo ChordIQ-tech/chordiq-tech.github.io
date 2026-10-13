@@ -14,7 +14,7 @@ surrogate, _ = engine.train_surrogate()
 resultado = engine.run_sweep(surrogate)
 <span class="cm"># resultado: erro de temperatura vs. FEA, por design</span></pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="img/surrogate_speed_rerun.jpg" alt="Gráfico de concordância entre o substituto treinado e a simulação 3D real"></div>
-        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, 227.000× mais rápido.</p></div>
+        <div class="body2"><p>Saída real: 4,46% de erro médio de temperatura contra uma simulação 3D de elementos finitos, cerca de 200.000× mais rápido (o fator varia com a carga da máquina).</p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Verificação &middot; física antes da decisão</span>
@@ -26,7 +26,8 @@ confianca = pcs.compute_physics_confidence(
     convergence_result=convergence_result,
 )</pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="img/verificacao.jpg" alt="Relatório de verificação física com nota de confiança"></div>
-        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p></div>
+        <div class="body2"><p>Saída real: uma nota de 0 a 1 por checagem, nunca uma média que esconde uma checagem que não rodou.</p>
+          <p><a class="ext" href="https://pinneapple-labs.github.io/PINNeAPPle/org/reference/#pinneapple_analysis.verification.physics_confidence_score" target="_blank" rel="noopener">Ver no PINNeAPPle &rarr;</a></p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Medição de escoamento &middot; PIV por software</span>
@@ -38,7 +39,8 @@ campo = piv_velocity_field(
 )
 <span class="cm"># campo["u"], campo["v"]: velocidade por janela de interrogação</span></pre>
         <div class="shot2"><img loading="lazy" decoding="async" src="img/flowtrace_vortex.jpg" alt="Campo de velocidade recuperado por PIV comparado ao campo real"></div>
-        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p></div>
+        <div class="body2"><p>Saída real: 81 vetores de velocidade recuperados, 3,94% de erro médio contra o campo exato.</p>
+          <p><a class="ext" href="https://pinneapple-labs.github.io/PINNeAPPle/org/reference/#pinneapple_perception.video_piv" target="_blank" rel="noopener">Ver no PINNeAPPle &rarr;</a></p></div>
       </article>
       <article class="example">
         <span class="card-k" style="display:block;padding:1rem 1.2rem 0">Interoperabilidade &middot; conversão e reparo de malha</span>
