@@ -7,7 +7,7 @@ LINKEDIN = "https://www.linkedin.com/in/yan-barros-yan"
 
 T = {
     "pt": dict(
-        entry_eyebrow="Por onde começar",
+        entry_eyebrow="Outros caminhos",
         entry_h2="O que custa tempo à sua equipe hoje?",
         entry_p="Escolha o que mais se parece com a sua situação. Cada atalho leva a um projeto nosso, com vídeo, números medidos e limites.",
         entries=[
@@ -60,7 +60,7 @@ T = {
         legal=["Privacidade", "Sobre", "Capacidades"],
     ),
     "en": dict(
-        entry_eyebrow="Where to start",
+        entry_eyebrow="Other ways in",
         entry_h2="What is costing your team time today?",
         entry_p="Pick the one that looks most like your situation. Each shortcut leads to one of our projects, with video, measured numbers and limits.",
         entries=[

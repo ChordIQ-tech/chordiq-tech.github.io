@@ -1,0 +1,83 @@
+"""Services page and the 'who does what' block (ChordIQ x Domus), bilingual."""
+
+PDF = {"pt": "/downloads/chordiq-comercial-pt.pdf", "en": "/downloads/chordiq-commercial-en.pdf"}
+
+S = {
+    "pt": dict(
+        title="Serviços — ChordIQ + Domus",
+        desc="Três formatos de projeto: prova de viabilidade, piloto de engenharia e implantação industrial. Todo começo é um diagnóstico sob NDA, sem custo.",
+        crumb="Serviços", eyebrow="Serviços",
+        h1="Do primeiro número medido à ferramenta em operação.",
+        lead="Três formatos de projeto. Todo começo é um diagnóstico de 30 minutos sob NDA, sem custo: dizemos se há ganho claro antes de qualquer proposta.",
+        formats_h2="Três formatos de projeto",
+        formats=[
+            ("01", "Prova de viabilidade", "Preço fechado",
+             "Descobrir, num escopo curto, se vale acelerar este problema.",
+             ["Escopo, prazo e preço fechados por escrito antes de começar.",
+              "Um primeiro modelo sobre uma amostra do seu caso, comparado com a simulação de referência.",
+              "Relatório curto: ganho medido, limites de validade e recomendação de seguir ou não."]),
+            ("02", "Piloto de engenharia", "Escopo fixo",
+             "Levar o modelo ao seu problema real e medir o ganho na métrica que você escolheu.",
+             ["Escopo e métrica de sucesso definidos por escrito, antes da primeira linha de código.",
+              "Um modelo ou ferramenta funcionando sobre a sua geometria e os seus dados.",
+              "Resultado comparado ao método atual, com o ganho medido, os limites e a incerteza."]),
+            ("03", "Implantação industrial", "Possível recorrência",
+             "Colocar a ferramenta em operação, no fluxo da sua equipe, e mantê-la atualizada.",
+             ["Integração com o fluxo de trabalho e com os dados da operação.",
+              "Acompanhamento e atualização do modelo conforme o processo muda.",
+              "Remuneração acordada no escopo; o modelo comercial por ganho está descrito em Sobre."]),
+        ],
+        deliver="Entregáveis", for_="Para quê",
+        limits_h="Condições dos testes e limites de validade",
+        limits_p="Cada número que mostramos vem com as condições do teste e o limite de validade. Não prometemos a mesma aceleração ou precisão no seu caso sem antes avaliar o seu problema, a sua geometria e os seus dados.",
+        diag_h="Comece por um diagnóstico", diag_p="30 minutos, sob NDA, sem custo. Você descreve o problema; dizemos se há ganho claro e qual formato faz sentido.",
+        diag_btn="Agendar diagnóstico", pdf_btn="Baixar o resumo em PDF (1 página)", wa_btn="Falar pelo WhatsApp",
+    ),
+    "en": dict(
+        title="Services — ChordIQ + Domus",
+        desc="Three project formats: proof of feasibility, engineering pilot and industrial deployment. Every start is a free diagnosis under NDA.",
+        crumb="Services", eyebrow="Services",
+        h1="From the first measured number to a tool in operation.",
+        lead="Three project formats. Every start is a free 30-minute diagnosis under NDA: we tell you whether there is a clear gain before any proposal.",
+        formats_h2="Three project formats",
+        formats=[
+            ("01", "Proof of feasibility", "Fixed price",
+             "Find out, in a short scope, whether this problem is worth accelerating.",
+             ["Scope, timeline and price fixed in writing before we start.",
+              "A first model on a sample of your case, compared with the reference simulation.",
+              "A short report: measured gain, validity limits and a recommendation on whether to continue."]),
+            ("02", "Engineering pilot", "Fixed scope",
+             "Take the model to your real problem and measure the gain on the metric you chose.",
+             ["Scope and success metric agreed in writing, before the first line of code.",
+              "A working model or tool on your geometry and your data.",
+              "The result compared with your current method, with the gain measured, the limits and the uncertainty."]),
+            ("03", "Industrial deployment", "Possible recurring work",
+             "Put the tool into operation, inside your team's workflow, and keep it up to date.",
+             ["Integration with your workflow and operational data.",
+              "Follow-up and model updates as the process changes.",
+              "Fees agreed in the scope; the gain-based commercial model is described in About."]),
+        ],
+        deliver="Deliverables", for_="What it is for",
+        limits_h="Test conditions and validity limits",
+        limits_p="Every number we show comes with the test conditions and its validity limit. We do not promise the same speed-up or accuracy on your case without first assessing your problem, geometry and data.",
+        diag_h="Start with a diagnosis", diag_p="30 minutes, under NDA, free of charge. You describe the problem; we tell you whether there is a clear gain and which format fits.",
+        diag_btn="Book a diagnosis", pdf_btn="Download the 1-page PDF summary", wa_btn="Talk on WhatsApp",
+    ),
+}
+
+R = {
+    "pt": dict(
+        eyebrow="Quem faz o quê", h2="ChordIQ desenvolve. Domus entrega.",
+        p="Duas empresas, um projeto só do ponto de vista do cliente.",
+        rows=[("ChordIQ", "Desenvolve", "Constrói a tecnologia de Physics AI: modelos físicos, modelos substitutos, verificação e o código aberto PINNeAPPle."),
+              ("Domus", "Entrega", "Leva a tecnologia para a operação da engenharia industrial: implantação, agentes e o modelo comercial por ganho."),
+              ("Contratação", "Definida na proposta", "A empresa que contrata e emite a nota fiscal é indicada na proposta de cada projeto, conforme o escopo.")],
+    ),
+    "en": dict(
+        eyebrow="Who does what", h2="ChordIQ builds. Domus delivers.",
+        p="Two companies, one project from the customer's point of view.",
+        rows=[("ChordIQ", "Builds", "Builds the Physics AI technology: physics-based models, surrogate models, verification and the open-source PINNeAPPle."),
+              ("Domus", "Delivers", "Takes the technology into industrial engineering operations: deployment, agents and the gain-based commercial model."),
+              ("Contracting", "Set in the proposal", "The company that signs the contract and issues the invoice is named in each project's proposal, according to the scope.")],
+    ),
+}

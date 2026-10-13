@@ -17,6 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 from i18n import translate  # noqa: E402
 from newsections import ANALYTICS_OFF, ANALYTICS_ON, GITHUB, LINKEDIN, PRIVACY, T  # noqa: E402
+from services import PDF, R, S  # noqa: E402
 from projects import BY_SLUG, CATEGORIES, CATEGORY_ORDER, HOME_HIGHLIGHTS, P  # noqa: E402
 
 EN = json.load(open(os.path.join(ROOT, "src", "en.json"), encoding="utf-8"))
@@ -30,7 +31,7 @@ UI = {
         title="ChordIQ + Domus — Physics AI para engenharia industrial",
         desc="Transformamos simulações e processos industriais em modelos de IA rápidos, físicos e verificáveis. CFD, gêmeos digitais, modelos substitutos e verificação, com casos reais e número medido.",
         nav=[("servicos", "Resultados"), ("portfolio", "Portfólio"), ("casos", "Validações"), ("capacidades", "Capacidades"),
-             ("metodo", "Como trabalhamos"), ("sobre", "Sobre"), ("contato", "Contato")],
+             ("servicos-pagina", "Serviços"), ("sobre", "Sobre"), ("contato", "Contato")],
         cta="Falar com a gente", val_hub_btn="Ver todas as validações em uma página", menu="Menu", hero_media_label="Ver o projeto Aircraft Design Optimizer", hero_media_cap="Aircraft Design Optimizer · CFD 3D (OpenFOAM) · pressão na pele", demo_btn="Pedir acesso à demo", demo_subject="Acesso à demo: ", demo_body="Olá! Gostaria de testar o ", demo_note="Os apps de demonstração têm acesso restrito.",
         show_eyebrow="Veja funcionando", show_h2="Um avião comercial projetado por IA e física, em 96 segundos.",
         show_p="O Aircraft Design Optimizer voa 1.920 projetos de avião de corredor único, descarta os que não seriam certificáveis e confere os escolhidos em CFD 3D. Calibrado primeiro no A320, depois otimizado: até −13% de CO₂ por passageiro-km, dentro do portão de 36 m do aeroporto.",
@@ -53,7 +54,7 @@ UI = {
         title="ChordIQ + Domus — Physics AI for industrial engineering",
         desc="We turn industrial simulations and processes into fast, physical and verifiable AI models. CFD, digital twins, surrogate models and verification, with real cases and measured numbers.",
         nav=[("servicos", "Outcomes"), ("portfolio", "Portfolio"), ("casos", "Validations"), ("capacidades", "Capabilities"),
-             ("metodo", "How we work"), ("sobre", "About"), ("contato", "Contact")],
+             ("servicos-pagina", "Services"), ("sobre", "About"), ("contato", "Contact")],
         cta="Talk to us", val_hub_btn="See all validations on one page", menu="Menu", hero_media_label="See the Aircraft Design Optimizer project", hero_media_cap="Aircraft Design Optimizer · 3D CFD (OpenFOAM) · skin pressure", demo_btn="Request demo access", demo_subject="Demo access: ", demo_body="Hello! I would like to try ", demo_note="The demo apps have restricted access.",
         show_eyebrow="See it working", show_h2="An airliner designed by AI and physics, in 96 seconds.",
         show_p="The Aircraft Design Optimizer flies 1,920 single-aisle airliner designs, discards the ones that would not be certifiable and checks the picks in 3D CFD. Calibrated on the A320 first, then optimized: up to −13% CO₂ per passenger-km, inside the 36 m airport gate.",
@@ -74,7 +75,7 @@ UI = {
 }
 
 HOME_ORDER = ["hero", "ENTRIES", "proof", "SHOWCASE", "problema", "HIGHLIGHTS", "servicos", "setores", "casos",
-              "principio", "validacao", "metodo", "PILOT", "ABOUT", "contato"]
+              "principio", "validacao", "metodo", "PILOT", "ROLES", "ABOUT", "contato"]
 
 
 def read(name):
@@ -89,7 +90,8 @@ def absolutize(s):
 
 PAGE_SLUGS = {"about": {"pt": "sobre", "en": "about"}, "capabilities": {"pt": "capacidades", "en": "capabilities"},
               "privacy": {"pt": "privacidade", "en": "privacy"},
-              "validations": {"pt": "validacoes", "en": "validations"}}
+              "validations": {"pt": "validacoes", "en": "validations"},
+              "services": {"pt": "servicos", "en": "services"}}
 
 
 def path_for(lang, kind, slug=None):
@@ -169,6 +171,8 @@ def header(lang, kind, slug=None):
             href = path_for(lang, "capabilities")
         elif anchor == "sobre":
             href = path_for(lang, "about")
+        elif anchor == "servicos-pagina":
+            href = path_for(lang, "services")
         elif anchor == "casos" and kind != "home":
             href = path_for(lang, "validations")
         else:
@@ -303,6 +307,8 @@ def home(lang):
             out.append(entries(lang))
         elif name == "PILOT":
             out.append(pilot(lang))
+        elif name == "ROLES":
+            out.append(roles(lang))
         elif name == "ABOUT":
             out.append(about_teaser(lang))
         else:
@@ -314,6 +320,7 @@ def home(lang):
                 s = s.replace("    </div>\n  </div>\n</section>", f'    </div>\n    <p class="show-cta"><a class="btn btn-ghost" href="{path_for(lang, "validations")}">{u["val_hub_btn"]} &rarr;</a></p>\n  </div>\n</section>')
             if name == "hero":
                 s = s.replace("<!--HEROMEDIA-->", hero_media(lang))
+                s = s.replace("{{BOOKING}}", CFG.get("booking_url", "#contato")).replace("{{PDF}}", PDF[lang])
             if name == "contato":
                 bk = CFG.get("booking_url", "").strip()
                 btn = f'<p><a class="btn btn-ghost" href="{E(bk)}" target="_blank" rel="noopener">{"Agendar uma conversa" if lang == "pt" else "Book a call"} &rarr;</a></p>' if bk else ""
@@ -563,9 +570,74 @@ def about_page(lang):
 {tr(lang, "proposito")}
 {tr(lang, "position")}
 {tr(lang, "setores")}
+{roles(lang)}
 {tr(lang, "parceria")}
 '''
     return simple_page(lang, "about", t["ab_title"], t["ab_desc"], body)
+
+
+def roles(lang):
+    r = R[lang]
+    rows = "\n".join(f'''      <div class="pilot-col">
+        <h3>{E(a)} <span class="card-k">{E(b)}</span></h3>
+        <p>{E(c)}</p>
+      </div>''' for a, b, c in r["rows"])
+    return f'''<section id="quem-faz">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{r["eyebrow"]}</p>
+      <h2>{r["h2"]}</h2>
+      <p>{r["p"]}</p>
+    </div>
+    <div class="pilot-grid">
+{rows}
+    </div>
+  </div>
+</section>
+
+'''
+
+
+def services_page(lang):
+    u = UI[lang]
+    t = S[lang]
+    cols = []
+    for n, name, tag, why, items in t["formats"]:
+        li = "\n".join(f"          <li>{E(i)}</li>" for i in items)
+        cols.append(f'''      <div class="pilot-col">
+        <p class="eyebrow">{n} &middot; {E(tag)}</p>
+        <h3>{E(name)}</h3>
+        <p><b>{t["for_"]}:</b> {E(why)}</p>
+        <p><b>{t["deliver"]}:</b></p>
+        <ul>
+{li}
+        </ul>
+      </div>''')
+    bk = CFG.get("booking_url", "#contato")
+    body = f'''<main class="page">
+  <div class="wrap">
+    <p class="crumbs"><a href="{u["prefix"]}/">{u["crumb_home"]}</a> / {t["crumb"]}</p>
+    <div class="section-head">
+      <p class="eyebrow">{t["eyebrow"]}</p>
+      <h1>{t["h1"]}</h1>
+      <p class="lead">{t["lead"]}</p>
+    </div>
+    <h2 class="gal-h">{t["formats_h2"]}</h2>
+    <div class="pilot-grid">
+{chr(10).join(cols)}
+    </div>
+    <div class="callout"><b>{t["limits_h"]}.</b> {t["limits_p"]}</div>
+    <h2 class="gal-h">{t["diag_h"]}</h2>
+    <p>{t["diag_p"]}</p>
+    <p class="show-cta"><a class="btn btn-primary" href="{E(bk)}" target="_blank" rel="noopener">{t["diag_btn"]} &rarr;</a>
+      <a class="btn btn-ghost" href="https://wa.me/5584991287602" target="_blank" rel="noopener">{t["wa_btn"]} &rarr;</a>
+      <a class="btn btn-ghost" href="{PDF[lang]}">{t["pdf_btn"]} &rarr;</a></p>
+  </div>
+</main>
+{pilot(lang)}
+{roles(lang)}
+'''
+    return simple_page(lang, "services", t["title"], t["desc"], body)
 
 
 def validations_page(lang):
@@ -662,12 +734,12 @@ def write(path, content):
 
 def main():
     # clean generated output
-    for d in ("portfolio", "en", "sobre", "capacidades", "privacidade", "validacoes"):
+    for d in ("portfolio", "en", "sobre", "capacidades", "privacidade", "validacoes", "servicos"):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     missing = set()
     # dry run for missing translations (home sections)
     for name in HOME_ORDER:
-        if name in ("SHOWCASE", "HIGHLIGHTS", "ENTRIES", "PILOT", "ABOUT"):
+        if name in ("SHOWCASE", "HIGHLIGHTS", "ENTRIES", "PILOT", "ROLES", "ABOUT"):
             continue
         translate(read(name), EN, missing)
     translate(read("footer"), EN, missing)
@@ -684,11 +756,12 @@ def main():
         write(path_for(lang, "about") + "index.html", about_page(lang))
         write(path_for(lang, "capabilities") + "index.html", capabilities_page(lang))
         write(path_for(lang, "validations") + "index.html", validations_page(lang))
+        write(path_for(lang, "services") + "index.html", services_page(lang))
         write(path_for(lang, "privacy") + "index.html", privacy_page(lang))
     write("/404.html", not_found())
     urls = []
     for lang in ("pt", "en"):
-        urls += [path_for(lang, k) for k in ("home", "portfolio", "about", "capabilities", "validations", "privacy")]
+        urls += [path_for(lang, k) for k in ("home", "portfolio", "about", "capabilities", "validations", "services", "privacy")]
         urls += [path_for(lang, "project", p["slug"]) for p in P]
     write("/sitemap.xml", sitemap(urls))
     write("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")

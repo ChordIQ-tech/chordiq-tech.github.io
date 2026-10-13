@@ -462,5 +462,13 @@
  "81f598": "Global weather forecast (preview)",
  "497a2b": "Optimised design · Cycles render",
  "518db7": "Thermal report of an electronics board with the hot spots",
- "32a5e8": "Real results from recent experiments and projects. Where a validation with a number exists, the tile leads to it; the others illustrate the type of delivery."
+ "32a5e8": "Real results from recent experiments and projects. Where a validation with a number exists, the tile leads to it; the others illustrate the type of delivery.",
+ "25a26c": "Book a 30-minute diagnosis →",
+ "2d7088": "Simulation acceleration with Physics AI",
+ "3adb1d": "Diagnosis under NDA, free of charge.",
+ "728bda": ", which answers in seconds and is checked against the reference simulation, with the error measured.",
+ "a87539": "PDF summary (1 page)",
+ "d97217": "Faster engineering simulation, without losing the physics.",
+ "df3bcd": "When simulation is too slow to decide in time, we turn your case into an AI model that is",
+ "eab25e": "fast, physics-based and verifiable"
 }
